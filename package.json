@@ -1,0 +1,33 @@
+{
+  "name": "koha-plugin-opac-theme-caboose",
+  "version": "1.0.0",
+  "previous_version": "",
+  "description": "Koha Caboose OPAC Theme Plugin",
+  "main": "index.js",
+  "dependencies": {
+    "datetime": "0.0.3",
+    "jsonfile": "^4.0.0",
+    "node-datetime": "^2.0.0"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-cli": "^1.2.2",
+    "gulp-github-release": "^1.1.5",
+    "gulp-replace": "^0.5.4",
+    "gulp-run": "^1.7.1",
+    "gulp-zip": "^3.2.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bywatersolutions/koha-plugin-opac-theme-caboose.git"
+  },
+  "author": "Kyle M Hall <kyle@bywatersolutions.com>",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/bywatersolutions/koha-plugin-opac-theme-caboose/issues"
+  },
+  "homepage": "https://github.com/bywatersolutions/koha-plugin-opac-theme-caboose#readme"
+}

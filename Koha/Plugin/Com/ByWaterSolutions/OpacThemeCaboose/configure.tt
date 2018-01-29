@@ -1,0 +1,62 @@
+[% INCLUDE 'doc-head-open.inc' %]
+ <title>Koha: Caboose OPAC Theme Plugin: Configuration</title>
+[% INCLUDE 'doc-head-close.inc' %]
+</head>
+<body>
+[% INCLUDE 'header.inc' %]
+[% INCLUDE 'cat-search.inc' %]
+
+<div id="breadcrumbs"><a href="/cgi-bin/koha/mainpage.pl">Home</a> &rsaquo; <a href="/cgi-bin/koha/plugins/plugins-home.pl">Plugins</a> &rsaquo; Caboose OPAC Theme &rsaquo; Configuration</div>
+
+<div id="doc3">
+    <h3>Koha: Caboose OPAC Theme Plugin: Configuration</h3>
+
+    <form method="get">
+        <!-- Always pass these two parameters so the plugin system knows what to execute! -->
+        <input type="hidden" name="class" value="[% CLASS %]"/>
+        <input type="hidden" name="method" value="[% METHOD %]"/>
+
+        <fieldset id="imgopts">
+            <legend>Header options</legend>
+
+            <label for="header_url">Header logo URL: </label>
+            <input name="header_url" id="header_url" type="text" size="120" value="[% header_url %]" />
+            <p/>
+
+            <label for=header_background_color">Background color: </label>
+            <input name="header_background_color" id="header_background_color" type="color" value="[% header_background_color %]" />
+            <p/>
+        </fieldset>
+
+        <fieldset id="coloropts">
+            <legend>General color options</legend>
+
+            <label for="body_background_color">Background color: </label>
+            <input name="body_background_color" id="body_background_color" type="color" value="[% body_background_color %]" />
+            <p/>
+
+            <label for="navbar_color">Navigation bar color: </label>
+            <input name="navbar_color" id="navbar_color" type="color" value="[% navbar_color %]" />
+            <p/>
+
+            <label for="navbar_bars_color">Navigation bar separator color: </label>
+            <input name="navbar_bars_color" id="navbar_bars_color" type="color" value="[% navbar_bars_color %]" />
+            <p/>
+
+            <label for="searchbox_background_color">Search box background color: </label>
+            <input name="searchbox_background_color" id="searchbox_background_color" type="color" value="[% searchbox_background_color %]" />
+            <p/>
+
+            <label for="search_button_color">Search button background color: </label>
+            <input name="search_button_color" id="search_button_color" type="color" value="[% search_button_color %]" />
+            <p/>
+        </fieldset>
+
+        <p>
+
+        <input type="hidden" name="save" value="1" />
+
+        <input type="submit" value="Save configuration" />
+    </form>
+
+[% INCLUDE 'intranet-bottom.inc' %]
