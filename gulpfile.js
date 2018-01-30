@@ -9,7 +9,7 @@ const run = require('gulp-run');
 var package_json = JSON.parse(fs.readFileSync('./package.json'));
 var release_filename = package_json.name + '-v' + package_json.version + '.kpz';
 
-var pm_file = 'CoverFlow.pm';
+var pm_file = 'OpacThemeCaboose.pm';
 var pm_file_path = 'Koha/Plugin/Com/ByWaterSolutions/';
 var pm_file_path_full = pm_file_path + pm_file;
 var pm_file_path_dist = 'dist/' + pm_file_path;
@@ -19,7 +19,7 @@ console.log(release_filename);
 console.log(pm_file_path_full_dist);
 
 gulp.task('build', () => {
-    run('mkdir dist ; cp -ar Koha dist/. ; cp -ar JavaScript dist/. ; sed -i -e "s/{VERSION}/' + package_json.version + '/g" ' + pm_file_path_full_dist + ' ; cd dist ; zip -r ../' + release_filename + ' ./Koha ./JavaScript ; cd .. ; rm -rf dist').exec();
+    run('mkdir dist ; cp -ar Koha dist/. ; sed -i -e "s/{VERSION}/' + package_json.version + '/g" ' + pm_file_path_full_dist + ' ; cd dist ; zip -r ../' + release_filename + ' ./Koha ; cd .. ; rm -rf dist').exec();
 
 });
 
