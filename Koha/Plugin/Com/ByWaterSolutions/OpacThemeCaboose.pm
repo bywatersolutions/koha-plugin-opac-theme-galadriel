@@ -7,7 +7,8 @@ use Modern::Perl;
 use base qw(Koha::Plugins::Base);
 
 # This block allows us to load external modules stored within the plugin itself
-# In this case it's Template::Plugin::Filter::Minify::JavaScript/CSS
+# In this case it's Template::Plugin::Filter::Minify::JavaScript/CSS and deps
+# cpanm --local-lib=. -f Template::Plugin::Filter::Minify::CSS from asssets dir
 BEGIN {
     use Config;
     use C4::Context;
