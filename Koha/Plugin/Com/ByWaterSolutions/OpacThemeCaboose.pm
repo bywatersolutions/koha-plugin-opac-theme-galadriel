@@ -111,7 +111,7 @@ sub update_opacheader {
     my ($self, $data) = @_;
 
     my $opacheader = C4::Context->preference('opacheader');
-    $opacheader =~ s/<!-- JS and CSS for Koha Caboose OPAC Theme Plugin.*End of JS and CSS for Koha Caboose OPAC Theme Plugin -->//gs;
+    $opacheader =~ s/\n*<!-- JS and CSS for Koha Caboose OPAC Theme Plugin.*End of JS and CSS for Koha Caboose OPAC Theme Plugin -->//gs;
 
     my $template = $self->get_template( { file => 'opacheader.tt' } );
     $template->param(%$data);
@@ -132,7 +132,7 @@ sub update_opaccredits {
     my ($self, $data) = @_;
 
     my $opaccredits = C4::Context->preference('opaccredits');
-    $opaccredits =~ s/<!-- JS and CSS for Koha Caboose OPAC Theme Plugin.*End of JS and CSS for Koha Caboose OPAC Theme Plugin -->//gs;
+    $opaccredits =~ s/\n*<!-- JS and CSS for Koha Caboose OPAC Theme Plugin.*End of JS and CSS for Koha Caboose OPAC Theme Plugin -->//gs;
 
     my $template = $self->get_template( { file => 'opaccredits.tt' } );
     $template->param(%$data);
