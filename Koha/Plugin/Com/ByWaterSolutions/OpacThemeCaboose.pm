@@ -1,16 +1,24 @@
 package Koha::Plugin::Com::ByWaterSolutions::OpacThemeCaboose;
 
-use FindBin;
-use lib "$FindBin::Bin/OpacThemeCaboose/lib/perl5";
-
 ## It's good practive to use Modern::Perl
 use Modern::Perl;
 
 ## Required for all plugins
 use base qw(Koha::Plugins::Base);
 
-## We will also need to include any Koha libraries we want to access
-use C4::Context;
+# This block allows us to load external modules stored within the plugin itself
+# In this case it's Template::Plugin::Filter::Minify::JavaScript/CSS
+BEGIN {
+    use Config;
+    use C4::Context;
+
+    my $pluginsdir = C4::Context->config('pluginsdir');
+    my $plugin_libs = '/Koha/Plugin/Com/ByWaterSolutions/OpacThemeCaboose/lib/perl5';
+    my $local_libs = "$pluginsdir/$plugin_libs";
+
+    unshift( @INC, $local_libs );
+    unshift( @INC, "$local_libs/$Config{archname}" );
+}
 
 ## Here we set our plugin version
 our $VERSION = "{VERSION}";
