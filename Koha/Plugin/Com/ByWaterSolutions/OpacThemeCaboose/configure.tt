@@ -23,6 +23,7 @@
             <input name="header_url" id="header_url" type="text" size="120" value="[% header_url %]" />
             <p/>
 
+            <input type="checkbox" name="enable_header_background_color" [% IF enable_header_background_color %]checked="checked"[% END %] />
             <label for=header_background_color">Background color: </label>
             <input name="header_background_color" id="header_background_color" type="color" value="[% header_background_color %]" />
             <p/>
@@ -31,22 +32,27 @@
         <fieldset id="coloropts">
             <legend>General color options</legend>
 
+            <input type="checkbox" name="enable_body_background_color" [% IF enable_body_background_color %]checked="checked"[% END %] />
             <label for="body_background_color">Background color: </label>
             <input name="body_background_color" id="body_background_color" type="color" value="[% body_background_color %]" />
             <p/>
 
+            <input type="checkbox" name="enable_navbar_color" [% IF enable_navbar_color %]checked="checked"[% END %] />
             <label for="navbar_color">Navigation bar color: </label>
             <input name="navbar_color" id="navbar_color" type="color" value="[% navbar_color %]" />
             <p/>
 
+            <input type="checkbox" name="enable_navbar_bars_color" [% IF enable_navbar_bars_color %]checked="checked"[% END %] />
             <label for="navbar_bars_color">Navigation bar separator color: </label>
             <input name="navbar_bars_color" id="navbar_bars_color" type="color" value="[% navbar_bars_color %]" />
             <p/>
 
+            <input type="checkbox" name="enable_searchbox_background_color" [% IF enable_searchbox_background_color %]checked="checked"[% END %] />
             <label for="searchbox_background_color">Search box background color: </label>
             <input name="searchbox_background_color" id="searchbox_background_color" type="color" value="[% searchbox_background_color %]" />
             <p/>
 
+            <input type="checkbox" name="enable_search_button_color" [% IF enable_search_button_color %]checked="checked"[% END %] />
             <label for="search_button_color">Search button background color: </label>
             <input name="search_button_color" id="search_button_color" type="color" value="[% search_button_color %]" />
             <p/>

@@ -2795,21 +2795,21 @@ and max-width 1024px {
     }
 }
 
-    [% IF body_background_color %]
+    [% IF enable_body_background_color %]
         #header-region,body {
           background-color: [% body_background_color %];
           border-color: [% body_background_color %];
         }
     [% END %]
 
-    [% IF header_background_color %]
+    [% IF enable_header_background_color %]
         #opacheader {
           background-color: [% header_background_color %];
           margin-top:5px;
         }
     [% END %]
 
-    [% IF navbar_color %]
+    [% IF enable_navbar_color %]
         .navbar-inverse .navbar-inner {
             background-image: linear-gradient(to bottom, [% navbar_color %], [% navbar_color %]);
             border-color: [% navbar_color %];
@@ -2817,20 +2817,20 @@ and max-width 1024px {
         }
     [% END %]
 
-    [% IF navbar_bars_color %]
+    [% IF enable_navbar_bars_color %]
         .navbar-inverse .divider-vertical {
             border-left-color: [% navbar_bars_color %];
             border-right-color: [% navbar_bars_color %];
         }
     [% END %]
 
-    [% IF searchbox_background_color %]
+    [% IF enable_searchbox_background_color %]
         .mastheadsearch input {
             background: linear-gradient(to bottom, [% searchbox_background_color %] 38%, [% searchbox_background_color %] 100%) repeat scroll 0% 0% transparent !important;
         }
     [% END %]
 
-    [% IF search_button_color %]
+    [% IF enable_search_button_color %]
         .btn-primary {
             color: #000;
             text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.25);

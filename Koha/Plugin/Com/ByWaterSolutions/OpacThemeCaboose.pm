@@ -54,10 +54,11 @@ sub configure {
     my ( $self, $args ) = @_;
     my $cgi = $self->{'cgi'};
 
+    my $dbh = C4::Context->dbh;
+
     unless ( $cgi->param('save') ) {
         my $template = $self->get_template( { file => 'configure.tt' } );
 
-        my $dbh = C4::Context->dbh;
         my $query = q{SELECT * FROM plugin_data WHERE plugin_class = 'Koha::Plugin::Com::ByWaterSolutions::OpacThemeCaboose'};
         my $sth = $dbh->prepare( $query );
         $sth->execute();
@@ -81,6 +82,7 @@ sub configure {
         my $data = { $cgi->Vars };
         delete $data->{ $_ } for qw( method save class );
 
+        $dbh->do(q{DELETE FROM plugin_data WHERE plugin_key LIKE "enable%" AND plugin_class = 'Koha::Plugin::Com::ByWaterSolutions::OpacThemeCaboose'});
         $self->store_data($data);
 
         $self->update_opacheader($data);
