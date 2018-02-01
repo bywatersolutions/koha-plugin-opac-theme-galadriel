@@ -56,6 +56,21 @@
             <label for="search_button_color">Search button background color: </label>
             <input name="search_button_color" id="search_button_color" type="color" value="[% search_button_color %]" />
             <p/>
+
+            <fieldset>
+                <legend>Login Box</legend>
+
+                <input type="checkbox" name="enable_login_box_background_color" [% IF enable_login_box_background_color %]checked="checked"[% END %] />
+                <label for="login_box_background_color">Background color: </label>
+                <input name="login_box_background_color" id="login_box_background_color" type="color" value="[% login_box_background_color %]" />
+                <p/>
+
+                <input type="checkbox" name="enable_login_box_border_top_color" [% IF enable_login_box_border_top_color %]checked="checked"[% END %] />
+                <label for="login_box_border_top_color">Top border color: </label>
+                <input name="login_box_border_top_color" id="login_box_border_top_color" type="color" value="[% login_box_border_top_color %]" />
+                <p/>
+
+            </fieldset>
         </fieldset>
 
         <p>

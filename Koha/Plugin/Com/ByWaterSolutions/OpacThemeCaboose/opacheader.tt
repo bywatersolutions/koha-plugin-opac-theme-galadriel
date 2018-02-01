@@ -2838,6 +2838,18 @@ and max-width 1024px {
             background-image: linear-gradient(to bottom, [% search_button_color %], [% search_button_color %]) !important;
         }
     [% END %]
+
+    [% IF enable_login_box_background_color %]
+        #login {
+            background-color: [% login_box_background_color %];
+        }
+    [% END %]
+
+    [% IF enable_login_box_border_top_color %]
+        #login {
+            border-top-color: [% login_box_border_top_color %];
+        }
+    [% END %]
 [% END %]
 </style>
 
