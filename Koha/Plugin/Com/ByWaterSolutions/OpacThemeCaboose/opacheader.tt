@@ -2825,7 +2825,7 @@ and max-width 1024px {
     [% END %]
 
     [% IF enable_searchbox_background_color %]
-        .mastheadsearch input {
+        .mastheadsearch {
             background: linear-gradient(to bottom, [% searchbox_background_color %] 38%, [% searchbox_background_color %] 100%) repeat scroll 0% 0% transparent !important;
         }
     [% END %]
