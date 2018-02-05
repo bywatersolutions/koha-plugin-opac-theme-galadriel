@@ -1,6 +1,8 @@
 [% INCLUDE 'doc-head-open.inc' %]
- <title>Koha: Caboose OPAC Theme Plugin: Configuration</title>
-[% INCLUDE 'doc-head-close.inc' %]
+  <title>Koha: Caboose OPAC Theme Plugin: Configuration</title>
+  [% INCLUDE 'doc-head-close.inc' %]
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/spectrum/1.8.0/spectrum.js" integrity="sha256-3wWiHra+MxkTwcZwUQkkowAjnu5uqAF+6hE676OitiE=" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/spectrum/1.8.0/spectrum.css" integrity="sha256-0gNW6jKGMP+oFR22hK5tl1qsZf21rWKR5cqmkyaLyjI=" crossorigin="anonymous" />
 </head>
 <body>
 [% INCLUDE 'header.inc' %]
@@ -17,11 +19,26 @@
         <input type="hidden" name="method" value="[% METHOD %]"/>
 
         <fieldset id="imgopts">
-            <legend>Header options</legend>
+            <legend>Header</legend>
 
-            <label for="header_url">Header logo URL: </label>
-            <input name="header_url" id="header_url" type="text" size="120" value="[% header_url %]" />
-            <p/>
+            <fieldset>
+                <legend>Logo</legend>
+
+                <input type="checkbox" name="enable_header_url" [% IF enable_header_url %]checked="checked"[% END %] />
+                <label for="header_url">Logo URL: </label>
+                <input name="header_url" id="header_url" type="text" size="120" value="[% header_url %]" />
+                <p/>
+
+                <input type="checkbox" name="enable_header_height" [% IF enable_header_height %]checked="checked"[% END %] />
+                <label for="header_height">Height: </label>
+                <input name="header_height" id="header_height" type="text" size="2" value="[% header_height %]" /> px
+                <p/>
+
+                <input type="checkbox" name="enable_header_width" [% IF enable_header_width %]checked="checked"[% END %] />
+                <label for="header_width">Width: </label>
+                <input name="header_width" id="header_width" type="text" size="2" value="[% header_width %]" /> px
+                <p/>
+            </fieldset>
 
             <input type="checkbox" name="enable_header_background_color" [% IF enable_header_background_color %]checked="checked"[% END %] />
             <label for=header_background_color">Background color: </label>
@@ -33,40 +50,48 @@
             <legend>General color options</legend>
 
             <input type="checkbox" name="enable_body_background_color" [% IF enable_body_background_color %]checked="checked"[% END %] />
-            <label for="body_background_color">Background color: </label>
+            <label for="body_background_color">Background: </label>
             <input name="body_background_color" id="body_background_color" type="color" value="[% body_background_color %]" />
             <p/>
 
-            <input type="checkbox" name="enable_navbar_color" [% IF enable_navbar_color %]checked="checked"[% END %] />
-            <label for="navbar_color">Navigation bar color: </label>
-            <input name="navbar_color" id="navbar_color" type="color" value="[% navbar_color %]" />
-            <p/>
+            <fieldset>
+                <legend>Navigation bar</legend>
 
-            <input type="checkbox" name="enable_navbar_bars_color" [% IF enable_navbar_bars_color %]checked="checked"[% END %] />
-            <label for="navbar_bars_color">Navigation bar separator color: </label>
-            <input name="navbar_bars_color" id="navbar_bars_color" type="color" value="[% navbar_bars_color %]" />
-            <p/>
+                <input type="checkbox" name="enable_navbar_color" [% IF enable_navbar_color %]checked="checked"[% END %] />
+                <label for="navbar_color">Navigation bar: </label>
+                <input name="navbar_color" id="navbar_color" type="color" value="[% navbar_color %]" />
+                <p/>
 
-            <input type="checkbox" name="enable_searchbox_background_color" [% IF enable_searchbox_background_color %]checked="checked"[% END %] />
-            <label for="searchbox_background_color">Search box background color: </label>
-            <input name="searchbox_background_color" id="searchbox_background_color" type="color" value="[% searchbox_background_color %]" />
-            <p/>
+                <input type="checkbox" name="enable_navbar_bars_color" [% IF enable_navbar_bars_color %]checked="checked"[% END %] />
+                <label for="navbar_bars_color">Navigation bar separator: </label>
+                <input name="navbar_bars_color" id="navbar_bars_color" type="color" value="[% navbar_bars_color %]" />
+                <p/>
+            </fieldset>
 
-            <input type="checkbox" name="enable_search_button_color" [% IF enable_search_button_color %]checked="checked"[% END %] />
-            <label for="search_button_color">Search button background color: </label>
-            <input name="search_button_color" id="search_button_color" type="color" value="[% search_button_color %]" />
-            <p/>
+            <fieldset>
+                <legend>Search box</legend>
+
+                <input type="checkbox" name="enable_searchbox_background_color" [% IF enable_searchbox_background_color %]checked="checked"[% END %] />
+                <label for="searchbox_background_color">Search box background: </label>
+                <input name="searchbox_background_color" id="searchbox_background_color" type="color" value="[% searchbox_background_color %]" />
+                <p/>
+
+                <input type="checkbox" name="enable_search_button_color" [% IF enable_search_button_color %]checked="checked"[% END %] />
+                <label for="search_button_color">Search button background: </label>
+                <input name="search_button_color" id="search_button_color" type="color" value="[% search_button_color %]" />
+                <p/>
+            </fieldset>
 
             <fieldset>
                 <legend>Login Box</legend>
 
                 <input type="checkbox" name="enable_login_box_background_color" [% IF enable_login_box_background_color %]checked="checked"[% END %] />
-                <label for="login_box_background_color">Background color: </label>
+                <label for="login_box_background_color">Background: </label>
                 <input name="login_box_background_color" id="login_box_background_color" type="color" value="[% login_box_background_color %]" />
                 <p/>
 
                 <input type="checkbox" name="enable_login_box_border_top_color" [% IF enable_login_box_border_top_color %]checked="checked"[% END %] />
-                <label for="login_box_border_top_color">Top border color: </label>
+                <label for="login_box_border_top_color">Top border: </label>
                 <input name="login_box_border_top_color" id="login_box_border_top_color" type="color" value="[% login_box_border_top_color %]" />
                 <p/>
 

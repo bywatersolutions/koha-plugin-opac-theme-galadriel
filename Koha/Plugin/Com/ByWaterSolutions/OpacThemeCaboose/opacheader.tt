@@ -1,9 +1,14 @@
 [% USE Filter.Minify.CSS %]
 [% USE Filter.Minify.JavaScript %]
 
-[% IF header_url %]
+[% IF enable_header_url %]
 <a title="logo" href="/" target="new">
-  <img alt="logo" src="[% header_url %]"/>
+  <img
+    alt="logo"
+    src="[% header_url %]"
+    [% IF header_height %] height="[% header_height %]" [% END %]
+    [% IF header_width %] width="[% header_width %]" [% END %]
+  />
 </a>
 [% END %]
 
