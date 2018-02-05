@@ -1,7 +1,7 @@
 {
   "name": "koha-plugin-opac-theme-caboose",
-  "version": "1.0.4",
-  "previous_version": "1.0.3",
+  "version": "1.0.5",
+  "previous_version": "1.0.4",
   "description": "Koha Caboose OPAC Theme Plugin",
   "main": "index.js",
   "dependencies": {
