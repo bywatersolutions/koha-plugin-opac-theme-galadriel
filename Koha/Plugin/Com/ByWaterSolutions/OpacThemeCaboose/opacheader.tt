@@ -642,9 +642,6 @@ body
 
 #searchsubmit:hover,.btn:hover,.btn-small:hover,#placehold:hover,#login .btn:hover
 {
-    background-color:#366CA4;
-    background-image:linear-gradient(tobottom,#366CA4,#366CA4);
-    color:#000;
 }
 
 #moresearches
@@ -724,34 +721,8 @@ body
 
 #login .btn
 {
-    -moz-border-radius:4px;
-    -moz-box-shadow:none;
-    -webkit-border-radius:4px;
-    -webkit-box-shadow:none;
-    background-color:#4385CA;
-    background-image:linear-gradient(tobottom,#254A71,#254A71);
-    background-repeat:no-repeat;
-    border:none;
-    border-color:rgba(0,0,0,0.1) rgba(0,0,0,0.1) rgba(0,0,0,0.25);
-    border-radius:0;
-    box-shadow:none;
-    color:#fff;
-    cursor:pointer;
-    display:inline-block;
-    filter:progid:DXImageTransform.Microsoft.gradient(enabled=false);
-    font-family:Roboto, sans-serif;
-    font-size:16px;
-    font-weight:300;
-    line-height:normal;
-    margin-bottom:0;
-    margin-left:10px;
-    padding:10px 88px;
-    position:relative;
-    text-align:center;
-    text-shadow:none;
-    text-transform:uppercase;
-    vertical-align:middle;
-    zoom:1;
+    color: #000;
+    margin-left: 10px;
 }
 
 #login legend
