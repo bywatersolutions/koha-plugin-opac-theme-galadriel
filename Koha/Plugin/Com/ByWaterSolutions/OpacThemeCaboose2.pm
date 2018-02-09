@@ -1,4 +1,4 @@
-package Koha::Plugin::Com::ByWaterSolutions::OpacThemeCaboose;
+package Koha::Plugin::Com::ByWaterSolutions::OpacThemeCaboose2;
 
 ## It's good practive to use Modern::Perl
 use Modern::Perl;
@@ -14,7 +14,7 @@ BEGIN {
     use C4::Context;
 
     my $pluginsdir = C4::Context->config('pluginsdir');
-    my $plugin_libs = '/Koha/Plugin/Com/ByWaterSolutions/OpacThemeCaboose/lib/perl5';
+    my $plugin_libs = '/Koha/Plugin/Com/ByWaterSolutions/OpacThemeCaboose2/lib/perl5';
     my $local_libs = "$pluginsdir/$plugin_libs";
 
     unshift( @INC, $local_libs );
@@ -25,9 +25,9 @@ BEGIN {
 our $VERSION = "{VERSION}";
 
 our $metadata = {
-    name            => 'Caboose OPAC Theme plugin',
+    name            => 'Caboose2 OPAC Theme plugin',
     author          => 'Kyle M Hall',
-    description     => 'Install the Caboose OPAC theme ( design by Michael Cabus )',
+    description     => 'Install the Caboose2 OPAC theme ( design by Michael Cabus )',
     date_authored   => '2018-01-29',
     date_updated    => '1900-01-01',
     minimum_version => '16.05',
@@ -59,7 +59,7 @@ sub configure {
     unless ( $cgi->param('save') ) {
         my $template = $self->get_template( { file => 'configure.tt' } );
 
-        my $query = q{SELECT * FROM plugin_data WHERE plugin_class = 'Koha::Plugin::Com::ByWaterSolutions::OpacThemeCaboose'};
+        my $query = q{SELECT * FROM plugin_data WHERE plugin_class = 'Koha::Plugin::Com::ByWaterSolutions::OpacThemeCaboose2'};
         my $sth = $dbh->prepare( $query );
         $sth->execute();
         my $data;
@@ -82,7 +82,7 @@ sub configure {
         my $data = { $cgi->Vars };
         delete $data->{ $_ } for qw( method save class );
 
-        $dbh->do(q{DELETE FROM plugin_data WHERE plugin_key LIKE "enable%" AND plugin_class = 'Koha::Plugin::Com::ByWaterSolutions::OpacThemeCaboose'});
+        $dbh->do(q{DELETE FROM plugin_data WHERE plugin_key LIKE "enable%" AND plugin_class = 'Koha::Plugin::Com::ByWaterSolutions::OpacThemeCaboose2'});
         $self->store_data($data);
 
         $self->update_opacheader($data);
@@ -114,18 +114,18 @@ sub update_opacheader {
     my ($self, $data) = @_;
 
     my $opacheader = C4::Context->preference('opacheader');
-    $opacheader =~ s/\n*<!-- JS and CSS for Koha Caboose OPAC Theme Plugin.*End of JS and CSS for Koha Caboose OPAC Theme Plugin -->//gs;
+    $opacheader =~ s/\n*<!-- JS and CSS for Koha Caboose2 OPAC Theme Plugin.*End of JS and CSS for Koha Caboose2 OPAC Theme Plugin -->//gs;
 
     my $template = $self->get_template( { file => 'opacheader.tt' } );
     $template->param(%$data);
 
     my $template_output = $template->output();
 
-    $template_output = qq|\n<!-- JS and CSS for Koha Caboose OPAC Theme Plugin 
-   This JS was added automatically by installing the Koha Caboose OPAC Theme Plugin
+    $template_output = qq|\n<!-- JS and CSS for Koha Caboose2 OPAC Theme Plugin 
+   This JS was added automatically by installing the Koha Caboose2 OPAC Theme Plugin
    Please do not modify -->|
       . $template_output
-      . q|<!-- End of JS and CSS for Koha Caboose OPAC Theme Plugin -->|;
+      . q|<!-- End of JS and CSS for Koha Caboose2 OPAC Theme Plugin -->|;
 
     $opacheader .= $template_output;
     C4::Context->set_preference( 'opacheader', $opacheader );
@@ -135,18 +135,18 @@ sub update_opaccredits {
     my ($self, $data) = @_;
 
     my $opaccredits = C4::Context->preference('opaccredits');
-    $opaccredits =~ s/\n*<!-- JS and CSS for Koha Caboose OPAC Theme Plugin.*End of JS and CSS for Koha Caboose OPAC Theme Plugin -->//gs;
+    $opaccredits =~ s/\n*<!-- JS and CSS for Koha Caboose2 OPAC Theme Plugin.*End of JS and CSS for Koha Caboose2 OPAC Theme Plugin -->//gs;
 
     my $template = $self->get_template( { file => 'opaccredits.tt' } );
     $template->param(%$data);
 
     my $template_output = $template->output();
 
-    $template_output = qq|\n<!-- JS and CSS for Koha Caboose OPAC Theme Plugin 
-   This JS was added automatically by installing the Koha Caboose OPAC Theme Plugin
+    $template_output = qq|\n<!-- JS and CSS for Koha Caboose2 OPAC Theme Plugin 
+   This JS was added automatically by installing the Koha Caboose2 OPAC Theme Plugin
    Please do not modify -->|
       . $template_output
-      . q|<!-- End of JS and CSS for Koha Caboose OPAC Theme Plugin -->|;
+      . q|<!-- End of JS and CSS for Koha Caboose2 OPAC Theme Plugin -->|;
 
     $opaccredits .= $template_output;
     C4::Context->set_preference( 'opaccredits', $opaccredits );

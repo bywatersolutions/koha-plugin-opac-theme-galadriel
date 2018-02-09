@@ -1,5 +1,5 @@
 [% INCLUDE 'doc-head-open.inc' %]
-  <title>Koha: Caboose OPAC Theme Plugin: Configuration</title>
+  <title>Koha: Caboose2 OPAC Theme Plugin: Configuration</title>
   [% INCLUDE 'doc-head-close.inc' %]
   <script src="https://cdnjs.cloudflare.com/ajax/libs/spectrum/1.8.0/spectrum.js" integrity="sha256-3wWiHra+MxkTwcZwUQkkowAjnu5uqAF+6hE676OitiE=" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/spectrum/1.8.0/spectrum.css" integrity="sha256-0gNW6jKGMP+oFR22hK5tl1qsZf21rWKR5cqmkyaLyjI=" crossorigin="anonymous" />
@@ -8,10 +8,10 @@
 [% INCLUDE 'header.inc' %]
 [% INCLUDE 'cat-search.inc' %]
 
-<div id="breadcrumbs"><a href="/cgi-bin/koha/mainpage.pl">Home</a> &rsaquo; <a href="/cgi-bin/koha/plugins/plugins-home.pl">Plugins</a> &rsaquo; Caboose OPAC Theme &rsaquo; Configuration</div>
+<div id="breadcrumbs"><a href="/cgi-bin/koha/mainpage.pl">Home</a> &rsaquo; <a href="/cgi-bin/koha/plugins/plugins-home.pl">Plugins</a> &rsaquo; Caboose2 OPAC Theme &rsaquo; Configuration</div>
 
 <div id="doc3">
-    <h3>Koha: Caboose OPAC Theme Plugin: Configuration</h3>
+    <h3>Koha: Caboose2 OPAC Theme Plugin: Configuration</h3>
 
     <form method="get">
         <!-- Always pass these two parameters so the plugin system knows what to execute! -->

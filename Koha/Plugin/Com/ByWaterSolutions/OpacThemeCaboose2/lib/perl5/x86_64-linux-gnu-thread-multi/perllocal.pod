@@ -4,7 +4,7 @@
 
 =item *
 
-C<installed into: /var/lib/koha/kohadev/plugins/Koha/Plugin/Com/ByWaterSolutions/OpacThemeCaboose/lib/perl5>
+C<installed into: /var/lib/koha/kohadev/plugins/Koha/Plugin/Com/ByWaterSolutions/OpacThemeCaboose2/lib/perl5>
 
 =item *
 
@@ -26,7 +26,7 @@ C<EXE_FILES: >
 
 =item *
 
-C<installed into: /var/lib/koha/kohadev/plugins/Koha/Plugin/Com/ByWaterSolutions/OpacThemeCaboose/lib/perl5>
+C<installed into: /var/lib/koha/kohadev/plugins/Koha/Plugin/Com/ByWaterSolutions/OpacThemeCaboose2/lib/perl5>
 
 =item *
 
@@ -48,7 +48,7 @@ C<EXE_FILES: >
 
 =item *
 
-C<installed into: /var/lib/koha/kohadev/plugins/Koha/Plugin/Com/ByWaterSolutions/OpacThemeCaboose/lib/perl5>
+C<installed into: /var/lib/koha/kohadev/plugins/Koha/Plugin/Com/ByWaterSolutions/OpacThemeCaboose2/lib/perl5>
 
 =item *
 
@@ -70,7 +70,7 @@ C<EXE_FILES: >
 
 =item *
 
-C<installed into: /var/lib/koha/kohadev/plugins/Koha/Plugin/Com/ByWaterSolutions/OpacThemeCaboose/lib/perl5>
+C<installed into: /var/lib/koha/kohadev/plugins/Koha/Plugin/Com/ByWaterSolutions/OpacThemeCaboose2/lib/perl5>
 
 =item *
 
