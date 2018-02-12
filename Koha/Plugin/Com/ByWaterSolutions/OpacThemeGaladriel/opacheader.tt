@@ -93,23 +93,13 @@
 
     [% IF enable_opac_cover_images_drop_shadows %]
         .item-thumbnail {
-            padding: 11px;
-            padding-bottom: 20px;
-            margin-left: 20px;
-            margin-top: 10px;
-            width: 100px;
-            background: url(http://huntsvillelibrary.net/custom/opac/book-back.png) no-repeat;
-            /* min-height: 152px; */
+            padding: 1px;
+            box-shadow: 5px 5px 10px grey;
         }
 
         span.no-image {
-            border: 0px solid lightgrey;
-            width: 123px;
-            height: 125px;
-            margin-left: 25px;
-            padding-top: 75px;
-            background: url(http://huntsvillelibrary.net/custom/opac/book-back.png) no-repeat;
-            /* min-height: 152px; */
+            padding: 1px;
+            box-shadow: 5px 5px 10px grey;
         }
     [% END %]
 
