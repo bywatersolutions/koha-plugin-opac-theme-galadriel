@@ -1,8 +1,8 @@
 {
-  "name": "koha-plugin-opac-theme-caboose2",
+  "name": "koha-plugin-opac-theme-galadriel",
   "version": "1.0.5",
   "previous_version": "1.0.4",
-  "description": "Koha Caboose2 OPAC Theme Plugin",
+  "description": "Koha Galadriel OPAC Theme Plugin",
   "main": "index.js",
   "dependencies": {
     "datetime": "0.0.3",
@@ -22,12 +22,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/bywatersolutions/koha-plugin-opac-theme-caboose2.git"
+    "url": "git+https://github.com/bywatersolutions/koha-plugin-opac-theme-galadriel.git"
   },
   "author": "Kyle M Hall <kyle@bywatersolutions.com>",
   "license": "GPL-3.0",
   "bugs": {
-    "url": "https://github.com/bywatersolutions/koha-plugin-opac-theme-caboose2/issues"
+    "url": "https://github.com/bywatersolutions/koha-plugin-opac-theme-galadriel/issues"
   },
-  "homepage": "https://github.com/bywatersolutions/koha-plugin-opac-theme-caboose2#readme"
+  "homepage": "https://github.com/bywatersolutions/koha-plugin-opac-theme-galadriel#readme"
 }
