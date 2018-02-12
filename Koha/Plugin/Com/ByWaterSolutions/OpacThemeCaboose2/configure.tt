@@ -3,6 +3,38 @@
   [% INCLUDE 'doc-head-close.inc' %]
   <script src="https://cdnjs.cloudflare.com/ajax/libs/spectrum/1.8.0/spectrum.js" integrity="sha256-3wWiHra+MxkTwcZwUQkkowAjnu5uqAF+6hE676OitiE=" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/spectrum/1.8.0/spectrum.css" integrity="sha256-0gNW6jKGMP+oFR22hK5tl1qsZf21rWKR5cqmkyaLyjI=" crossorigin="anonymous" />
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.5/css/select2.css" integrity="sha256-xqxV4FDj5tslOz6MV13pdnXgf63lJwViadn//ciKmIs=" crossorigin="anonymous" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.5/js/select2.full.js" integrity="sha256-Sp9iyAGCmNhQw7nNwUU3zKH/uO3DPzcJVxdKOkWOI6A=" crossorigin="anonymous"></script>
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.5.18/webfont.js"></script>
+
+  <link rel="stylesheet" href="https://cdn.rawgit.com/saadqbal/HiGoogleFonts/master/css/fonts.css" crossorigin="anonymous" />
+  <script src="https://cdn.rawgit.com/saadqbal/HiGoogleFonts/master/js/fonts.js" crossorigin="anonymous"></script>
+
+  <script type="text/javascript">
+    $(document).ready(function() {
+      $('#font-preview').hide();
+
+      $( "#select_font_family" ).higooglefonts({
+          selectedCallback:function(e){
+              console.log(e);
+              $('#font_family').val(e);
+              $('#font-preview').show();
+          },
+          loadedCallback:function(e){
+              console.log(e);
+              $("#font-preview").css("font-family", e);
+          }
+      });
+
+      [% IF font_family %]
+        $('.select2-selection__placeholder').text('[% font_family %]');
+      [% END %]
+    });
+  </script>
+
 </head>
 <body>
 [% INCLUDE 'header.inc' %]
@@ -17,6 +49,15 @@
         <!-- Always pass these two parameters so the plugin system knows what to execute! -->
         <input type="hidden" name="class" value="[% CLASS %]"/>
         <input type="hidden" name="method" value="[% METHOD %]"/>
+
+        <fieldset>
+            <legend>Font</legend>
+
+            <input type="checkbox" name="enable_font_family" [% IF enable_font_family %]checked="checked"[% END %] />
+            <input type="hidden" id="font_family" name="font_family" value="[% font_family %]" />
+            <select id="select_font_family"></select>
+            <p id="font-preview" style="font-size: 20px;">This is the preview of the font selected</p>
+        </fieldset>
 
         <fieldset id="imgopts">
             <legend>Header</legend>
@@ -96,6 +137,18 @@
                 <p/>
 
             </fieldset>
+        </fieldset>
+
+        <fieldset>
+            <legend>Search results</legend>
+
+            <input type="checkbox" name="enable_opac_cover_images_on_left" [% IF enable_opac_cover_images_on_left %]checked="checked"[% END %] />
+            <label for="enable_opac_cover_images_on_left">Show search results cover images on the left side: </label>
+            <p/>
+
+            <input type="checkbox" name="enable_opac_cover_images_drop_shadows" [% IF enable_opac_cover_images_drop_shadows %]checked="checked"[% END %] />
+            <label for="enable_opac_cover_images_drop_shadows">Add drop shadows to cover images: </label>
+            <p/>
         </fieldset>
 
         <p>
