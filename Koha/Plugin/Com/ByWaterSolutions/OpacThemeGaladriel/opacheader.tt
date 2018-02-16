@@ -73,11 +73,33 @@
         #login {
             background-color: [% login_box_background_color %];
         }
+        #login input,label,p {
+            margin-left: 10px;
+        }
+    [% END %]
+
+    [% IF enable_login_box_text_color %]
+        #login {
+            color: [% login_box_text_color %];
+        }
+    [% END %]
+
+    [% IF enable_login_box_link_color %]
+        #login a {
+            color: [% login_box_link_color %];
+        }
     [% END %]
 
     [% IF enable_login_box_border_top_color %]
         #login legend {
             background-color: [% login_box_border_top_color %];
+            text-align:center;
+        }
+    [% END %]
+
+    [% IF enable_login_box_text_top_color %]
+        #login legend {
+            color: [% login_box_text_top_color %];
         }
     [% END %]
 
@@ -103,11 +125,92 @@
         }
     [% END %]
 
+    /* Make the more searches bar the same width as the other elements */
+    #moresearches {
+        padding: 0;
+    }
+
+    /* Give the login box the same rounded corners as the other elements */
+    #login {
+        border-radius: 7px;
+    }
+    #login legend {
+        border-top-left-radius: 7px;
+        border-top-right-radius: 7px;
+    }
+
+    /* BEGIN New 'flat style' more searches bar */
+    #moresearches ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        [% IF enable_moresearches_background_color %]
+            background-color: [% moresearches_background_color %];
+        [% END %]
+        border-radius: 7px;
+    }
+
+    #moresearches li {
+        float: left;
+    }
+
+    #moresearches li:after {
+        content: "";
+    }
+
+    #moresearches li a {
+        display: block;
+        [% IF enable_moresearches_text_color %]
+            color: [% moresearches_text_color %];
+        [% END %]
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+    }
+
+    /* Change the link color to #111 (black) on hover */
+    #moresearches li a:hover {
+        [% IF enable_moresearches_background_hover_color %]
+            background-color: [% moresearches_background_hover_color %];
+        [% END %]
+    }
+
+    #moresearches .active {
+        [% IF enable_moresearches_background_active_color %]
+            background-color: [% moresearches_background_active_color %];
+        [% END %]
+    }
+    /* END New 'flat style' more searches bar */
+
 [% END %]
 </style>
 
 
 <script type="text/javascript">
 [% FILTER minify_js %]
+    // Works like jquery ready
+    function r(f) {
+      /in/.test(document.readyState) ? setTimeout('r(' + f + ')', 9) : f()
+    }
+
+    r(function() {
+      // Add the 'active' class to the correct moresearches link
+      const links = [
+        '/cgi-bin/koha/opac-search.pl',
+        '/cgi-bin/koha/opac-course-reserves.pl',
+        '/cgi-bin/koha/opac-authorities-home.pl',
+        '/cgi-bin/koha/opac-tags.pl'
+      ];
+
+      for (var i = 0, len = links.length; i < len; i++) {
+        const link = links[i];
+        if (window.location.href.indexOf(link) > -1) {
+          elt = document.querySelector("a[href='" + link + "']");
+          elt.classList.add('active');
+          break;
+        }
+      }
+    });
 [% END %]
 </script>

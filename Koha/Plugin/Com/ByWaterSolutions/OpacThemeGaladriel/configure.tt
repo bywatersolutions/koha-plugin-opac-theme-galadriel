@@ -7,11 +7,13 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.5/css/select2.css" integrity="sha256-xqxV4FDj5tslOz6MV13pdnXgf63lJwViadn//ciKmIs=" crossorigin="anonymous" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.5/js/select2.full.js" integrity="sha256-Sp9iyAGCmNhQw7nNwUU3zKH/uO3DPzcJVxdKOkWOI6A=" crossorigin="anonymous"></script>
 
-
   <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.5.18/webfont.js"></script>
 
   <link rel="stylesheet" href="https://cdn.rawgit.com/saadqbal/HiGoogleFonts/master/css/fonts.css" crossorigin="anonymous" />
   <script src="https://cdn.rawgit.com/saadqbal/HiGoogleFonts/master/js/fonts.js" crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" type="text/css" href="[% interface %]/[% theme %]/css/humanmsg.css" />
+  <script src="[% interface %]/lib/jquery/plugins/humanmsg.js" type="text/javascript"></script>
 
   <script type="text/javascript">
     $(document).ready(function() {
@@ -32,6 +34,13 @@
       [% IF font_family %]
         $('.select2-selection__placeholder').text('[% font_family %]');
       [% END %]
+
+      $('#save_continue').on('click', function(e){
+        e.preventDefault();
+        $.post('', $('#configureForm').serialize(), function(){
+          humanMsg.displayMsg('Settings saved!');
+        });
+      });
     });
   </script>
 
@@ -45,7 +54,7 @@
 <div id="doc3">
     <h3>Koha: Galadriel OPAC Theme Plugin: Configuration</h3>
 
-    <form method="get">
+    <form id="configureForm" method="get">
         <!-- Always pass these two parameters so the plugin system knows what to execute! -->
         <input type="hidden" name="class" value="[% CLASS %]"/>
         <input type="hidden" name="method" value="[% METHOD %]"/>
@@ -124,16 +133,55 @@
             </fieldset>
 
             <fieldset>
+                <legend>More searches</legend>
+
+                <input type="checkbox" name="enable_moresearches_background_color" [% IF enable_moresearches_background_color %]checked="checked"[% END %] />
+                <label for="moresearches_background_color">Background: </label>
+                <input name="moresearches_background_color" id="moresearches_background_color" type="color" value="[% moresearches_background_color %]" />
+                <p/>
+
+                <input type="checkbox" name="enable_moresearches_background_hover_color" [% IF enable_moresearches_background_hover_color %]checked="checked"[% END %] />
+                <label for="moresearches_background_hover_color">Hover background: </label>
+                <input name="moresearches_background_hover_color" id="moresearches_background_hover_color" type="color" value="[% moresearches_background_hover_color %]" />
+                <p/>
+
+                <input type="checkbox" name="enable_moresearches_background_active_color" [% IF enable_moresearches_background_active_color %]checked="checked"[% END %] />
+                <label for="moresearches_background_active_color">Active background: </label>
+                <input name="moresearches_background_active_color" id="moresearches_background_active_color" type="color" value="[% moresearches_background_active_color %]" />
+                <p/>
+
+                <input type="checkbox" name="enable_moresearches_text_color" [% IF enable_moresearches_text_color %]checked="checked"[% END %] />
+                <label for="moresearches_text_color">Text: </label>
+                <input name="moresearches_text_color" id="moresearches_text_color" type="color" value="[% moresearches_text_color %]" />
+                <p/>
+            </fieldset>
+
+            <fieldset>
                 <legend>Login Box</legend>
+
+                <input type="checkbox" name="enable_login_box_border_top_color" [% IF enable_login_box_border_top_color %]checked="checked"[% END %] />
+                <label for="login_box_border_top_color">Top border: </label>
+                <input name="login_box_border_top_color" id="login_box_border_top_color" type="color" value="[% login_box_border_top_color %]" />
+                <p/>
+
+                <input type="checkbox" name="enable_login_box_text_top_color" [% IF enable_login_box_text_top_color %]checked="checked"[% END %] />
+                <label for="login_box_text_top_color">Top text: </label>
+                <input name="login_box_text_top_color" id="login_box_text_top_color" type="color" value="[% login_box_text_top_color %]" />
+                <p/>
 
                 <input type="checkbox" name="enable_login_box_background_color" [% IF enable_login_box_background_color %]checked="checked"[% END %] />
                 <label for="login_box_background_color">Background: </label>
                 <input name="login_box_background_color" id="login_box_background_color" type="color" value="[% login_box_background_color %]" />
                 <p/>
 
-                <input type="checkbox" name="enable_login_box_border_top_color" [% IF enable_login_box_border_top_color %]checked="checked"[% END %] />
-                <label for="login_box_border_top_color">Top border: </label>
-                <input name="login_box_border_top_color" id="login_box_border_top_color" type="color" value="[% login_box_border_top_color %]" />
+                <input type="checkbox" name="enable_login_box_text_color" [% IF enable_login_box_text_color %]checked="checked"[% END %] />
+                <label for="login_box_text_color">Text: </label>
+                <input name="login_box_text_color" id="login_box_text_color" type="color" value="[% login_box_text_color %]" />
+                <p/>
+
+                <input type="checkbox" name="enable_login_box_link_color" [% IF enable_login_box_link_color %]checked="checked"[% END %] />
+                <label for="login_box_link_color">Link: </label>
+                <input name="login_box_link_color" id="login_box_link_color" type="color" value="[% login_box_link_color %]" />
                 <p/>
 
             </fieldset>
@@ -155,7 +203,8 @@
 
         <input type="hidden" name="save" value="1" />
 
-        <input type="submit" value="Save configuration" />
+        <input type="submit" value="Save" />
+        <button id="save_continue">Save & continue</button>
     </form>
 
 [% INCLUDE 'intranet-bottom.inc' %]
