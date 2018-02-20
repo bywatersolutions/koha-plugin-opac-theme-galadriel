@@ -90,6 +90,28 @@
                 <p/>
             </fieldset>
 
+            <fieldset>
+                <legend>Additional text</legend>
+
+                <input type="checkbox" name="enable_header_text" [% IF enable_header_text %]checked="checked"[% END %] />
+                <label for="header_text">Text: </label>
+                <input name="header_text" id="header_text" type="text" value="[% header_text %]" /> px
+                <p/>
+
+                <input type="checkbox" name="enable_header_text_position" [% IF enable_header_text_position %]checked="checked"[% END %] />
+                <label for="header_text_position">Position: </label>
+                <select name="header_text_position" id="header_text_position" value="[% header_text_position %]" />
+                    <option value="left_of_logo" [% IF header_text_position == "left_of_logo" %]selected="selected"[% END %]>Left of logo</option>
+                    <option value="right_of_logo" [% IF header_text_position == "right_of_logo" %]selected="selected"[% END %]>Right of logo</option>
+                </select>
+                <p/>
+
+                <input type="checkbox" name="enable_header_text_color" [% IF enable_header_text_color %]checked="checked"[% END %] />
+                <label for="header_text_color">Color: </label>
+                <input name="header_text_color" id="header_text_color" type="color" value="[% header_text_color %]" />
+                <p/>
+            </fieldset>
+
             <input type="checkbox" name="enable_header_background_color" [% IF enable_header_background_color %]checked="checked"[% END %] />
             <label for=header_background_color">Background color: </label>
             <input name="header_background_color" id="header_background_color" type="color" value="[% header_background_color %]" />

@@ -1,6 +1,9 @@
 [% USE Filter.Minify.CSS %]
 [% USE Filter.Minify.JavaScript %]
 
+[% IF enable_header_text && header_text_position == 'left_of_logo' %]
+    <span id="header-additional-text">[% header_text %]</span>
+[% END %]
 [% IF enable_header_url %]
 <a title="logo" href="/" target="new">
   <img
@@ -8,8 +11,11 @@
     src="[% header_url %]"
     [% IF header_height %] height="[% header_height %]" [% END %]
     [% IF header_width %] width="[% header_width %]" [% END %]
-  />
+  ></img>
 </a>
+[% END %]
+[% IF enable_header_text && header_text_position != 'left_of_logo' %]
+    <span id="header-additional-text">[% header_text %]</span>
 [% END %]
 
 [% IF enable_font_family %]
@@ -122,6 +128,12 @@
         span.no-image {
             padding: 1px;
             box-shadow: 5px 5px 10px grey;
+        }
+    [% END %]
+
+    [% IF enable_header_text_color %]
+        #header-additional-text {
+            color: [% header_text_color %];
         }
     [% END %]
 
