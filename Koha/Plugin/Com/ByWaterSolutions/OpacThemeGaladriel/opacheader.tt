@@ -29,8 +29,14 @@
     </style>
 [% END %]
 
+
 <style>
 [% FILTER minify_css %]
+    [% IF enable_font_size %]
+          body {
+            font-size: [% font_size %] !important;
+          }
+    [% END %]
     [% IF enable_body_background_color %]
         #header-region,body {
           background-color: [% body_background_color %];
