@@ -152,6 +152,11 @@
                 <label for="search_button_color">Search button background: </label>
                 <input name="search_button_color" id="search_button_color" type="color" value="[% search_button_color %]" />
                 <p/>
+
+                <input type="checkbox" name="enable_search_text_color" [% IF enable_search_text_color %]checked="checked"[% END %] />
+                <label for="search_text_color">Search text:</label>
+                <input name="search_text_color" id="search_text_color" type="color" value="[% search_text_color %]" />
+                <p/>
             </fieldset>
 
             <fieldset>

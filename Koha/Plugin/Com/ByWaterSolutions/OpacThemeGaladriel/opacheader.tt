@@ -66,6 +66,12 @@
         }
     [% END %]
 
+    [% IF enable_searchbox_text %]
+       #searchform label {
+           color: [% searchbox_text %] !important; 
+       }
+    [% END %]
+
     [% IF enable_search_button_color %]
         .btn-primary {
             color: #000;
