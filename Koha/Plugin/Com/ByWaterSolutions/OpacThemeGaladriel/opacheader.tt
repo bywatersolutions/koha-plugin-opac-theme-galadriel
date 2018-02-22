@@ -66,9 +66,9 @@
         }
     [% END %]
 
-    [% IF enable_searchbox_text %]
+    [% IF enable_search_text_color %]
        #searchform label {
-           color: [% searchbox_text %] !important; 
+           color: [% search_text_color %] !important; 
        }
     [% END %]
 
