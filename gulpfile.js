@@ -2,6 +2,10 @@ const gulp = require('gulp');
 const release = require('gulp-github-release');
 const fs = require('fs');
 const run = require('gulp-run');
+const dateTime = require('node-datetime');
+
+const dt = dateTime.create();
+const today = dt.format('Y-m-d');
 
 var package_json = JSON.parse(fs.readFileSync('./package.json'));
 var release_filename = package_json.name + '-v' + package_json.version + '.kpz';
