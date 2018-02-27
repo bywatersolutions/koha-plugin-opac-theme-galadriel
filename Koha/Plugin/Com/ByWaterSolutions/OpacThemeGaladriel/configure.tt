@@ -30,7 +30,7 @@
               $("#font-preview").css("font-family", e);
           }
       });
-     
+
       [% IF font_family %]
         $('.select2-selection__placeholder').text('[% font_family %]');
       [% END %]
@@ -67,11 +67,11 @@
             <select id="select_font_family"></select>
             <input type="checkbox" name="enable_font_size" [% IF enable_font_size %]checked="checked"[% END %] />
             <select id="font_size" name="font_size">
-                <option value="small" [% IF font_size == "small" %]selected="selected" [% END %]>Small</option>
-                <option value="medium" [% IF font_size == "medium" %]selected="selected" [% END %] >Medium</option>
-                <option value="large" [% IF font_size == "large" %]selected="selected" [% END %]>Large</option>
-                <option value="x-large" [% IF font_size == "x-large" %]selected="selected" [% END %]>Extra Large</option>
-                <option value="xx-large" [% IF font_size == "xx-large" %]selected="selected" [% END %]>Extra Extra Large</option>
+                <option value="small"    [% IF font_size == "small" %]   selected="selected" [% END %]>Small</option>
+                <option value="medium"   [% IF font_size == "medium" %]  selected="selected" [% END %]>Medium</option>
+                <option value="large"    [% IF font_size == "large" %]   selected="selected" [% END %]>Large</option>
+                <option value="x-large"  [% IF font_size == "x-large" %] selected="selected" [% END %]>XL</option>
+                <option value="xx-large" [% IF font_size == "xx-large" %]selected="selected" [% END %]>2XL</option>
             </select>
 
             <p id="font-preview" style="font-size: 20px;">This is the preview of the font selected</p>
