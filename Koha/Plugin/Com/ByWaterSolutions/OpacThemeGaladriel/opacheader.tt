@@ -143,6 +143,30 @@
         }
     [% END %]
 
+    [% IF enable_opac_edition_field %]
+        .bibliocol .edition {
+            display: none;
+        }
+    [% END %]
+
+    [% IF enable_opac_material_field %]
+        .bibliocol .type {
+            display: none;
+        }   
+    [% END %]
+
+    [% IF enable_opac_publisher_field %]
+        .bibliocol .publisher {
+            display: none;
+        }   
+    [% END %]
+    
+    [% IF enable_opac_ratings_field %]
+        .bibliocol .ratings {
+            display: none;
+        }   
+    [% END %]
+
     [% IF enable_header_text_color %]
         #header-additional-text {
             color: [% header_text_color %];

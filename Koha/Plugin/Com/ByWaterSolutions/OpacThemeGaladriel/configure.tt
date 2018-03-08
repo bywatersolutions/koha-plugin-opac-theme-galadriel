@@ -233,6 +233,22 @@
             <input type="checkbox" name="enable_opac_cover_images_drop_shadows" [% IF enable_opac_cover_images_drop_shadows %]checked="checked"[% END %] />
             <label for="enable_opac_cover_images_drop_shadows">Add drop shadows to cover images: </label>
             <p/>
+            
+            <input type="checkbox" name="enable_opac_edition_field" [% IF enable_opac_edition_field %]checked="checked"[% END %] />
+            <label for="enable_opac_edition_field">Disable the "Edition" field in Search Results </label>
+            <p/>
+            
+            <input type="checkbox" name="enable_opac_material_field" [% IF enable_opac_material_field %]checked="checked"[% END %] />
+            <label for="enable_opac_material_field">Disable the "Material Type" field in Search Results </label>
+            <p/>
+            
+            <input type="checkbox" name="enable_opac_publisher_field" [% IF enable_opac_publisher_field %]checked="checked"[% END %] />
+            <label for="enable_opac_publisher_field">Disable the "Publisher" field in Search Results </label>
+            <p/>
+
+            <input type="checkbox" name="enable_opac_ratings_field" [% IF enable_opac_ratings_field %]checked="checked"[% END %] />
+            <label for="enable_opac_ratings_field">Disable the "Ratings" field in Search Results </label>
+            <p/>
         </fieldset>
 
         <p>
