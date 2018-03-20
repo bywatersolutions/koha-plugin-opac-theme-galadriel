@@ -1,0 +1,266 @@
+[% INCLUDE 'doc-head-open.inc' %]
+  <title>Koha: Galadriel OPAC Theme Plugin: Configuration</title>
+  [% INCLUDE 'doc-head-close.inc' %]
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/spectrum/1.8.0/spectrum.js" integrity="sha256-3wWiHra+MxkTwcZwUQkkowAjnu5uqAF+6hE676OitiE=" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/spectrum/1.8.0/spectrum.css" integrity="sha256-0gNW6jKGMP+oFR22hK5tl1qsZf21rWKR5cqmkyaLyjI=" crossorigin="anonymous" />
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.5/css/select2.css" integrity="sha256-xqxV4FDj5tslOz6MV13pdnXgf63lJwViadn//ciKmIs=" crossorigin="anonymous" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.5/js/select2.full.js" integrity="sha256-Sp9iyAGCmNhQw7nNwUU3zKH/uO3DPzcJVxdKOkWOI6A=" crossorigin="anonymous"></script>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.5.18/webfont.js"></script>
+
+  <link rel="stylesheet" href="https://cdn.rawgit.com/saadqbal/HiGoogleFonts/master/css/fonts.css" crossorigin="anonymous" />
+  <script src="https://cdn.rawgit.com/saadqbal/HiGoogleFonts/master/js/fonts.js" crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" type="text/css" href="[% interface %]/[% theme %]/css/humanmsg.css" />
+  <script src="[% interface %]/lib/jquery/plugins/humanmsg.js" type="text/javascript"></script>
+
+  <script type="text/javascript">
+    $(document).ready(function() {
+      $('#font-preview').hide();
+
+      $( "#select_font_family" ).higooglefonts({
+          selectedCallback:function(e){
+              console.log(e);
+              $('#font_family').val(e);
+              $('#font-preview').show();
+          },
+          loadedCallback:function(e){
+              console.log(e);
+              $("#font-preview").css("font-family", e);
+          }
+      });
+
+      [% IF font_family %]
+        $('.select2-selection__placeholder').text('[% font_family %]');
+      [% END %]
+
+      $('#save_continue').on('click', function(e){
+        e.preventDefault();
+        $.post('', $('#configureForm').serialize(), function(){
+          humanMsg.displayMsg('Settings saved!');
+        });
+      });
+    });
+  </script>
+
+</head>
+<body>
+[% INCLUDE 'header.inc' %]
+[% INCLUDE 'cat-search.inc' %]
+
+<div id="breadcrumbs"><a href="/cgi-bin/koha/mainpage.pl">Home</a> &rsaquo; <a href="/cgi-bin/koha/plugins/plugins-home.pl">Plugins</a> &rsaquo; Galadriel OPAC Theme &rsaquo; Configuration</div>
+
+<div id="doc3">
+    <h3>Koha: Galadriel OPAC Theme Plugin: Configuration</h3>
+
+    <form id="configureForm" method="get">
+        <!-- Always pass these two parameters so the plugin system knows what to execute! -->
+        <input type="hidden" name="class" value="[% CLASS %]"/>
+        <input type="hidden" name="method" value="[% METHOD %]"/>
+
+        <fieldset>
+            <legend>Font</legend>
+
+            <input type="checkbox" name="enable_font_family" [% IF enable_font_family %]checked="checked"[% END %] />
+            <input type="hidden" id="font_family" name="font_family" value="[% font_family %]" />
+            <select id="select_font_family"></select>
+            <input type="checkbox" name="enable_font_size" [% IF enable_font_size %]checked="checked"[% END %] />
+            <select id="font_size" name="font_size">
+                <option value="small"    [% IF font_size == "small" %]   selected="selected" [% END %]>Small</option>
+                <option value="medium"   [% IF font_size == "medium" %]  selected="selected" [% END %]>Medium</option>
+                <option value="large"    [% IF font_size == "large" %]   selected="selected" [% END %]>Large</option>
+                <option value="x-large"  [% IF font_size == "x-large" %] selected="selected" [% END %]>XL</option>
+                <option value="xx-large" [% IF font_size == "xx-large" %]selected="selected" [% END %]>2XL</option>
+            </select>
+
+            <p id="font-preview" style="font-size: 20px;">This is the preview of the font selected</p>
+        </fieldset>
+
+        <fieldset id="imgopts">
+            <legend>Header</legend>
+
+            <fieldset>
+                <legend>Logo</legend>
+
+                <input type="checkbox" name="enable_header_url" [% IF enable_header_url %]checked="checked"[% END %] />
+                <label for="header_url">Logo URL: </label>
+                <input name="header_url" id="header_url" type="text" size="120" value="[% header_url %]" />
+                <p/>
+
+                <input type="checkbox" name="enable_header_height" [% IF enable_header_height %]checked="checked"[% END %] />
+                <label for="header_height">Height: </label>
+                <input name="header_height" id="header_height" type="text" size="2" value="[% header_height %]" /> px
+                <p/>
+
+                <input type="checkbox" name="enable_header_width" [% IF enable_header_width %]checked="checked"[% END %] />
+                <label for="header_width">Width: </label>
+                <input name="header_width" id="header_width" type="text" size="2" value="[% header_width %]" /> px
+                <p/>
+            </fieldset>
+
+            <fieldset>
+                <legend>Additional text</legend>
+
+                <input type="checkbox" name="enable_header_text" [% IF enable_header_text %]checked="checked"[% END %] />
+                <label for="header_text">Text: </label>
+                <input name="header_text" id="header_text" type="text" value="[% header_text %]" /> px
+                <p/>
+
+                <input type="checkbox" name="enable_header_text_position" [% IF enable_header_text_position %]checked="checked"[% END %] />
+                <label for="header_text_position">Position: </label>
+                <select name="header_text_position" id="header_text_position" value="[% header_text_position %]" />
+                    <option value="left_of_logo" [% IF header_text_position == "left_of_logo" %]selected="selected"[% END %]>Left of logo</option>
+                    <option value="right_of_logo" [% IF header_text_position == "right_of_logo" %]selected="selected"[% END %]>Right of logo</option>
+                </select>
+                <p/>
+
+                <input type="checkbox" name="enable_header_text_color" [% IF enable_header_text_color %]checked="checked"[% END %] />
+                <label for="header_text_color">Color: </label>
+                <input name="header_text_color" id="header_text_color" type="color" value="[% header_text_color %]" />
+                <p/>
+            </fieldset>
+
+            <input type="checkbox" name="enable_header_background_color" [% IF enable_header_background_color %]checked="checked"[% END %] />
+            <label for=header_background_color">Background color: </label>
+            <input name="header_background_color" id="header_background_color" type="color" value="[% header_background_color %]" />
+            <p/>
+        </fieldset>
+
+        <fieldset id="coloropts">
+            <legend>General color options</legend>
+
+            <input type="checkbox" name="enable_body_background_color" [% IF enable_body_background_color %]checked="checked"[% END %] />
+            <label for="body_background_color">Background: </label>
+            <input name="body_background_color" id="body_background_color" type="color" value="[% body_background_color %]" />
+            <p/>
+
+            <fieldset>
+                <legend>Navigation bar</legend>
+
+                <input type="checkbox" name="enable_navbar_color" [% IF enable_navbar_color %]checked="checked"[% END %] />
+                <label for="navbar_color">Navigation bar: </label>
+                <input name="navbar_color" id="navbar_color" type="color" value="[% navbar_color %]" />
+                <p/>
+
+                <input type="checkbox" name="enable_navbar_bars_color" [% IF enable_navbar_bars_color %]checked="checked"[% END %] />
+                <label for="navbar_bars_color">Navigation bar separator: </label>
+                <input name="navbar_bars_color" id="navbar_bars_color" type="color" value="[% navbar_bars_color %]" />
+                <p/>
+            </fieldset>
+
+            <fieldset>
+                <legend>Search box</legend>
+
+                <input type="checkbox" name="enable_searchbox_background_color" [% IF enable_searchbox_background_color %]checked="checked"[% END %] />
+                <label for="searchbox_background_color">Search box background: </label>
+                <input name="searchbox_background_color" id="searchbox_background_color" type="color" value="[% searchbox_background_color %]" />
+                <p/>
+
+                <input type="checkbox" name="enable_search_button_color" [% IF enable_search_button_color %]checked="checked"[% END %] />
+                <label for="search_button_color">Search button background: </label>
+                <input name="search_button_color" id="search_button_color" type="color" value="[% search_button_color %]" />
+                <p/>
+
+                <input type="checkbox" name="enable_search_text_color" [% IF enable_search_text_color %]checked="checked"[% END %] />
+                <label for="search_text_color">Search text:</label>
+                <input name="search_text_color" id="search_text_color" type="color" value="[% search_text_color %]" />
+                <p/>
+            </fieldset>
+
+            <fieldset>
+                <legend>More searches</legend>
+
+                <input type="checkbox" name="enable_moresearches_background_color" [% IF enable_moresearches_background_color %]checked="checked"[% END %] />
+                <label for="moresearches_background_color">Background: </label>
+                <input name="moresearches_background_color" id="moresearches_background_color" type="color" value="[% moresearches_background_color %]" />
+                <p/>
+
+                <input type="checkbox" name="enable_moresearches_background_hover_color" [% IF enable_moresearches_background_hover_color %]checked="checked"[% END %] />
+                <label for="moresearches_background_hover_color">Hover background: </label>
+                <input name="moresearches_background_hover_color" id="moresearches_background_hover_color" type="color" value="[% moresearches_background_hover_color %]" />
+                <p/>
+
+                <input type="checkbox" name="enable_moresearches_background_active_color" [% IF enable_moresearches_background_active_color %]checked="checked"[% END %] />
+                <label for="moresearches_background_active_color">Active background: </label>
+                <input name="moresearches_background_active_color" id="moresearches_background_active_color" type="color" value="[% moresearches_background_active_color %]" />
+                <p/>
+
+                <input type="checkbox" name="enable_moresearches_text_color" [% IF enable_moresearches_text_color %]checked="checked"[% END %] />
+                <label for="moresearches_text_color">Text: </label>
+                <input name="moresearches_text_color" id="moresearches_text_color" type="color" value="[% moresearches_text_color %]" />
+                <p/>
+            </fieldset>
+
+            <fieldset>
+                <legend>Login Box</legend>
+
+                <input type="checkbox" name="enable_login_box_border_top_color" [% IF enable_login_box_border_top_color %]checked="checked"[% END %] />
+                <label for="login_box_border_top_color">Top border: </label>
+                <input name="login_box_border_top_color" id="login_box_border_top_color" type="color" value="[% login_box_border_top_color %]" />
+                <p/>
+
+                <input type="checkbox" name="enable_login_box_text_top_color" [% IF enable_login_box_text_top_color %]checked="checked"[% END %] />
+                <label for="login_box_text_top_color">Top text: </label>
+                <input name="login_box_text_top_color" id="login_box_text_top_color" type="color" value="[% login_box_text_top_color %]" />
+                <p/>
+
+                <input type="checkbox" name="enable_login_box_background_color" [% IF enable_login_box_background_color %]checked="checked"[% END %] />
+                <label for="login_box_background_color">Background: </label>
+                <input name="login_box_background_color" id="login_box_background_color" type="color" value="[% login_box_background_color %]" />
+                <p/>
+
+                <input type="checkbox" name="enable_login_box_text_color" [% IF enable_login_box_text_color %]checked="checked"[% END %] />
+                <label for="login_box_text_color">Text: </label>
+                <input name="login_box_text_color" id="login_box_text_color" type="color" value="[% login_box_text_color %]" />
+                <p/>
+
+                <input type="checkbox" name="enable_login_box_link_color" [% IF enable_login_box_link_color %]checked="checked"[% END %] />
+                <label for="login_box_link_color">Link: </label>
+                <input name="login_box_link_color" id="login_box_link_color" type="color" value="[% login_box_link_color %]" />
+                <p/>
+
+                <input type="checkbox" name="enable_login_button_color" [% IF enable_login_button_color %]checked="checked"[% END %] />
+                <label for="login_button_color">Login button background: </label>
+                <input name="login_button_color" id="login_button_color" type="color" value="[% login_button_color %]" />
+                <p/>
+            </fieldset>
+        </fieldset>
+
+        <fieldset>
+            <legend>Search results</legend>
+
+            <input type="checkbox" name="enable_opac_cover_images_on_left" [% IF enable_opac_cover_images_on_left %]checked="checked"[% END %] />
+            <label for="enable_opac_cover_images_on_left">Show search results cover images on the left side: </label>
+            <p/>
+
+            <input type="checkbox" name="enable_opac_cover_images_drop_shadows" [% IF enable_opac_cover_images_drop_shadows %]checked="checked"[% END %] />
+            <label for="enable_opac_cover_images_drop_shadows">Add drop shadows to cover images: </label>
+            <p/>
+
+            <input type="checkbox" name="enable_opac_edition_field" [% IF enable_opac_edition_field %]checked="checked"[% END %] />
+            <label for="enable_opac_edition_field">Disable the "Edition" field in Search Results </label>
+            <p/>
+
+            <input type="checkbox" name="enable_opac_material_field" [% IF enable_opac_material_field %]checked="checked"[% END %] />
+            <label for="enable_opac_material_field">Disable the "Material Type" field in Search Results </label>
+            <p/>
+
+            <input type="checkbox" name="enable_opac_publisher_field" [% IF enable_opac_publisher_field %]checked="checked"[% END %] />
+            <label for="enable_opac_publisher_field">Disable the "Publisher" field in Search Results </label>
+            <p/>
+
+            <input type="checkbox" name="enable_opac_ratings_field" [% IF enable_opac_ratings_field %]checked="checked"[% END %] />
+            <label for="enable_opac_ratings_field">Disable the "Ratings" field in Search Results </label>
+            <p/>
+        </fieldset>
+
+        <p>
+
+        <input type="hidden" name="save" value="1" />
+
+        <input type="submit" value="Save" />
+        <button id="save_continue">Save & continue</button>
+    </form>
+
+[% INCLUDE 'intranet-bottom.inc' %]
