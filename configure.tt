@@ -253,6 +253,15 @@
             <input type="checkbox" name="enable_opac_ratings_field" [% IF enable_opac_ratings_field %]checked="checked"[% END %] />
             <label for="enable_opac_ratings_field">Disable the "Ratings" field in Search Results </label>
             <p/>
+
+            <input type="checkbox" name="enable_cover_normal_field" [% IF enable_cover_normal_field %]checked="checked"[% END %] />
+            <label for="enable_cover_normal_field">Normalize the height and width of cover images in Search Results </label>
+            <p/>
+   
+            <input type="checkbox" name="enable_cover_border_field" [% IF enable_cover_normal_field %]checked="checked"[% END %] />
+            <label for="enable_cover_border_field">Add a border to the cover images in Search Results </label>
+            <p/>
+
         </fieldset>
 
         <p>

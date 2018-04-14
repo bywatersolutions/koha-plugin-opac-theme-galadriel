@@ -176,6 +176,27 @@
         }
     [% END %]
 
+    [% IF enable_cover_normal_field %]
+        .coverimages img {
+            padding: 11px;
+            padding-bottom: 11px;
+            padding-bottom: 10px;
+            margin-left: 20px;
+            margin-top: 10px;
+            width: 100px;
+            height: 152px;
+        }
+    [% END %]
+
+    [% IF enable_cover_border_field %]
+        .coverimages img {
+            border:1px solid #021a40;
+            background-color: #fff;
+        }
+    [% END %]
+
+
+
     [% IF enable_header_text_color %]
         #header-additional-text {
             color: [% header_text_color %];
