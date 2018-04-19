@@ -19,6 +19,17 @@
     $(document).ready(function() {
       $('#font-preview').hide();
 
+      $('.color').spectrum({
+            preferredFormat: "hex",
+            showInput: true,
+            showInitial: true,
+            allowEmpty: true,
+            showAlpha: true,
+            showPalette: true,
+            showSelectionPalette: true,
+            clickoutFiresChange: true
+      });
+
       $( "#select_font_family" ).higooglefonts({
           selectedCallback:function(e){
               console.log(e);
@@ -117,13 +128,13 @@
 
                 <input type="checkbox" name="enable_header_text_color" [% IF enable_header_text_color %]checked="checked"[% END %] />
                 <label for="header_text_color">Color: </label>
-                <input name="header_text_color" id="header_text_color" type="color" value="[% header_text_color %]" />
+                <input name="header_text_color" id="header_text_color" type="text" class="color" value="[% header_text_color %]" />
                 <p/>
             </fieldset>
 
             <input type="checkbox" name="enable_header_background_color" [% IF enable_header_background_color %]checked="checked"[% END %] />
             <label for=header_background_color">Background color: </label>
-            <input name="header_background_color" id="header_background_color" type="color" value="[% header_background_color %]" />
+            <input name="header_background_color" id="header_background_color" type="text" class="color" value="[% header_background_color %]" />
             <p/>
         </fieldset>
 
@@ -132,7 +143,7 @@
 
             <input type="checkbox" name="enable_body_background_color" [% IF enable_body_background_color %]checked="checked"[% END %] />
             <label for="body_background_color">Background: </label>
-            <input name="body_background_color" id="body_background_color" type="color" value="[% body_background_color %]" />
+            <input name="body_background_color" id="body_background_color" type="text" class="color" value="[% body_background_color %]" />
             <p/>
 
             <fieldset>
@@ -140,12 +151,12 @@
 
                 <input type="checkbox" name="enable_navbar_color" [% IF enable_navbar_color %]checked="checked"[% END %] />
                 <label for="navbar_color">Navigation bar: </label>
-                <input name="navbar_color" id="navbar_color" type="color" value="[% navbar_color %]" />
+                <input name="navbar_color" id="navbar_color" type="text" class="color" value="[% navbar_color %]" />
                 <p/>
 
                 <input type="checkbox" name="enable_navbar_bars_color" [% IF enable_navbar_bars_color %]checked="checked"[% END %] />
                 <label for="navbar_bars_color">Navigation bar separator: </label>
-                <input name="navbar_bars_color" id="navbar_bars_color" type="color" value="[% navbar_bars_color %]" />
+                <input name="navbar_bars_color" id="navbar_bars_color" type="text" class="color" value="[% navbar_bars_color %]" />
                 <p/>
             </fieldset>
 
@@ -154,17 +165,17 @@
 
                 <input type="checkbox" name="enable_searchbox_background_color" [% IF enable_searchbox_background_color %]checked="checked"[% END %] />
                 <label for="searchbox_background_color">Search box background: </label>
-                <input name="searchbox_background_color" id="searchbox_background_color" type="color" value="[% searchbox_background_color %]" />
+                <input name="searchbox_background_color" id="searchbox_background_color" type="text" class="color" value="[% searchbox_background_color %]" />
                 <p/>
 
                 <input type="checkbox" name="enable_search_button_color" [% IF enable_search_button_color %]checked="checked"[% END %] />
                 <label for="search_button_color">Search button background: </label>
-                <input name="search_button_color" id="search_button_color" type="color" value="[% search_button_color %]" />
+                <input name="search_button_color" id="search_button_color" type="text" class="color" value="[% search_button_color %]" />
                 <p/>
 
                 <input type="checkbox" name="enable_search_text_color" [% IF enable_search_text_color %]checked="checked"[% END %] />
                 <label for="search_text_color">Search text:</label>
-                <input name="search_text_color" id="search_text_color" type="color" value="[% search_text_color %]" />
+                <input name="search_text_color" id="search_text_color" type="text" class="color" value="[% search_text_color %]" />
                 <p/>
             </fieldset>
 
@@ -173,22 +184,22 @@
 
                 <input type="checkbox" name="enable_moresearches_background_color" [% IF enable_moresearches_background_color %]checked="checked"[% END %] />
                 <label for="moresearches_background_color">Background: </label>
-                <input name="moresearches_background_color" id="moresearches_background_color" type="color" value="[% moresearches_background_color %]" />
+                <input name="moresearches_background_color" id="moresearches_background_color" type="text" class="color" value="[% moresearches_background_color %]" />
                 <p/>
 
                 <input type="checkbox" name="enable_moresearches_background_hover_color" [% IF enable_moresearches_background_hover_color %]checked="checked"[% END %] />
                 <label for="moresearches_background_hover_color">Hover background: </label>
-                <input name="moresearches_background_hover_color" id="moresearches_background_hover_color" type="color" value="[% moresearches_background_hover_color %]" />
+                <input name="moresearches_background_hover_color" id="moresearches_background_hover_color" type="text" class="color" value="[% moresearches_background_hover_color %]" />
                 <p/>
 
                 <input type="checkbox" name="enable_moresearches_background_active_color" [% IF enable_moresearches_background_active_color %]checked="checked"[% END %] />
                 <label for="moresearches_background_active_color">Active background: </label>
-                <input name="moresearches_background_active_color" id="moresearches_background_active_color" type="color" value="[% moresearches_background_active_color %]" />
+                <input name="moresearches_background_active_color" id="moresearches_background_active_color" type="text" class="color" value="[% moresearches_background_active_color %]" />
                 <p/>
 
                 <input type="checkbox" name="enable_moresearches_text_color" [% IF enable_moresearches_text_color %]checked="checked"[% END %] />
                 <label for="moresearches_text_color">Text: </label>
-                <input name="moresearches_text_color" id="moresearches_text_color" type="color" value="[% moresearches_text_color %]" />
+                <input name="moresearches_text_color" id="moresearches_text_color" type="text" class="color" value="[% moresearches_text_color %]" />
                 <p/>
             </fieldset>
 
@@ -197,27 +208,27 @@
 
                 <input type="checkbox" name="enable_login_box_border_top_color" [% IF enable_login_box_border_top_color %]checked="checked"[% END %] />
                 <label for="login_box_border_top_color">Top border: </label>
-                <input name="login_box_border_top_color" id="login_box_border_top_color" type="color" value="[% login_box_border_top_color %]" />
+                <input name="login_box_border_top_color" id="login_box_border_top_color" type="text" class="color" value="[% login_box_border_top_color %]" />
                 <p/>
 
                 <input type="checkbox" name="enable_login_box_text_top_color" [% IF enable_login_box_text_top_color %]checked="checked"[% END %] />
                 <label for="login_box_text_top_color">Top text: </label>
-                <input name="login_box_text_top_color" id="login_box_text_top_color" type="color" value="[% login_box_text_top_color %]" />
+                <input name="login_box_text_top_color" id="login_box_text_top_color" type="text" class="color" value="[% login_box_text_top_color %]" />
                 <p/>
 
                 <input type="checkbox" name="enable_login_box_background_color" [% IF enable_login_box_background_color %]checked="checked"[% END %] />
                 <label for="login_box_background_color">Background: </label>
-                <input name="login_box_background_color" id="login_box_background_color" type="color" value="[% login_box_background_color %]" />
+                <input name="login_box_background_color" id="login_box_background_color" type="text" class="color" value="[% login_box_background_color %]" />
                 <p/>
 
                 <input type="checkbox" name="enable_login_box_text_color" [% IF enable_login_box_text_color %]checked="checked"[% END %] />
                 <label for="login_box_text_color">Text: </label>
-                <input name="login_box_text_color" id="login_box_text_color" type="color" value="[% login_box_text_color %]" />
+                <input name="login_box_text_color" id="login_box_text_color" type="text" class="color" value="[% login_box_text_color %]" />
                 <p/>
 
                 <input type="checkbox" name="enable_login_box_link_color" [% IF enable_login_box_link_color %]checked="checked"[% END %] />
                 <label for="login_box_link_color">Link: </label>
-                <input name="login_box_link_color" id="login_box_link_color" type="color" value="[% login_box_link_color %]" />
+                <input name="login_box_link_color" id="login_box_link_color" type="text" class="color" value="[% login_box_link_color %]" />
                 <p/>
 
             </fieldset>
