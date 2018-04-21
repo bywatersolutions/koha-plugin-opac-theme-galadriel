@@ -239,28 +239,47 @@
             <p/>
 
             <input type="checkbox" name="enable_opac_edition_field" [% IF enable_opac_edition_field %]checked="checked"[% END %] />
-            <label for="enable_opac_edition_field">Disable the "Edition" field in Search Results </label>
+            <label for="enable_opac_edition_field">Hide the "Edition" field in Search Results </label>
             <p/>
 
             <input type="checkbox" name="enable_opac_material_field" [% IF enable_opac_material_field %]checked="checked"[% END %] />
-            <label for="enable_opac_material_field">Disable the "Material Type" field in Search Results </label>
+            <label for="enable_opac_material_field">Hide the "Material Type" field in Search Results </label>
             <p/>
 
             <input type="checkbox" name="enable_opac_publisher_field" [% IF enable_opac_publisher_field %]checked="checked"[% END %] />
-            <label for="enable_opac_publisher_field">Disable the "Publisher" field in Search Results </label>
+            <label for="enable_opac_publisher_field">Hide the "Publisher" field in Search Results </label>
             <p/>
 
             <input type="checkbox" name="enable_opac_ratings_field" [% IF enable_opac_ratings_field %]checked="checked"[% END %] />
-            <label for="enable_opac_ratings_field">Disable the "Ratings" field in Search Results </label>
+            <label for="enable_opac_ratings_field">Hide the "Ratings" field in Search Results </label>
             <p/>
 
-            <input type="checkbox" name="enable_cover_normal_field" [% IF enable_cover_normal_field %]checked="checked"[% END %] />
-            <label for="enable_cover_normal_field">Normalize the height and width of cover images in Search Results </label>
+            <input type="checkbox" name="enable_cover_height" [% IF enable_cover_height %]checked="checked"[% END %] />
+            <label for="cover_height">Normalize cover height in Search Results: </label>
+            <input name="cover_height" id="cover_height" type="text" size="2" value="[% cover_height %]" /> px
             <p/>
-   
-            <input type="checkbox" name="enable_cover_border_field" [% IF enable_cover_normal_field %]checked="checked"[% END %] />
-            <label for="enable_cover_border_field">Add a border to the cover images in Search Results </label>
+
+            <input type="checkbox" name="enable_cover_width" [% IF enable_cover_width %]checked="checked"[% END %] />
+            <label for="cover_width">Normalize cover width in Search Results: </label>
+            <input name="cover_width" id="cover_width" type="text" size="2" value="[% cover_width %]" /> px
             <p/>
+
+            <input type="checkbox" name="enable_cover_border_color" [% IF enable_cover_button_color %]checked="checked"[% END %] />
+            <label for="cover_border_color">Add a border to cover images in Search Results: </label>
+            <input name="cover_border_color" id="cover_border_color" type="color" value="[% cover_border_color %]" />
+            <p/>
+
+            <input type="checkbox" name="enable_border_padding" [% IF enable_border_padding %]checked="checked"[% END %] />
+            <label for="border_padding">Add padding to cover image in Search Results: </label>
+            <input name="border_padding" id="border_padding" type="text" size="2" value="[% border_padding %]" /> px
+            <p/>
+
+            <input type="checkbox" name="enable_cover_background_color" [% IF enable_cover_background_color %]checked="checked"[% END %] />
+            <label for="cover_background_color">Add padding color to cover images in Search Results: </label>
+            <input name="cover_background_color" id="cover_background_color" type="color" value="[% cover_background_color %]" /> ***Cover image padding must be turned on.
+            <p/>
+
+
 
         </fieldset>
 

@@ -150,6 +150,10 @@
             padding: 1px;
             box-shadow: 5px 5px 10px grey;
         }
+
+        .coverimages img {
+            box-shadow: 5px 5px 10px grey;
+        }
     [% END %]
 
     [% IF enable_opac_edition_field %]
@@ -176,26 +180,36 @@
         }
     [% END %]
 
-    [% IF enable_cover_normal_field %]
+    [% IF enable_cover_height %]
         .coverimages img {
-            padding: 11px;
-            padding-bottom: 11px;
-            padding-bottom: 10px;
-            margin-left: 20px;
-            margin-top: 10px;
-            width: 100px;
-            height: 152px;
+            height: [% cover_height %]px;
         }
     [% END %]
 
-    [% IF enable_cover_border_field %]
+    [% IF enable_cover_width %]
         .coverimages img {
-            border:1px solid #021a40;
-            background-color: #fff;
+            width: [% cover_width %]px;
         }
     [% END %]
 
+    [% IF enable_cover_border_color %]
+        .coverimages img {
+            border: 1px solid [% cover_border_color %];
+        }
+    [% END %]
 
+    [% IF enable_cover_background_color %]
+        .coverimages img {
+            background-color: [% cover_background_color %];
+        }
+    [% END %]
+
+    [% IF enable_border_padding %]
+        .coverimages img {
+            padding: [% border_padding %]px;
+            padding-bottom: [% border_padding%]px;         
+        }
+    [% END %]
 
     [% IF enable_header_text_color %]
         #header-additional-text {
