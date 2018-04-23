@@ -196,8 +196,9 @@
                 <legend>Login Box</legend>
 
                 <input type="checkbox" name="enable_login_box_border_top_color" [% IF enable_login_box_border_top_color %]checked="checked"[% END %] />
-                <label for="login_box_border_top_color">Top border: </label>
+                <label for="login_box_border_top_color">Top border color/width: </label>
                 <input name="login_box_border_top_color" id="login_box_border_top_color" type="color" value="[% login_box_border_top_color %]" />
+                <input name="login_box_border_top_width" id="login_box_border_top_width" type="text" size="2" value="[% login_box_border_top_width %]" /> px
                 <p/>
 
                 <input type="checkbox" name="enable_login_box_text_top_color" [% IF enable_login_box_text_top_color %]checked="checked"[% END %] />
@@ -220,10 +221,32 @@
                 <input name="login_box_link_color" id="login_box_link_color" type="color" value="[% login_box_link_color %]" />
                 <p/>
 
+                <input type="checkbox" name="enable_login_box_left_padding" [% IF enable_login_box_left_padding %]checked="checked"[% END %] />
+                <label for="login_box_left_padding">Left Side Padding: </label>
+                <input name="login_box_left_padding" id="login_box_left_padding" type="text" size="2" value="[% login_box_left_padding %]" /> px
+                <p/>
+
                 <input type="checkbox" name="enable_login_button_color" [% IF enable_login_button_color %]checked="checked"[% END %] />
                 <label for="login_button_color">Login button background: </label>
                 <input name="login_button_color" id="login_button_color" type="color" value="[% login_button_color %]" />
                 <p/>
+
+                <input type="checkbox" name="enable_login_button_size" [% IF enable_login_button_size %]checked="checked"[% END %] />
+                <label for="login_login_button_size">Login Button Size: </label>
+                <input name="login_button_size_width" id="login_button_size_width" type="text" size="2" value="[% login_box_border_top_width %]" /> width (px)
+                <input name="login_button_size_height" id="login_button_size_height" type="text" size="2" value="[% login_button_size_height %]" /> height (px)
+                <p/>
+
+                <input type="checkbox" name="enable_login_button_hover_color" [% IF enable_login_button_hover_color %]checked="checked"[% END %] />
+                <label for="login_button_hover_color">Button Hover Color: </label>
+                <input name="login_button_hover_color" id="login_button_hover_color" type="color" value="[% login_box_hover_color %]" />
+                <p/>
+
+                <input type="checkbox" name="enable_login_button_hover_text_color" [% IF enable_login_button_hover_text_color %]checked="checked"[% END %] />
+                <label for="login_button_hover_text_color">Button Hover Text Color: </label>
+                <input name="login_button_hover_text_color" id="login_button_hover_text_color" type="color" value="[% login_button_hover_text_color %]" />
+                <p/>
+
             </fieldset>
         </fieldset>
 

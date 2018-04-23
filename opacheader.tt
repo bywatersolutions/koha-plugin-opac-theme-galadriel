@@ -96,6 +96,12 @@
         }
     [% END %]
 
+    [% IF enable_login_box_left_padding %]
+        #login {
+            padding-left: [% login_box_left_padding %]px;
+        }
+    [% END %]
+
     [% IF enable_login_box_text_color %]
         #login {
             color: [% login_box_text_color %];
@@ -109,9 +115,8 @@
     [% END %]
 
     [% IF enable_login_box_border_top_color %]
-        #login legend {
-            background-color: [% login_box_border_top_color %];
-            text-align:center;
+        #login  {
+            border-top: [% login_box_border_top_width %]px solid [% login_box_border_top_color %];
         }
     [% END %]
 
@@ -125,10 +130,34 @@
         #login .btn {
             color: #000;
             text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.25);
-            background-color: [% login_button_color %] !important;
-            background-image: linear-gradient(to bottom, [% login_button_color %], [% login_button_color %]) !important;
+            background-color: [% login_button_color %];
+            background-image: linear-gradient(to bottom, [% login_button_color %], [% login_button_color %]);
         }
     [% END %]
+
+    [% IF enable_login_button_size %]
+        #login .btn {
+            padding: [% login_button_size_height%]px [% login_button_size_width %]px;
+        }
+    [% END %]
+
+    [% IF enable_login_button_hover_color %]
+        #login .btn:hover {
+            background-color: [% login_button_hover_color %];
+            background-image: -moz-linear-gradient(top, [% login_button_hover_color %], [% login_button_hover_color %]);
+            background-image: -webkit-gradient(linear, 0 0, 0 100%, from([% login_button_hover_color %]), to([% login_button_hover_color %]));
+            background-image: -webkit-linear-gradient(top, [% login_button_hover_color %], [% login_button_hover_color %]);
+            background-image: -o-linear-gradient(top, [% login_button_hover_color %], [% login_button_hover_color %]);
+            background-image: linear-gradient(to bottom, [% login_button_hover_color %], [% login_button_hover_color %]);
+        }
+    [% END %]
+
+    [% IF enable_login_button_hover_text_color %]
+        #login .btn:hover {
+            color: [% login_button_hover_text_color%];
+        }
+    [% END %]
+
 
     [% IF enable_opac_cover_images_on_left %]
         .coverimages {
