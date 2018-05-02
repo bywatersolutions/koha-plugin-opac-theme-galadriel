@@ -244,13 +244,13 @@
 
                 <input type="checkbox" name="enable_login_button_size" [% IF enable_login_button_size %]checked="checked"[% END %] />
                 <label for="login_login_button_size">Login Button Size: </label>
-                <input name="login_button_size_width" id="login_button_size_width" type="text" size="2" value="[% login_box_border_top_width %]" /> width (px)
+                <input name="login_button_size_width" id="login_button_size_width" type="text" size="2" value="[% login_button_size_width %]" /> width (px)
                 <input name="login_button_size_height" id="login_button_size_height" type="text" size="2" value="[% login_button_size_height %]" /> height (px)
                 <p/>
 
                 <input type="checkbox" name="enable_login_button_hover_color" [% IF enable_login_button_hover_color %]checked="checked"[% END %] />
                 <label for="login_button_hover_color">Button Hover Color: </label>
-                <input name="login_button_hover_color" id="login_button_hover_color" type="text" class="color" value="[% login_box_hover_color %]" />
+                <input name="login_button_hover_color" id="login_button_hover_color" type="text" class="color" value="[% login_button_hover_color %]" />
                 <p/>
 
                 <input type="checkbox" name="enable_login_button_hover_text_color" [% IF enable_login_button_hover_text_color %]checked="checked"[% END %] />
