@@ -37,6 +37,11 @@
             font-size: [% font_size %] !important;
           }
     [% END %]
+    [% IF enable_link_color %]
+        #moresearches a, #moresearches a:link, .main a, .main a:link {
+          color: [% link_color %];
+    }
+    [% END %]
     [% IF enable_body_background_color %]
         #header-region,body {
           background-color: [% body_background_color %];
@@ -49,6 +54,63 @@
           background-color: [% header_background_color %];
           margin-top:5px;
         }
+    [% END %]
+
+    [% IF enable_search_new %]
+        #opac-main-search, .main {
+          position: relative;
+          max-width: 1400px;
+          margin: 0 auto;
+          display: block;
+          position: relative;
+          padding: 0 20px;
+          padding-left: 50px;
+       }
+
+        .mastheadsearch {
+          background: none;
+          margin: 0 10;
+          text-align: center;
+       }
+
+        #opac-main-search input, #opac-main-search select{
+          border: 1px solid [% search_button_color %];
+          height: 46px;
+          padding: 10px 16px;
+          font-size: 18px;
+          line-height: 1.3333333;
+          border-radius: 4px;
+      }
+
+        #opac-main-search input{
+          height: 36px;
+          padding: 4px 5px;
+      }
+
+        .mastheadsearch label {
+          font-size: 18px;
+          font-weight: 600;             
+      }
+
+        .nolibrarypulldown .transl1 {
+          top: -1px;
+      }
+
+        button#searchsubmit {
+          position: relative;
+          height: 46px;
+          left: -2px;
+          top: -1px;
+          font-size: 18px;
+          color: #fff;
+          border-color: [% search_button_color %];
+          border-radius: 0 4px 4px 0;                                                                  
+      }
+
+         #moresearches {
+          text-align: center;
+      }
+
     [% END %]
 
     [% IF enable_navbar_color %]
@@ -86,6 +148,57 @@
             background-image: linear-gradient(to bottom, [% search_button_color %], [% search_button_color %]) !important;
         }
     [% END %]
+
+    [% IF enable_login_new %]
+        #login {
+            background-color: #DCDFE0;
+            border-radius: 2px;
+            width: 250px;
+            margin: 0 auto;
+            margin-bottom: 20px;
+        }   
+
+        #login form {
+            margin: 0 0 20px;
+            width: 100% !important;
+            margin: 0 auto;
+        }
+
+
+        #login {
+            margin-bottom:20px !important;
+        }
+
+        #login form, #login {
+            margin: 0 0 20px;
+            width: 100%;
+            margin: 0 auto;
+        }
+
+
+        #login {
+            margin-bottom: 20px;
+        }
+
+        #login input {
+            border: 1px solid [% login_box_text_color %];
+            padding: 10px 16px;
+            font-size: 18px;
+            line-height: 1.3333333;
+            border-radius: 4px;
+            width: 64%
+        }
+
+        #login .btn {
+            width: 75%
+        }
+
+        #login {
+            padding-left: 10px;
+            border-radius: 0px !important;
+        }
+    [% END %]
+
 
     [% IF enable_login_box_background_color %]
         #login {
@@ -132,12 +245,6 @@
             text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.25);
             background-color: [% login_button_color %];
             background-image: linear-gradient(to bottom, [% login_button_color %], [% login_button_color %]);
-        }
-    [% END %]
-
-    [% IF enable_login_button_size %]
-        #login .btn {
-            padding: [% login_button_size_height%]px [% login_button_size_width %]px;
         }
     [% END %]
 

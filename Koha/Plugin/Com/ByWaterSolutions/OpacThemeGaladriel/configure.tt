@@ -113,6 +113,11 @@
             <fieldset>
                 <legend>Additional text</legend>
 
+                <input type="checkbox" name="enable_link_color" [% IF enable_link_color %]checked="checked"[% END %] />
+                <label for="link_color">Link Color: </label>
+                <input name="link_color" id="link_color" type="text" class="color" value="[% link_color %]" />
+                <p/>
+ 
                 <input type="checkbox" name="enable_header_text" [% IF enable_header_text %]checked="checked"[% END %] />
                 <label for="header_text">Text: </label>
                 <input name="header_text" id="header_text" type="text" value="[% header_text %]" /> px
@@ -163,6 +168,10 @@
             <fieldset>
                 <legend>Search box</legend>
 
+                 <input type="checkbox" name="enable_search_new" [% IF enable_search_new %]checked="checked"[% END %] />
+                 <label for="enable_search_new">Enable enchanced Search Bar and Button: </label>
+                 <p/>
+
                 <input type="checkbox" name="enable_searchbox_background_color" [% IF enable_searchbox_background_color %]checked="checked"[% END %] />
                 <label for="searchbox_background_color">Search box background: </label>
                 <input name="searchbox_background_color" id="searchbox_background_color" type="text" class="color" value="[% searchbox_background_color %]" />
@@ -205,6 +214,9 @@
 
             <fieldset>
                 <legend>Login Box</legend>
+                 <input type="checkbox" name="enable_login_new" [% IF enable_login_new %]checked="checked"[% END %] />
+                 <label for="enable_login_new">Enable enchanced Login Box: </label>
+                 <p/>
 
                 <input type="checkbox" name="enable_login_box_border_top_color" [% IF enable_login_box_border_top_color %]checked="checked"[% END %] />
                 <label for="login_box_border_top_color">Top border color/width: </label>
@@ -240,12 +252,6 @@
                 <input type="checkbox" name="enable_login_button_color" [% IF enable_login_button_color %]checked="checked"[% END %] />
                 <label for="login_button_color">Login button background: </label>
                 <input name="login_button_color" id="login_button_color" type="text" class="color" value="[% login_button_color %]" />
-                <p/>
-
-                <input type="checkbox" name="enable_login_button_size" [% IF enable_login_button_size %]checked="checked"[% END %] />
-                <label for="login_login_button_size">Login Button Size: </label>
-                <input name="login_button_size_width" id="login_button_size_width" type="text" size="2" value="[% login_button_size_width %]" /> width (px)
-                <input name="login_button_size_height" id="login_button_size_height" type="text" size="2" value="[% login_button_size_height %]" /> height (px)
                 <p/>
 
                 <input type="checkbox" name="enable_login_button_hover_color" [% IF enable_login_button_hover_color %]checked="checked"[% END %] />
