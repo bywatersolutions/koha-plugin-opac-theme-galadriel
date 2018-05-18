@@ -108,39 +108,7 @@
                 <label for="header_width">Width: </label>
                 <input name="header_width" id="header_width" type="text" size="2" value="[% header_width %]" /> px
                 <p/>
-            </fieldset>
 
-            <fieldset>
-                <legend>Additional text</legend>
-
-                <input type="checkbox" name="enable_link_color" [% IF enable_link_color %]checked="checked"[% END %] />
-                <label for="link_color">Link Color: </label>
-                <input name="link_color" id="link_color" type="text" class="color" value="[% link_color %]" />
-                <p/>
- 
-                <input type="checkbox" name="enable_header_text" [% IF enable_header_text %]checked="checked"[% END %] />
-                <label for="header_text">Text: </label>
-                <input name="header_text" id="header_text" type="text" value="[% header_text %]" /> px
-                <p/>
-
-                <input type="checkbox" name="enable_header_text_position" [% IF enable_header_text_position %]checked="checked"[% END %] />
-                <label for="header_text_position">Position: </label>
-                <select name="header_text_position" id="header_text_position" value="[% header_text_position %]" />
-                    <option value="left_of_logo" [% IF header_text_position == "left_of_logo" %]selected="selected"[% END %]>Left of logo</option>
-                    <option value="right_of_logo" [% IF header_text_position == "right_of_logo" %]selected="selected"[% END %]>Right of logo</option>
-                </select>
-                <p/>
-
-                <input type="checkbox" name="enable_header_text_color" [% IF enable_header_text_color %]checked="checked"[% END %] />
-                <label for="header_text_color">Color: </label>
-                <input name="header_text_color" id="header_text_color" type="text" class="color" value="[% header_text_color %]" />
-                <p/>
-            </fieldset>
-
-            <input type="checkbox" name="enable_header_background_color" [% IF enable_header_background_color %]checked="checked"[% END %] />
-            <label for=header_background_color">Background color: </label>
-            <input name="header_background_color" id="header_background_color" type="text" class="color" value="[% header_background_color %]" />
-            <p/>
         </fieldset>
 
         <fieldset id="coloropts">
@@ -159,6 +127,11 @@
                 <input name="navbar_color" id="navbar_color" type="text" class="color" value="[% navbar_color %]" />
                 <p/>
 
+                <input type="checkbox" name="enable_navbar_link_color" [% IF enable_navbar_link_color %]checked="checked"[% END %] />
+                <label for="navbar_color">Navigation bar links: </label>
+                <input name="navbar_link_color" id="navbar_link_color" type="text" class="color" value="[% navbar_link_color %]" />
+                <p/>
+
                 <input type="checkbox" name="enable_navbar_bars_color" [% IF enable_navbar_bars_color %]checked="checked"[% END %] />
                 <label for="navbar_bars_color">Navigation bar separator: </label>
                 <input name="navbar_bars_color" id="navbar_bars_color" type="text" class="color" value="[% navbar_bars_color %]" />
@@ -168,9 +141,9 @@
             <fieldset>
                 <legend>Search box</legend>
 
-                 <input type="checkbox" name="enable_search_new" [% IF enable_search_new %]checked="checked"[% END %] />
-                 <label for="enable_search_new">Enable enchanced Search Bar and Button: </label>
-                 <p/>
+                <input type="checkbox" name="enable_searchbox_enhanced" [% IF enable_searchbox_enhanced %]checked="checked"[% END %] />
+                <label for="enabled_searchbox_enhanced">Enhanced Search Bar: </label>
+                <p/>
 
                 <input type="checkbox" name="enable_searchbox_background_color" [% IF enable_searchbox_background_color %]checked="checked"[% END %] />
                 <label for="searchbox_background_color">Search box background: </label>
@@ -187,9 +160,13 @@
                 <input name="search_text_color" id="search_text_color" type="text" class="color" value="[% search_text_color %]" />
                 <p/>
             </fieldset>
-
             <fieldset>
                 <legend>More searches</legend>
+
+                <input type="checkbox" name="enable_link_color" [% IF enable_link_color %]checked="checked"[% END %] />
+                <label for="link_color">Link Color: </label>
+                <input name="link_color" id="link_color" type="text" class="color" value="[% link_color %]" />
+                <p/>
 
                 <input type="checkbox" name="enable_moresearches_background_color" [% IF enable_moresearches_background_color %]checked="checked"[% END %] />
                 <label for="moresearches_background_color">Background: </label>
@@ -201,11 +178,6 @@
                 <input name="moresearches_background_hover_color" id="moresearches_background_hover_color" type="text" class="color" value="[% moresearches_background_hover_color %]" />
                 <p/>
 
-                <input type="checkbox" name="enable_moresearches_background_active_color" [% IF enable_moresearches_background_active_color %]checked="checked"[% END %] />
-                <label for="moresearches_background_active_color">Active background: </label>
-                <input name="moresearches_background_active_color" id="moresearches_background_active_color" type="text" class="color" value="[% moresearches_background_active_color %]" />
-                <p/>
-
                 <input type="checkbox" name="enable_moresearches_text_color" [% IF enable_moresearches_text_color %]checked="checked"[% END %] />
                 <label for="moresearches_text_color">Text: </label>
                 <input name="moresearches_text_color" id="moresearches_text_color" type="text" class="color" value="[% moresearches_text_color %]" />
@@ -214,14 +186,13 @@
 
             <fieldset>
                 <legend>Login Box</legend>
-                 <input type="checkbox" name="enable_login_new" [% IF enable_login_new %]checked="checked"[% END %] />
-                 <label for="enable_login_new">Enable enchanced Login Box: </label>
-                 <p/>
+                <input type="checkbox" name="enable_login_enhanced" [% IF enable_login_enhanced %]checked="checked"[% END %] />
+                <label for="enabled_login_enhanced">Enhanced Login Box: </label>
+                <p/>
 
                 <input type="checkbox" name="enable_login_box_border_top_color" [% IF enable_login_box_border_top_color %]checked="checked"[% END %] />
                 <label for="login_box_border_top_color">Top border color/width: </label>
                 <input name="login_box_border_top_color" id="login_box_border_top_color" type="text" class="color" value="[% login_box_border_top_color %]" />
-                <input name="login_box_border_top_width" id="login_box_border_top_width" type="text" size="2" value="[% login_box_border_top_width %]" /> px
                 <p/>
 
                 <input type="checkbox" name="enable_login_box_text_top_color" [% IF enable_login_box_text_top_color %]checked="checked"[% END %] />
@@ -244,11 +215,6 @@
                 <input name="login_box_link_color" id="login_box_link_color" type="text" class="color" value="[% login_box_link_color %]" />
                 <p/>
 
-                <input type="checkbox" name="enable_login_box_left_padding" [% IF enable_login_box_left_padding %]checked="checked"[% END %] />
-                <label for="login_box_left_padding">Left Side Padding: </label>
-                <input name="login_box_left_padding" id="login_box_left_padding" type="text" size="2" value="[% login_box_left_padding %]" /> px
-                <p/>
-
                 <input type="checkbox" name="enable_login_button_color" [% IF enable_login_button_color %]checked="checked"[% END %] />
                 <label for="login_button_color">Login button background: </label>
                 <input name="login_button_color" id="login_button_color" type="text" class="color" value="[% login_button_color %]" />
@@ -269,6 +235,15 @@
 
         <fieldset>
             <legend>Search results</legend>
+
+             <input type="checkbox" name="enable_cover_url" [% IF enable_cover_url %]checked="checked"[% END %] />
+             <label for="cover_url">Custom Bookplate URL: </label>
+             <input name="cover_url" id="cover_url" type="text" size="120" value="[% cover_url %]" />
+             <p/>
+
+            <input type="checkbox" name="enable_hide_labels" [% IF enable_hide_labels %]checked="checked"[% END %] />
+            <label for="enable_hide_labels">Hide Labels: </label>
+            <p/>
 
             <input type="checkbox" name="enable_opac_cover_images_on_left" [% IF enable_opac_cover_images_on_left %]checked="checked"[% END %] />
             <label for="enable_opac_cover_images_on_left">Show search results cover images on the left side: </label>
@@ -293,6 +268,11 @@
             <input type="checkbox" name="enable_opac_ratings_field" [% IF enable_opac_ratings_field %]checked="checked"[% END %] />
             <label for="enable_opac_ratings_field">Hide the "Ratings" field in Search Results </label>
             <p/>
+
+            <input type="checkbox" name="enable_other_title" [% IF enable_other_title %]checked="checked"[% END %] />
+            <label for="enable_other_title">Hide the "Other Title" field in Search Results </label>
+            <p/>
+
 
             <input type="checkbox" name="enable_cover_height" [% IF enable_cover_height %]checked="checked"[% END %] />
             <label for="cover_height">Normalize cover height in Search Results: </label>
@@ -323,7 +303,7 @@
 
         </fieldset>
 
-        <p>
+        <p style="box-shadow: 0 0 0.25em 0 rgba(0, 0, 0, 0.25);position: fixed;bottom: 0;width: 100%;z-index: 100">
 
         <input type="hidden" name="save" value="1" />
 

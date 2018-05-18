@@ -47,71 +47,125 @@
           background-color: [% body_background_color %];
           border-color: [% body_background_color %];
         }
-    [% END %]
-
-    [% IF enable_header_background_color %]
         #opacheader {
-          background-color: [% header_background_color %];
+          background-color: [% body_background_color %];
           margin-top:5px;
         }
+ 
     [% END %]
 
-    [% IF enable_search_new %]
-        #opac-main-search, .main {
-          position: relative;
-          max-width: 1400px;
-          margin: 0 auto;
-          display: block;
-          position: relative;
-          padding: 0 20px;
-          padding-left: 50px;
-       }
-
+    
+    [% IF enable_searchbox_enhanced %]
         .mastheadsearch {
-          background: none;
-          margin: 0 10;
-          text-align: center;
-       }
-
-        #opac-main-search input, #opac-main-search select{
-          border: 1px solid [% search_button_color %];
-          height: 46px;
-          padding: 10px 16px;
-          font-size: 18px;
-          line-height: 1.3333333;
-          border-radius: 4px;
-      }
-
-        #opac-main-search input{
-          height: 36px;
-          padding: 4px 5px;
-      }
+            -webkit-border-radius: 7px;
+            -moz-border-radius: 7px;
+            border-radius: 7px;
+            padding: .8em;
+            margin: .5em 0;
+        }
 
         .mastheadsearch label {
-          font-size: 18px;
-          font-weight: 600;             
-      }
+            color: #366CA4;
+            font-weight: 500;
+            font-size: 18px;
+        }
 
-        .nolibrarypulldown .transl1 {
-          top: -1px;
-      }
+        #searchsubmit, .btn {
+            font-family: inherit;
+            text-transform: uppercase;
+            display: inline-block;
+            *display: inline;
+            *zoom: 1;
+            margin-bottom: 0;
+            font-size: 14px;
+            line-height: 20px;
+            text-align: center;
+            vertical-align: middle;
+            cursor: pointer;
+            text-shadow: none;
+            -webkit-border-radius: 4px;
+            -moz-border-radius: 4px;
+            border-radius: 4px;
+            *margin-left: .3em;
+            -webkit-box-shadow: none;
+            -moz-box-shadow: none;
+            box-shadow: none;
+            background-repeat: no-repeat;
+            border: none;
+            cursor: pointer;
+            display: inline-block;
+            font-size: 16px;
+            font-weight: 300;
+            line-height: normal;
+            padding: 12px 32px;
+            position: relative;
+            border-radius: 4px;
+            margin-left: 5px;
+        }
 
-        button#searchsubmit {
-          position: relative;
-          height: 46px;
-          left: -2px;
-          top: -1px;
-          font-size: 18px;
-          color: #fff;
-          border-color: [% search_button_color %];
-          border-radius: 0 4px 4px 0;                                                                  
-      }
+        .mastheadsearch input[type="text"] {
+            background-color: #ffffff;
+            border-top: 1px solid #E5E5E4;
+            border-bottom: 1px solid #E5E5E4;
+            -webkit-box-shadow: none;
+            -moz-box-shadow: none;
+            box-shadow: inset none;
+            -webkit-transition: none;
+            -moz-transition: none;
+            -o-transition: border linear .2s, box-shadow linear .2s;
+            transition: border linear .2s, box-shadow linear .2s;
+            border-radius: 0 !important;
+            height: 22px;
+            padding: 10px;
+            margin: 0px;
+            width: 80%;
+        }
 
-         #moresearches {
-          text-align: center;
-      }
+        #toolbar select, #opac-main-search select, .toolbar select {
+            font-family: inherit;
+            text-indent: 0.01px;
+            width: 100%;
+            padding: 8px 18px;
+            font-size: 14px;
+            background: #FFF;
+            border: 1px solid #E5E5E4;
+            border-radius: 0;
+            outline: 0;
+            color: #333333;
+            height: 44px;
+            appearance: none;
+            background-color: rgb(255, 255, 255) !important;
+            border: 1px solid rgb(229, 229, 228);
+            outline: none;
+            -webkit-appearance: none;
+        }
+
+        #toolbar select, #opac-main-search select, .toolbar select, select {
+            text-indent: 0.01px;
+            width: 100%;
+            padding: 8px 18px;
+            font-size: 14px;
+            background: #FFF;
+            border: 1px solid #E5E5E4;
+            border-radius: 0;
+            outline: 0;
+            color: #333333;
+            height: 44px;
+            appearance: none;
+            background-color: rgb(255, 255, 255);
+            border: 1px solid rgb(229, 229, 228);
+            outline: none;
+            color: rgb(0, 0, 0);
+            -webkit-appearance: none;
+            box-sizing: border-box;
+            text-indent: .01px;
+            text-overflow: '';
+            margin-bottom: 0;
+
+        }
 
     [% END %]
+    
 
     [% IF enable_navbar_color %]
         .navbar-inverse .navbar-inner {
@@ -149,56 +203,96 @@
         }
     [% END %]
 
-    [% IF enable_login_new %]
+    [% IF enable_login_enhanced %]
+        #login .btn {
+            font-family: inherit;
+            text-transform: uppercase;
+            display: inline-block;
+            *display: inline;
+            *zoom: 1;
+            padding: 4px 12px;
+            margin-bottom: 0;
+            font-size: 14px;
+            line-height: 20px;
+            text-align: center;
+            vertical-align: middle;
+            cursor: pointer;
+            color: #ffffff;
+            text-shadow: none;
+            background-color: #254A71;
+            background-image: -moz-linear-gradient(top, #254A71, #254A71);
+            background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#254A71), to(#254A71));
+            background-image: -webkit-linear-gradient(top, #254A71, #254A71);
+            background-image: -o-linear-gradient(top, #254A71, #254A71);
+            background-image: linear-gradient(to bottom, #254A71, #254A71);
+            background-repeat: repeat-x;
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff', endColorstr='#ffe6e6e6', GradientType=0);
+            border-color: #e6e6e6 #e6e6e6 #bfbfbf;
+            border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+            *background-color: #4385CA;
+            filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+            -webkit-border-radius: 4px;
+            -moz-border-radius: 4px;
+            border-radius: 4px;
+            *margin-left: .3em;
+            -webkit-box-shadow: none;
+            -moz-box-shadow: none;
+            box-shadow: none;
+            background-repeat: no-repeat;
+            border: none;
+            cursor: pointer;
+            display: inline-block;
+            font-size: 16px;
+            font-weight: 300;
+            line-height: normal;
+            padding: 10px 88px;
+            position: relative;
+            border-radius: 0px;
+            margin-left: 10px;
+        }
+
         #login {
             background-color: #DCDFE0;
             border-radius: 2px;
-            width: 250px;
+            border-top: 8px solid #B4B7B8;
+            width: 273px;
+            margin: 0 auto 10px auto;
+        }
+
+        #login legend {
+            color: #000;
+            font-size: 16px;
+            font-weight: 300;
+            border: none;
+            text-align: center;
+        }
+
+        #login label {
+            color: #000;
+            font-size: 16px;
+            font-weight: 300;
+            border: none;
+            padding: 10px;
+        }
+
+            #userid, #password {
+            margin-left: 10px;
+            height: 32px;
+            width: 85%;        
+        }
+
+        #login form {
+            margin: 0 0 20px;
+            width: 224px;
             margin: 0 auto;
-            margin-bottom: 20px;
         }   
 
         #login form {
             margin: 0 0 20px;
-            width: 100% !important;
+            width: 253px;
             margin: 0 auto;
-        }
-
-
-        #login {
-            margin-bottom:20px !important;
-        }
-
-        #login form, #login {
-            margin: 0 0 20px;
-            width: 100%;
-            margin: 0 auto;
-        }
-
-
-        #login {
-            margin-bottom: 20px;
-        }
-
-        #login input {
-            border: 1px solid [% login_box_text_color %];
-            padding: 10px 16px;
-            font-size: 18px;
-            line-height: 1.3333333;
-            border-radius: 4px;
-            width: 64%
-        }
-
-        #login .btn {
-            width: 75%
-        }
-
-        #login {
-            padding-left: 10px;
-            border-radius: 0px !important;
         }
     [% END %]
-
 
     [% IF enable_login_box_background_color %]
         #login {
@@ -206,12 +300,6 @@
         }
         #login input,label,p {
             margin-left: 10px;
-        }
-    [% END %]
-
-    [% IF enable_login_box_left_padding %]
-        #login {
-            padding-left: [% login_box_left_padding %]px;
         }
     [% END %]
 
@@ -229,7 +317,7 @@
 
     [% IF enable_login_box_border_top_color %]
         #login  {
-            border-top: [% login_box_border_top_width %]px solid [% login_box_border_top_color %];
+            border-top: 7px solid [% login_box_border_top_color %];
         }
     [% END %]
 
@@ -270,7 +358,7 @@
         .coverimages {
             left: 0;
             float: left;
-            padding-right: 25px;
+            padding-right: 50px;
             padding-bottom: 40px;
             top: 0;
         }
@@ -291,6 +379,47 @@
             box-shadow: 5px 5px 10px grey;
         }
     [% END %]
+
+    [% IF enable_hide_labels %]
+        .availability .label {
+            display: none;
+        }
+
+        .results_material_type .label {
+            display: none;
+        }   
+
+        .results_material_type img {
+            display: none;
+        }
+
+        .publisher .label {
+            display: none;
+        }
+
+        .edition .label {
+            display: none;
+        }
+
+        .results_format .label {
+            display: none;
+        }
+
+        .results_contents_literary {
+            display: none;
+        }
+
+        .other_title .label {
+            display: none;
+        }
+        .online_resources .label {
+            display: none;
+        }
+    [% END %]
+        
+       .available {
+            text-transform: uppercase;
+       } 
 
     [% IF enable_opac_edition_field %]
         .bibliocol .edition {
@@ -316,18 +445,40 @@
         }
     [% END %]
 
+    [% IF enable_other_title %]
+        .bibliocol .other_title {
+            display: none;
+        }
+    [% END %]
+
+
     [% IF enable_cover_height %]
         .coverimages img {
             height: [% cover_height %]px;
         }
+        .no-image {
+            height: [% cover_height %]px;
+        }
+         .coverimages  {
+            height: [% cover_height %]px;
+        }
+        
     [% END %]
 
     [% IF enable_cover_width %]
         .coverimages img {
             width: [% cover_width %]px;
         }
+        .no-image {
+            width: [% cover_width %]px;
+        }
+        .coverimages {
+            width: [% cover_width %]px;
+        }
     [% END %]
-
+        .coverimages {
+            min-height: 229px;
+        }
     [% IF enable_cover_border_color %]
         .coverimages img {
             border: 1px solid [% cover_border_color %];
@@ -358,16 +509,21 @@
         padding: 0;
     }
 
-    /* Give the login box the same rounded corners as the other elements */
-    #login {
-        border-radius: 7px;
-    }
     #login legend {
         border-top-left-radius: 7px;
         border-top-right-radius: 7px;
     }
 
     /* BEGIN New 'flat style' more searches bar */
+    #moresearches {
+        margin: .5em 0;
+        padding: 0 .8em;
+    }
+
+    #moresearches ul li {
+        height: 55px;
+        display: inline-block;
+    }
     #moresearches ul {
         list-style-type: none;
         margin: 0;
@@ -376,7 +532,7 @@
         [% IF enable_moresearches_background_color %]
             background-color: [% moresearches_background_color %];
         [% END %]
-        border-radius: 7px;
+        border-radius: 0px;
     }
 
     #moresearches li {
@@ -397,20 +553,23 @@
         text-decoration: none;
     }
 
-    /* Change the link color to #111 (black) on hover */
     #moresearches li a:hover {
         [% IF enable_moresearches_background_hover_color %]
-            background-color: [% moresearches_background_hover_color %];
-        [% END %]
-    }
-
-    #moresearches .active {
-        [% IF enable_moresearches_background_active_color %]
-            background-color: [% moresearches_background_active_color %];
+        border-bottom: 5px solid [% moresearches_background_hover_color %];
+        cursor: pointer;
         [% END %]
     }
     /* END New 'flat style' more searches bar */
 
+    .no-image {
+        background-image: url('https://rawgit.com/bywatersolutions/web-assets/master/sites/galadriel/Classic-Red-Book-Cover-Texture.jpg');
+        background-size: 100% 100%;
+    }
+    [% IF enable_cover_url %]
+        .no-image {
+            background-image: url('[% cover_url %]');
+        }
+    [% END %]
 [% END %]
 </style>
 
