@@ -164,6 +164,9 @@
 
         }
 
+        #booleansearch select {
+            width: 20%;
+        }
     [% END %]
     
 
