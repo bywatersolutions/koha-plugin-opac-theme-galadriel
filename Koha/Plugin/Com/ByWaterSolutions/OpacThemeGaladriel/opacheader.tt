@@ -169,25 +169,46 @@
         }
     [% END %]
     
-
     [% IF enable_navbar_color %]
         .navbar-inverse .navbar-inner {
             background-image: linear-gradient(to bottom, [% navbar_color %], [% navbar_color %]);
             border-color: [% navbar_color %];
             background-color: [% navbar_color %];
         }
+
+        .navbar-inverse .divider-vertical {
+            border-left-color: [% navbar_color %];
+            border-right-color: [% navbar_color %];
+        }
+
     [% END %]
 
-    [% IF enable_navbar_bars_color %]
-        .navbar-inverse .divider-vertical {
-            border-left-color: [% navbar_bars_color %];
-            border-right-color: [% navbar_bars_color %];
+    [% IF enable_navbar_link_color %]
+        .navbar-inverse .brand, .navbar-inverse .nav > li > a {
+            color: [% navbar_link_color %];
+            text-shadow: none;
+        }   
+
+        .loggedinusername, .login-link, a.login-link, #members a.logout {
+            color: [% navbar_link_color %];
         }
     [% END %]
 
     [% IF enable_searchbox_background_color %]
         .mastheadsearch {
             background: linear-gradient(to bottom, [% searchbox_background_color %] 38%, [% searchbox_background_color %] 100%) repeat scroll 0% 0% transparent !important;
+        }
+    [% END %]
+
+    [% IF enable_breadcrumbs_link_color %]
+        .breadcrumb a {
+            color: [% breadcrumbs_link_color %];
+        }
+    [% END %]
+
+    [% IF enable_breadcrumbs_background_color %]
+        .breadcrumb {
+            background-color: [% breadcrumbs_background_color %]
         }
     [% END %]
 
@@ -567,6 +588,9 @@
     .no-image {
         background-image: url('https://rawgit.com/bywatersolutions/web-assets/master/sites/galadriel/Classic-Red-Book-Cover-Texture.jpg');
         background-size: 100% 100%;
+        text-indent: 100%;
+        white-space: nowrap;
+        overflow: hidden;
     }
     [% IF enable_cover_url %]
         .no-image {

@@ -131,11 +131,6 @@
                 <label for="navbar_color">Navigation bar links: </label>
                 <input name="navbar_link_color" id="navbar_link_color" type="text" class="color" value="[% navbar_link_color %]" />
                 <p/>
-
-                <input type="checkbox" name="enable_navbar_bars_color" [% IF enable_navbar_bars_color %]checked="checked"[% END %] />
-                <label for="navbar_bars_color">Navigation bar separator: </label>
-                <input name="navbar_bars_color" id="navbar_bars_color" type="text" class="color" value="[% navbar_bars_color %]" />
-                <p/>
             </fieldset>
 
             <fieldset>
@@ -181,6 +176,19 @@
                 <input type="checkbox" name="enable_moresearches_text_color" [% IF enable_moresearches_text_color %]checked="checked"[% END %] />
                 <label for="moresearches_text_color">Text: </label>
                 <input name="moresearches_text_color" id="moresearches_text_color" type="text" class="color" value="[% moresearches_text_color %]" />
+                <p/>
+            </fieldset>
+
+            <fieldset>
+                <legend>Breadcrumbs</legend>
+                <input type="checkbox" name="enable_breadcrumbs_link_color" [% IF enable_breadcrumbs_link_color %]checked="checked"[% END %] />
+                <label for="breadcrumbs_link_color">Breadcrumbs Link Color: </label>
+                <input name="breadcrumbs_link_color" id="breadcrumbs_link_color" type="text" class="color" value="[% breadcrumbs_link_color %]" />
+                <p/>
+
+                <input type="checkbox" name="enable_breadcrumbs_background_color" [% IF enable_breadcrumbs_background_color %]checked="checked"[% END %] />
+                <label for="breadcrumbs_background_color">Background: </label>
+                <input name="breadcrumbs_background_color" id="breadcrumbs_background_color" type="text" class="color" value="[% breadcrumbs_background_color %]" />
                 <p/>
             </fieldset>
 
