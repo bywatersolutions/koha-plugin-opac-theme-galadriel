@@ -281,6 +281,9 @@
             <label for="enable_other_title">Hide the "Other Title" field in Search Results </label>
             <p/>
 
+            <input type="checkbox" name="enable_245_title" [% IF enable_245_title %]checked="checked"[% END %] />
+            <label for="enable_245_title">Hide the 245C (Statement of Responsbility) from title </label>
+            <p/>
 
             <input type="checkbox" name="enable_cover_height" [% IF enable_cover_height %]checked="checked"[% END %] />
             <label for="cover_height">Normalize cover height in Search Results: </label>
