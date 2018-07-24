@@ -310,6 +310,10 @@
             <input name="cover_background_color" id="cover_background_color" type="text" class="color" value="[% cover_background_color %]" /> ***Cover image padding must be turned on.
             <p/>
 
+            <input type="checkbox" name="enable_action_buttons" [% IF enable_action_buttons %]checked="checked"[% END %] />
+            <label for="enable_action_buttons">Turn Action Items Into Buttons (Place Hold, Save To Lists, Add to Cart) </label>
+            <p/>
+
 
 
         </fieldset>

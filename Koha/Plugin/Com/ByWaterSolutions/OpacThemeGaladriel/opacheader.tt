@@ -9,11 +9,20 @@
   <img
     alt="logo"
     src="[% header_url %]"
-    [% IF header_height %] height="[% header_height %]" [% END %]
-    [% IF header_width %] width="[% header_width %]" [% END %]
+    [% IF header_height %] height="[% header_height %]px !important;" [% END %]
+    [% IF header_width %] width="[% header_width %]px;" [% END %]
   ></img>
 </a>
 [% END %]
+
+[% IF header_height %]
+<style>
+    #opacheader img:first-of-type {
+        height:[% header_height %]px;
+    }
+</style>
+[% END %]
+
 [% IF enable_header_text && header_text_position != 'left_of_logo' %]
     <span id="header-additional-text">[% header_text %]</span>
 [% END %]
@@ -118,13 +127,11 @@
             height: 22px;
             padding: 10px;
             margin: 0px;
-            width: 80%;
         }
 
         #toolbar select, #opac-main-search select, .toolbar select {
             font-family: inherit;
             text-indent: 0.01px;
-            width: 100%;
             padding: 8px 18px;
             font-size: 14px;
             background: #FFF;
@@ -133,16 +140,13 @@
             outline: 0;
             color: #333333;
             height: 44px;
-            appearance: none;
             background-color: rgb(255, 255, 255) !important;
             border: 1px solid rgb(229, 229, 228);
             outline: none;
-            -webkit-appearance: none;
         }
 
         #toolbar select, #opac-main-search select, .toolbar select, select {
             text-indent: 0.01px;
-            width: 100%;
             padding: 8px 18px;
             font-size: 14px;
             background: #FFF;
@@ -151,22 +155,38 @@
             outline: 0;
             color: #333333;
             height: 44px;
-            appearance: none;
+            appearance: menulist;
             background-color: rgb(255, 255, 255);
             border: 1px solid rgb(229, 229, 228);
             outline: none;
             color: rgb(0, 0, 0);
-            -webkit-appearance: none;
+            -webkit-appearance: menulist;
             box-sizing: border-box;
             text-indent: .01px;
             text-overflow: '';
-            margin-bottom: 0;
 
+        }
+
+        input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"], .uneditable-input {
+            height: 34px;
+        }
+
+        input, button, select, label {
+            line-height: 44px;
+        }
+
+        .input-mini {
+            width: 80px;
         }
 
         #booleansearch select {
             width: 20%;
         }
+
+        #memberentry_library label {
+            line-height: 20px;
+        }
+
     [% END %]
     
     [% IF enable_navbar_color %]
@@ -383,7 +403,7 @@
             left: 0;
             float: left;
             padding-right: 50px;
-            padding-bottom: 40px;
+            padding-bottom: 40px; 
             top: 0;
         }
     [% END %]
@@ -511,9 +531,6 @@
             width: [% cover_width %]px;
         }
     [% END %]
-        .coverimages {
-            min-height: 229px;
-        }
     [% IF enable_cover_border_color %]
         .coverimages img {
             border: 1px solid [% cover_border_color %];
@@ -640,8 +657,44 @@
         font-size: 20px;
     }
 
+[% IF enable_action_buttons %]
+    .actions  {
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+    padding: 4px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    line-height: 20px;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    color: #333333;
+    text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
+    background-color: #f5f5f5;
+    background-image: -moz-linear-gradient(top, #ffffff, #e6e6e6);
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ffffff), to(#e6e6e6));
+    background-image: -webkit-linear-gradient(top, #ffffff, #e6e6e6);
+    background-image: -o-linear-gradient(top, #ffffff, #e6e6e6);
+    background-image: linear-gradient(to bottom, #ffffff, #e6e6e6);
+    background-repeat: repeat-x;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff', endColorstr='#ffe6e6e6', GradientType=0);
+    border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+    *background-color: #e6e6e6;
+    filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+    border: 1px solid #cccccc;
+    *border: 0;
+    border-bottom-color: #b3b3b3;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    *margin-left: .3em;
+    -webkit-box-shadow: inset 0 1px 0 rgba(255,255,255,.2), 0 1px 2px rgba(0,0,0,.05);
+    -moz-box-shadow: inset 0 1px 0 rgba(255,255,255,.2), 0 1px 2px rgba(0,0,0,.05);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,.2), 0 1px 2px rgba(0,0,0,.05);
+}
+[% END %]
 </style>
-
 
 <script type="text/javascript">
 [% FILTER minify_js %]
