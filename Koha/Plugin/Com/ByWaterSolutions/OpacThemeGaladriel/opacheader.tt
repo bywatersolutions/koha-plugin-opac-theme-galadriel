@@ -657,6 +657,10 @@
         font-size: 20px;
     }
 
+    input.hold, input.hold.disabled {
+        background-image: none !important;
+    }
+
 [% IF enable_action_buttons %]
     .actions  {
     display: inline-block;
