@@ -656,8 +656,7 @@
     #results .actions {
         font-size: 20px;
     }
-
-    input.hold, input.hold.disabled {
+    .hold, .disabled {
         background-image: none !important;
     }
 
