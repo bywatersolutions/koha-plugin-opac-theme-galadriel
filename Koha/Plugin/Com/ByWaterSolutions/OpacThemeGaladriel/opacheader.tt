@@ -47,7 +47,7 @@
           }
     [% END %]
     [% IF enable_link_color %]
-        #moresearches a, #moresearches a:link, .main a, .main a:link {
+        #moresearches a, #moresearches a:link {
           color: [% link_color %];
     }
     [% END %]

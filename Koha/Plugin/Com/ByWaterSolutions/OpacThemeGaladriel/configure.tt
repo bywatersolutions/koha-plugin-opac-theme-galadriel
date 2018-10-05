@@ -322,7 +322,7 @@
 
         <input type="hidden" name="save" value="1" />
 
-        <input type="submit" value="Save" />
+        <button type="submit" value="Save">Save & Exit</button>
         <button id="save_continue">Save & continue</button>
     </form>
 
