@@ -1,6 +1,6 @@
 [% USE Filter.Minify.CSS %]
 [% USE Filter.Minify.JavaScript %]
-
+[% IF enable_galadriel %]
 [% IF enable_header_text && header_text_position == 'left_of_logo' %]
     <span id="header-additional-text">[% header_text %]</span>
 [% END %]
@@ -724,5 +724,6 @@
         }
       }
     });
+[% END %]
 [% END %]
 </script>

@@ -69,7 +69,13 @@
         <!-- Always pass these two parameters so the plugin system knows what to execute! -->
         <input type="hidden" name="class" value="[% CLASS %]"/>
         <input type="hidden" name="method" value="[% METHOD %]"/>
+        <fieldset>
+          <legend>Enable Galadriel</legend>
 
+           <input type ="checkbox" name="enable_galadriel" [% IF enable_galadriel %]checked="checked"[% END %] />
+           <label for="enable_galadriel">This box must be checked to enable Galadriel </label>
+       
+        </fieldset>
         <fieldset>
             <legend>Font</legend>
 
