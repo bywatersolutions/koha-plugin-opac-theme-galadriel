@@ -324,7 +324,7 @@
 
         </fieldset>
 
-        <p style="box-shadow: 0 0 0.25em 0 rgba(0, 0, 0, 0.25);position: fixed;bottom: 0;width: 100%;z-index: 100">
+        <p style="box-shadow: 0 0 0.25em 0 rgba(0, 0, 0, 0.25);position: fixed;bottom: 0;width: 100%;z-index: 100;padding-bottom:30px;">
 
         <input type="hidden" name="save" value="1" />
 
