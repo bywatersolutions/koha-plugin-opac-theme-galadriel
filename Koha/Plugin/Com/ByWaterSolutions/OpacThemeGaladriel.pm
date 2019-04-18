@@ -1,5 +1,7 @@
 package Koha::Plugin::Com::ByWaterSolutions::OpacThemeGaladriel;
 
+no warnings 'redefine';
+
 ## It's good practive to use Modern::Perl
 use Modern::Perl;
 
