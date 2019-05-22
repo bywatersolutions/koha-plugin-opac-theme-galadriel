@@ -63,7 +63,12 @@
  
     [% END %]
 
-    
+    [% IF koha_logo_color %]
+        #logo {
+            background: transparent url([% koha_logo_color %]) no-repeat scroll 0;
+        }
+    [% END %]
+
     [% IF enable_searchbox_enhanced %]
         .mastheadsearch {
             -webkit-border-radius: 7px;
@@ -213,7 +218,16 @@
             color: [% navbar_link_color %];
         }
     [% END %]
-
+    [% IF enable_navbar_icon_color %]
+        #carticon, #listsmenu .fa {
+          color: [% navbar_icon_color %];
+        }
+    [% END %]
+    [% IF enable_navbar_label_color %]
+        .cartlabel, .listslabel, .loggedinusername {
+          color: [% navbar_label_color %];
+        }
+    [% END %]
     [% IF enable_searchbox_background_color %]
         .mastheadsearch {
             background: linear-gradient(to bottom, [% searchbox_background_color %] 38%, [% searchbox_background_color %] 100%) repeat scroll 0% 0% transparent !important;

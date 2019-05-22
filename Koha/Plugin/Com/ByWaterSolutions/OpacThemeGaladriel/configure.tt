@@ -118,14 +118,21 @@
         </fieldset>
 
         <fieldset id="coloropts">
-            <legend>General color options</legend>
+                <legend>General color options</legend> 
+                <input type="checkbox" name="enable_koha_logo_color" [% IF enable_koha_logo_color %]checked="checked"[% END %] />
+                <label for="koha_logo_color">Koha Logo Color: </label>
+                <select id="koha_logo_color" name="koha_logo_color">
+                    <option value="/opac-tmpl/bootstrap/images/koha-logo-navbar-black.png"    [% IF koha_logo_color == "/opac-tmpl/bootstrap/images/koha-logo-navbar-black.png" %]   selected="selected" [% END %]>Black</option>
+                    <option value="/opac-tmpl/bootstrap/images/koha-green-logo.png"   [% IF koha_logo_color == "/opac-tmpl/bootstrap/images/koha-green-logo.png" %]  selected="selected" [% END %]>Green</option>
+                    <option value="/opac-tmpl/bootstrap/images/koha-logo-navbar.png"  [% IF koha_logo_color == "/opac-tmpl/bootstrap/images/koha-logo-navbar.png" %] selected="selected" [% END %]>White</option>
+                </select>
+                <p/>
+                <input type="checkbox" name="enable_body_background_color" [% IF enable_body_background_color %]checked="checked"[% END %] />
+                <label for="body_background_color">Background: </label>
+                <input name="body_background_color" id="body_background_color" type="text" class="color" value="[% body_background_color %]" />
+                <p/>
 
-            <input type="checkbox" name="enable_body_background_color" [% IF enable_body_background_color %]checked="checked"[% END %] />
-            <label for="body_background_color">Background: </label>
-            <input name="body_background_color" id="body_background_color" type="text" class="color" value="[% body_background_color %]" />
-            <p/>
-
-            <fieldset>
+        <fieldset>
                 <legend>Navigation bar</legend>
 
                 <input type="checkbox" name="enable_navbar_color" [% IF enable_navbar_color %]checked="checked"[% END %] />
@@ -137,6 +144,17 @@
                 <label for="navbar_color">Navigation bar links: </label>
                 <input name="navbar_link_color" id="navbar_link_color" type="text" class="color" value="[% navbar_link_color %]" />
                 <p/>
+
+                <input type="checkbox" name="enable_navbar_icon_color" [% IF enable_navbar_icon_color %]checked="checked"[% END %] />
+                <label for="navbar_icon_color">Navigation bar icon color: </label>
+                <input name="navbar_icon_color" id="navbar_icon_color" type="text" class="color" value="[% navbar_icon_color %]" />
+                <p/>
+
+                <input type="checkbox" name="enable_navbar_label_color" [% IF enable_navbar_label_color %]checked="checked"[% END %] />
+                <label for="navbar_label_color">Navigation bar label color: </label>
+                <input name="navbar_label_color" id="navbar_label_color" type="text" class="color" value="[% navbar_label_color %]" />
+                <p/>
+
             </fieldset>
 
             <fieldset>
