@@ -51,6 +51,17 @@
           color: [% link_color %];
     }
     [% END %]
+    [% IF enable_body_padding %]
+        #wrap {
+            padding-right: 0;
+            padding-left: 0;
+        }
+    [% END %]
+    [% IF enable_rounded_corners %]
+        .breadcrumb, th span, .main, .mastheadsearch, .view, .dropdown-menu, #menu, #search-facets, #menu a, #user_summary  {
+            border-radius: 7px !important;
+        }   
+    [% END %]
     [% IF enable_body_background_color %]
         #header-region,body {
           background-color: [% body_background_color %];
@@ -224,9 +235,14 @@
         }
     [% END %]
     [% IF enable_navbar_label_color %]
-        .cartlabel, .listslabel, .loggedinusername {
+        .cartlabel, .listslabel, .loggedinusername, .login-link {
           color: [% navbar_label_color %];
         }
+    [% END %]
+    [% IF enable_navbar_label_hover_color %]
+        .listslabel:hover, .navbar-inverse .nav > li > a:hover, .navbar-inverse .nav li.dropdown.open > .dropdown-toggle, .navbar-inverse .nav > li > a:focus, .navbar-inverse .nav > li > a:hover {
+            color: [% navbar_label_hover_color %];
+    }
     [% END %]
     [% IF enable_navbar_list_color %]
         .dropdown-menu > li > a:hover {
@@ -262,7 +278,12 @@
            color: [% search_text_color %] !important;
        }
     [% END %]
-
+    [% IF enable_search_focus_color %]
+        input[type="text"]:focus {
+            border-color: [% search_focus_color %];
+            box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(0,0,0,.075);
+        }
+    [% END %]
     [% IF enable_search_button_color %]
         .btn-primary {
             color: #000;

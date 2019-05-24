@@ -117,6 +117,17 @@
 
         </fieldset>
 
+        <fieldset id="bodyopts">
+                <legend>General body options</legend>
+                <input type="checkbox" name="enable_body_padding" [% IF enable_body_padding %]checked="checked"[% END %] />
+                <label for="enabled_body_padding">Eliminate extra left/right body padding: </label>
+                <p/>
+
+                <input type="checkbox" name="enable_rounded_corners" [% IF enable_rounded_corners %]checked="checked"[% END %] />
+                <label for="enabled_rounded_corners">Bring back rounded corners: </label>
+                <p/>
+        </fieldset>
+
         <fieldset id="coloropts">
                 <legend>General color options</legend> 
                 <input type="checkbox" name="enable_koha_logo_color" [% IF enable_koha_logo_color %]checked="checked"[% END %] />
@@ -155,6 +166,11 @@
                 <input name="navbar_label_color" id="navbar_label_color" type="text" class="color" value="[% navbar_label_color %]" />
                 <p/>
 
+                <input type="checkbox" name="enable_navbar_label_hover_color" [% IF enable_navbar_label_hover_color %]checked="checked"[% END %] />
+                <label for="navbar_label_color">Navigation bar list/login HOVER color: </label>
+                <input name="navbar_label_hover_color" id="navbar_label_hover_color" type="text" class="color" value="[% navbar_label_hover_color %]" />
+                <p/>
+
                 <input type="checkbox" name="enable_navbar_list_color" [% IF enable_navbar_list_color %]checked="checked"[% END %] />
                 <label for="navbar_list_color">Navigation bar list hover color: </label>
                 <input name="navbar_list_color" id="navbar_list_color" type="text" class="color" value="[% navbar_list_color %]" />
@@ -187,6 +203,11 @@
                 <input type="checkbox" name="enable_search_text_color" [% IF enable_search_text_color %]checked="checked"[% END %] />
                 <label for="search_text_color">Search text:</label>
                 <input name="search_text_color" id="search_text_color" type="text" class="color" value="[% search_text_color %]" />
+                <p/>
+
+                <input type="checkbox" name="enable_search_focus_color" [% IF enable_search_focus_color %]checked="checked"[% END %] />
+                <label for="search_focus_color">Search box focus outline color:</label>
+                <input name="search_focus_color" id="search_focus_color" type="text" class="color" value="[% search_focus_color %]" />
                 <p/>
             </fieldset>
             <fieldset>
