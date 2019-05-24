@@ -228,6 +228,17 @@
           color: [% navbar_label_color %];
         }
     [% END %]
+    [% IF enable_navbar_list_color %]
+        .dropdown-menu > li > a:hover {
+            background: [% navbar_list_color %] none;
+        }
+    [% END %]
+    [% IF enable_navbar_caret_color%]
+        .navbar-inverse .nav li.dropdown > a:focus .caret, .navbar-inverse .nav li.dropdown > a:hover .caret {
+            border-top-color: [% navbar_caret_color %] !important;
+            border-bottom-color: [% navbar_caret_color %] !important;
+        }
+    [% END %]
     [% IF enable_searchbox_background_color %]
         .mastheadsearch {
             background: linear-gradient(to bottom, [% searchbox_background_color %] 38%, [% searchbox_background_color %] 100%) repeat scroll 0% 0% transparent !important;

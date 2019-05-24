@@ -155,6 +155,16 @@
                 <input name="navbar_label_color" id="navbar_label_color" type="text" class="color" value="[% navbar_label_color %]" />
                 <p/>
 
+                <input type="checkbox" name="enable_navbar_list_color" [% IF enable_navbar_list_color %]checked="checked"[% END %] />
+                <label for="navbar_list_color">Navigation bar list hover color: </label>
+                <input name="navbar_list_color" id="navbar_list_color" type="text" class="color" value="[% navbar_list_color %]" />
+                <p/>
+
+                <input type="checkbox" name="enable_navbar_caret_color" [% IF enable_navbar_caret_color %]checked="checked"[% END %] />
+                <label for="navbar_caret_color">Navigation bar caret color: </label>
+                <input name="navbar_caret_color" id="navbar_caret_color" type="text" class="color" value="[% navbar_caret_color %]" />
+                <p/>
+
             </fieldset>
 
             <fieldset>
