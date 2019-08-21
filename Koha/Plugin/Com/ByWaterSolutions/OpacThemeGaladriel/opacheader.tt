@@ -672,40 +672,6 @@
         }
     [% END %]
 [% END %]
-/*Search Results Page*/
-    #results a.title {
-        font-size: 1.29143rem;
-        line-height: 1.52;
-        font-weight: 400;
-        color: #2F3C4A;
-    }
-
-    #results .author {
-        color: #305972;
-        font-size: 18px;
-        font-weight: 300;
-        text-decoration: none;
-        font-size: 16px;
-        margin-top: 10px;
-        line-height: 2;
-    }
-
-    #results .results_summary {
-        line-height: 1.53;
-    }
-
-    #results .available {
-        font-weight: 300;
-        font-size: 18px;
-    }
-
-    #results .actions {
-        font-size: 20px;
-    }
-    .hold, .disabled {
-        background-image: none !important;
-    }
-
 [% IF enable_action_buttons %]
     .actions  {
     display: inline-block;
