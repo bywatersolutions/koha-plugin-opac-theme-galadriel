@@ -294,94 +294,40 @@
     [% END %]
 
     [% IF enable_login_enhanced %]
-        #login .btn {
-            font-family: inherit;
-            text-transform: uppercase;
-            display: inline-block;
-            *display: inline;
-            *zoom: 1;
-            padding: 4px 12px;
-            margin-bottom: 0;
-            font-size: 14px;
-            line-height: 20px;
-            text-align: center;
-            vertical-align: middle;
-            cursor: pointer;
-            color: #ffffff;
-            text-shadow: none;
-            background-color: #254A71;
-            background-image: -moz-linear-gradient(top, #254A71, #254A71);
-            background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#254A71), to(#254A71));
-            background-image: -webkit-linear-gradient(top, #254A71, #254A71);
-            background-image: -o-linear-gradient(top, #254A71, #254A71);
-            background-image: linear-gradient(to bottom, #254A71, #254A71);
-            background-repeat: repeat-x;
-            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff', endColorstr='#ffe6e6e6', GradientType=0);
-            border-color: #e6e6e6 #e6e6e6 #bfbfbf;
-            border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
-            *background-color: #4385CA;
-            filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
-            -webkit-border-radius: 4px;
-            -moz-border-radius: 4px;
-            border-radius: 4px;
-            *margin-left: .3em;
-            -webkit-box-shadow: none;
-            -moz-box-shadow: none;
-            box-shadow: none;
-            background-repeat: no-repeat;
-            border: none;
-            cursor: pointer;
-            display: inline-block;
-            font-size: 16px;
-            font-weight: 300;
-            line-height: normal;
-            padding: 10px 88px;
-            position: relative;
-            border-radius: 0px;
-            margin-left: 10px;
-        }
+		#patronregistration-main p {
+			text-align: center;
+		}
 
-        #login {
-            background-color: #DCDFE0;
-            border-radius: 2px;
-            border-top: 8px solid #B4B7B8;
-            width: 273px;
-            margin: 0 auto 10px auto;
-        }
+		#login #auth {
+			padding: 2em 1em 1em 1em;
+		}
 
-        #login legend {
-            color: #000;
-            font-size: 16px;
-            font-weight: 300;
-            border: none;
-            text-align: center;
-        }
+		#login #userid, #login #password {
+		    all: unset;
+			background: #f2f2f2;
+			width: 100%;
+			border: 0;
+			margin: 0 0 15px;
+			padding: 15px;
+			box-sizing: border-box;
+			font-size: 14px;
+		}
 
-        #login label {
-            color: #000;
-            font-size: 16px;
-            font-weight: 300;
-            border: none;
-            padding: 10px;
-        }
+		#login #auth .btn {
+			text-transform: uppercase;
+			outline: 0;
+			width: 100%;
+			border: 0;
+			padding: 15px;
+			color: #FFFFFF;
+			font-size: 14px;
+			font-weight: 600 !important;
+			border-radius: 0;
+		}
 
-            #userid, #password {
-            margin-left: 10px;
-            height: 32px;
-            width: 85%;        
-        }
-
-        #login form {
-            margin: 0 0 20px;
-            width: 224px;
-            margin: 0 auto;
-        }   
-
-        #login form {
-            margin: 0 0 20px;
-            width: 253px;
-            margin: 0 auto;
-        }
+		#login legend {
+			font-size: 18px;
+		}
     [% END %]
 
     [% IF enable_login_box_background_color %]
@@ -470,88 +416,113 @@
         }
     [% END %]
 
-    [% IF enable_hide_labels %]
-        .availability .label {
-            display: none;
-        }
-
-        .results_material_type .label {
-            display: none;
-        }   
-
-        .results_material_type img {
-            display: none;
-        }
-
-        .publisher .label {
-            display: none;
-        }
-
-        .edition .label {
-            display: none;
-        }
-
-        .results_format .label {
-            display: none;
-        }
-
-        .results_contents_literary {
-            display: none;
-        }
-
-        .other_title .label {
-            display: none;
-        }
-        .online_resources .label {
-            display: none;
-        }
-        .location .label {
-            display: none;
-        }
-        .results_typeofcontinuing .label{
-            display: none;
-        }
-    [% END %]
     [% IF enable_245_title %]
-        .title_resp_stmt {
+        #results .title_resp_stmt {
             display: none;
         }
     [% END %]
         
-       .available {
-            text-transform: uppercase;
-       } 
+    [% IF enable_opac_available_field %]
+        #results .availability {
+            display: none;
+        }
+    [% END %]
+    [% IF enable_opac_available_field_label %]
+        #results .availability .label {
+            display: none;
+        }
+    [% END %]
+
+    [% IF enable_opac_online_field %]
+        #results .online_resources {
+            display: none;
+        }
+    [% END %]
+    [% IF enable_opac_online_field_label %]
+        #results .online_resources .label {
+            display: none;
+        }
+    [% END %]
 
     [% IF enable_opac_edition_field %]
-        .bibliocol .edition {
+        #results .edition {
+            display: none;
+        }
+    [% END %]
+
+    [% IF enable_opac_edition_field_label %]
+        #results .edition .label {
+            display: none;
+        }
+    [% END %]
+
+    [% IF enable_opac_source_field %]
+        #results .source {
+            display: none;
+        }
+    [% END %]
+
+    [% IF enable_opac_source_field_label %]
+        #results .source .label {
             display: none;
         }
     [% END %]
 
     [% IF enable_opac_material_field %]
-        .bibliocol .type {
+        #results .type {
+            display: none;
+        }
+    [% END %]
+    [% IF enable_opac_material_field_label %]
+        #results .type .label {
             display: none;
         }
     [% END %]
 
     [% IF enable_opac_publisher_field %]
-        .bibliocol .publisher {
+        #results .publisher {
+            display: none;
+        }
+    [% END %]
+    [% IF enable_opac_publisher_field_label %]
+        #results .publisher .label {
             display: none;
         }
     [% END %]
 
     [% IF enable_opac_ratings_field %]
-        .bibliocol .ratings {
+        #results .ratings {
+            display: none;
+        }
+    [% END %]
+    [% IF enable_opac_ratings_field_label %]
+        #results .ratings .label {
             display: none;
         }
     [% END %]
 
     [% IF enable_other_title %]
-        .bibliocol .other_title {
+        #results .other_title {
             display: none;
         }
     [% END %]
 
+    [% IF enable_other_title_label %]
+        #results .other_title .label {
+            display: none;
+        }
+    [% END %]
+
+    [% IF enable_opac_dissnote %]
+        #results .diss_note {
+            display: none;
+        }
+    [% END %]
+    [% IF enable_opac_dissnote_label %]
+        #results .diss_note .label {
+            display: none;
+        }
+    [% END %]
 
     [% IF enable_cover_height %]
         .coverimages img {
@@ -602,70 +573,6 @@
         }
     [% END %]
 
-    /* Make the more searches bar the same width as the other elements */
-    #moresearches {
-        padding: 0;
-    }
-
-    #login legend {
-        border-top-left-radius: 7px;
-        border-top-right-radius: 7px;
-    }
-
-    /* BEGIN New 'flat style' more searches bar */
-    #moresearches {
-        margin: .5em 0;
-        padding: 0 .8em;
-    }
-
-    #moresearches ul li {
-        height: 55px;
-        display: inline-block;
-    }
-    #moresearches ul {
-        list-style-type: none;
-        margin: 0;
-        padding: 0;
-        overflow: hidden;
-        [% IF enable_moresearches_background_color %]
-            background-color: [% moresearches_background_color %];
-        [% END %]
-        border-radius: 0px;
-    }
-
-    #moresearches li {
-        float: left;
-    }
-
-    #moresearches li:after {
-        content: "";
-    }
-
-    #moresearches li a {
-        display: block;
-        [% IF enable_moresearches_text_color %]
-            color: [% moresearches_text_color %];
-        [% END %]
-        text-align: center;
-        padding: 14px 16px;
-        text-decoration: none;
-    }
-
-    #moresearches li a:hover {
-        [% IF enable_moresearches_background_hover_color %]
-        border-bottom: 5px solid [% moresearches_background_hover_color %];
-        cursor: pointer;
-        [% END %]
-    }
-    /* END New 'flat style' more searches bar */
-
-    .no-image {
-        background-image: url('https://rawgit.com/bywatersolutions/web-assets/master/sites/galadriel/Classic-Red-Book-Cover-Texture.jpg');
-        background-size: 100% 100%;
-        text-indent: 100%;
-        white-space: nowrap;
-        overflow: hidden;
-    }
     [% IF enable_cover_url %]
         .no-image {
             background-image: url('[% cover_url %]');
