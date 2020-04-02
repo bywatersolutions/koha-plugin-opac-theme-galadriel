@@ -95,6 +95,7 @@ sub configure {
         $self->update_opacheader($data);
         $self->update_opaccredits($data);
         $self->update_galadriel_js($data);
+        $self->update_galadriel_css($data);
         $self->go_home();
     }
 }
@@ -104,6 +105,10 @@ sub opac_js {
             return "<script>".$self->retrieve_data('galadriel_js')."</script>";
 }
 
+sub opac_head {
+        my ( $self ) = @_;
+            return "<style>".$self->retrieve_data('galadriel_css')."</style>";
+}
 ## This is the 'install' method. Any database tables or other setup that should
 ## be done when the plugin if first installed should be executed in this method.
 ## The installation method should always return true if the installation succeeded
@@ -174,6 +179,19 @@ sub update_galadriel_js {
 
     $galadriel_js = minify( input => $galadriel_js );
     $self->store_data({ galadriel_js => $galadriel_js });
+
+}
+
+sub update_galadriel_css {
+    my ($self, $data) = @_;
+
+    my $template = $self->get_template( { file => 'galadrielcss.tt' } );
+    $template->param(%$data);
+
+    my $galadriel_css = $template->output();
+
+    $galadriel_css = minify( input => $galadriel_css );
+    $self->store_data({ galadriel_css => $galadriel_css });
 
 }
 
