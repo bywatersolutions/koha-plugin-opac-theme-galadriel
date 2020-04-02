@@ -25,6 +25,8 @@ BEGIN {
         unshift( @INC, "$local_libs/$Config{archname}" );
     }
 }
+## We will also need to include any Koha libraries we want to access
+use JavaScript::Minifier qw(minify);
 
 ## Here we set our plugin version
 our $VERSION = "{VERSION}";
@@ -92,9 +94,14 @@ sub configure {
 
         $self->update_opacheader($data);
         $self->update_opaccredits($data);
-
+        $self->update_galadriel_js($data);
         $self->go_home();
     }
+}
+
+sub opac_js {
+        my ( $self ) = @_;
+            return "<script>".$self->retrieve_data('galadriel_js')."</script>";
 }
 
 ## This is the 'install' method. Any database tables or other setup that should
@@ -155,6 +162,19 @@ sub update_opaccredits {
 
     $opaccredits .= $template_output;
     C4::Context->set_preference( 'opaccredits', $opaccredits );
+}
+
+sub update_galadriel_js {
+    my ($self, $data) = @_;
+
+    my $template = $self->get_template( { file => 'galadrieljs.tt' } );
+    $template->param(%$data);
+
+    my $galadriel_js = $template->output();
+
+    $galadriel_js = minify( input => $galadriel_js );
+    $self->store_data({ galadriel_js => $galadriel_js });
+
 }
 
 1;
