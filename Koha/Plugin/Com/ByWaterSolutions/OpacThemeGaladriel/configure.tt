@@ -394,6 +394,70 @@
 
         </fieldset>
 
+        <fieldset>
+            <legend>Online resources</legend>
+
+            <input type="checkbox" name="enable_online_resource" [% IF enable_online_resource %]checked="checked"[% END %] />
+            <label for="enable_online_resource">Enable online resource buttons: </label>
+            </p>
+            <input type="checkbox" name="enable_online_resource_font_size" [% IF enable_online_resource_font_size %]checked="checked"[% END %] />
+            <label for="online_resource_font_size">Font size: </label>
+            <input name="online_resource_font_size" id="online_resource_font_size" type="text" size="2" placeholder="px" value="[% online_resource_font_size %]" />
+
+            <input type="checkbox" name="enable_online_resource_font_color" [% IF enable_online_resource_font_color %]checked="checked"[% END %] />
+            <label for="online_resource_font_color">Font color: </label>
+            <input name="online_resource_font_color" id="online_resource_font_color" type="text" class="color" value="[% online_resource_font_color %]" />
+            </p>
+
+            <input type="checkbox" name="enable_online_resource_border" [% IF enable_online_resource_border %]checked="checked"[% END %] />
+            <label for="enable_online_resource_border">Add border: </label>
+
+            <input type="checkbox" name="enable_online_resource_border_color" [% IF enable_online_resource_border_color %]checked="checked"[% END %] />
+            <label for="online_resource_border_color">Border color: </label>
+            <input name="online_resource_border_color" id="online_resource_border_color" type="text" class="color" value="[% online_resource_border_color %]" />
+            <p/>
+
+            <input type="checkbox" name="enable_online_resource_background_color" [% IF enable_online_resource_background_color %]checked="checked"[% END %] />
+            <label for="online_resource_background_color">Background color: </label>
+            <input name="online_resource_background_color" id="online_resource_background_color" type="text" class="color" value="[% online_resource_background_color %]" />
+            <p/>
+            <hr>
+            <input type="checkbox" name="enable_online_resource_url" [% IF enable_online_resource_url %]checked="checked"[% END %] />
+            <label for="enable_online_resource_url">Global custom link: </label>
+        
+            <input type="checkbox" name="enable_custom_link_text" [% IF enable_custom_link_text %]checked="checked"[% END %] />
+            <label for="enable_custom_link_text">Global custom link text: </label>
+            <input name="custom_link_text" id="custom_link_text" type="text" size="20" value="[% custom_link_text %]" />
+            <p/>
+
+            <input type="checkbox" name="enable_custom_link_url" [% IF enable_custom_link_url %]checked="checked"[% END %] />
+            <label for="enable_custom_link_text">Only effect this URL: </label>
+            <input name="custom_link_url" id="custom_link_url" type="text" size="20" value="[% custom_link_url %]" />
+
+            <input type="checkbox" name="enable_custom_link_url_text" [% IF enable_custom_link_url_text %]checked="checked"[% END %] />
+            <label for="enable_custom_link_url_text">With this text: </label>
+            <input name="custom_link_url_text" id="custom_link_url_text" type="text" size="20" value="[% custom_link_url_text %]" />
+            <p/>
+            <input type="checkbox" name="enable_custom_link_url2" [% IF enable_custom_link_url2 %]checked="checked"[% END %] />
+            <label for="enable_custom_link_text2">Only effect this URL: </label>
+            <input name="custom_link_url2" id="custom_link_url2" type="text" size="20" value="[% custom_link_url2 %]" />
+            
+            <input type="checkbox" name="enable_custom_link_url_text2" [% IF enable_custom_link_url_text2 %]checked="checked"[% END %] />
+            <label for="enable_custom_link_url_text2">With this text: </label>
+            <input name="custom_link_url_text2" id="custom_link_url_text2" type="text" size="20" value="[% custom_link_url_text2 %]" />
+            <p/>
+            <input type="checkbox" name="enable_custom_link_url3" [% IF enable_custom_link_url3 %]checked="checked"[% END %] />
+            <label for="enable_custom_link_text3">Only effect this URL: </label>
+            <input name="custom_link_url3" id="custom_link_url3" type="text" size="20" value="[% custom_link_url3 %]" />
+
+            <input type="checkbox" name="enable_custom_link_url_text3" [% IF enable_custom_link_url_text3 %]checked="checked"[% END %] />
+            <label for="enable_custom_link_url_text3">With this text: </label>
+            <input name="custom_link_url_text3" id="custom_link_url_text3" type="text" size="20" value="[% custom_link_url_text3 %]" />
+            <p/>
+            <input type="checkbox" name="enable_online_resource_hide_extra" [% IF enable_online_resource_hide_extra %]checked="checked"[% END %] />
+            <label for="enable_online_resource_hide_extra">Hide the action buttons/availability of each selected resource: </label>
+        </fieldset>
+
         <p style="box-shadow: 0 0 0.25em 0 rgba(0, 0, 0, 0.25);position: fixed;bottom: 0;width: 100%;z-index: 100;padding-bottom:30px;">
 
         <input type="hidden" name="save" value="1" />

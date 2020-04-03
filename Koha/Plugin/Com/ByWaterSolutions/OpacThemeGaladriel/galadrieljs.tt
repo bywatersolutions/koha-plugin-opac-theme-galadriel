@@ -1,1 +1,38 @@
-console.log('Galadriel JS Plugin Hook');
+[% IF enable_online_resource %]
+if ($('.bibliocol, #catalogue_detail_biblio').length ) {
+		function makeButton(url, text) {
+			$('.online_resources '+url+'').each( function() {
+                if ( text.length ) {
+				    $(this).text(''+text+'');
+                }
+				$(this).addClass('ebook');
+				$(this).siblings('.label').hide();
+				$( '<i class="fa fa-cloud-download" aria-hidden="true"></i>' ).prependTo( $(this) );
+                [% IF enable_online_resource_hide_extra %]
+                    $(this).parent().siblings('.availability, .actions-menu').hide();
+                [% END %]
+			})
+		}
+        [%  IF ( enable_online_resource_url ) && ( enable_custom_link_url_text != 'on' || enable_custom_link_url_text2 != 'on' || enable_custom_link_url_text3 != 'on' ) %]
+                var global_url = 'a';
+                var global_text = ' [% custom_link_text %]';
+                makeButton(global_url, global_text );
+        [% END %]
+        [% IF enable_custom_link_url %]
+				var url1 = 'a[href*="[% custom_link_url %]"]';
+				var text1 = ' [% custom_link_url_text %]';
+				makeButton(url1, text1);
+        [% END %]
+        [% IF enable_custom_link_url2 %]
+				var url2 = 'a[href*="[% custom_link_url2 %]"]';
+				var text2 = ' [% custom_link_url_text2 %]';
+				makeButton(url2, text2);
+        [% END %]
+        [% IF enable_custom_link_url3 %]
+				var url3 = 'a[href*="[% custom_link_url3 %]"]';
+				var text3 = ' [% custom_link_url_text3 %]';
+				makeButton(url3, text3);
+        [% END %]
+}
+[% END %]
+
