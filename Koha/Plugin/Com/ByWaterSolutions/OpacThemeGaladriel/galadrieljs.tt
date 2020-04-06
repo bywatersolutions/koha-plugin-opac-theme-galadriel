@@ -13,9 +13,13 @@ if ($('.bibliocol, #catalogue_detail_biblio').length ) {
                 [% END %]
 			})
 		}
-        [%  IF ( enable_online_resource_url ) && ( enable_custom_link_url_text != 'on' || enable_custom_link_url_text2 != 'on' || enable_custom_link_url_text3 != 'on' ) %]
+        [%  IF ( enable_online_resource ) && ( enable_custom_link_url_text != 'on' || enable_custom_link_url_text2 != 'on' || enable_custom_link_url_text3 != 'on' ) %]
                 var global_url = 'a';
-                var global_text = ' [% custom_link_text %]';
+                [% IF custom_link_text %]
+                    var global_text = ' [% custom_link_text %]';
+                [% ELSE %]
+                    var global_text = '';
+                [% END %]
                 makeButton(global_url, global_text );
         [% END %]
         [% IF enable_custom_link_url %]

@@ -422,8 +422,6 @@
             <input name="online_resource_background_color" id="online_resource_background_color" type="text" class="color" value="[% online_resource_background_color %]" />
             <p/>
             <hr>
-            <input type="checkbox" name="enable_online_resource_url" [% IF enable_online_resource_url %]checked="checked"[% END %] />
-            <label for="enable_online_resource_url">Global custom link: </label>
         
             <input type="checkbox" name="enable_custom_link_text" [% IF enable_custom_link_text %]checked="checked"[% END %] />
             <label for="enable_custom_link_text">Global custom link text: </label>
@@ -453,9 +451,15 @@
             <input type="checkbox" name="enable_custom_link_url_text3" [% IF enable_custom_link_url_text3 %]checked="checked"[% END %] />
             <label for="enable_custom_link_url_text3">With this text: </label>
             <input name="custom_link_url_text3" id="custom_link_url_text3" type="text" size="20" value="[% custom_link_url_text3 %]" />
-            <p/>
+            </p>
             <input type="checkbox" name="enable_online_resource_hide_extra" [% IF enable_online_resource_hide_extra %]checked="checked"[% END %] />
             <label for="enable_online_resource_hide_extra">Hide the action buttons/availability of each selected resource: </label>
+            </p>
+            <hr>
+
+            <input type="checkbox" name="enable_online_resource_overdrive" [% IF enable_online_resource_overdrive %]checked="checked"[% END %] />
+            <label for="enable_online_resource_overdrive">Style the OverDrive results button: </label>
+            </p>
         </fieldset>
 
         <p style="box-shadow: 0 0 0.25em 0 rgba(0, 0, 0, 0.25);position: fixed;bottom: 0;width: 100%;z-index: 100;padding-bottom:30px;">

@@ -123,26 +123,57 @@
 
 [% END %]
 
-/*Online Resources CSS*/
-.ebook {
-    padding: 0 5px;
-[% IF enable_online_resource_font_size %]
-    font-size:[% online_resource_font_size %]px;
-[% END %]
-[% IF enable_online_resource_font_color %]
-    color:[% online_resource_font_color %] !important;
-[% END %]
-[% IF enable_online_resource_border %]
-    border: 1px solid;
-[% END %]
-[% IF enable_online_resource_border_color %]
-    border-color: [% online_resource_border_color %];
-[% END %]
-[% IF enable_online_resource_background_color %]
-    background: [% online_resource_background_color %]
-[% END %]
-}
+[% IF enable_online_resource %]
+    /*Online Resources CSS*/
+    .ebook {
+        padding: 0 5px;
+    [% IF enable_online_resource_font_size %]
+        font-size:[% online_resource_font_size %]px;
+    [% END %]
+    [% IF enable_online_resource_font_color %]
+        color:[% online_resource_font_color %] !important;
+    [% END %]
+    [% IF enable_online_resource_border %]
+        border: 1px solid;
+    [% END %]
+    [% IF enable_online_resource_border_color %]
+        border-color: [% online_resource_border_color %];
+    [% END %]
+    [% IF enable_online_resource_background_color %]
+        background: [% online_resource_background_color %]
+    [% END %]
+    }
 
-.ebook:hover, .ebook:active {
-    text-decoration: none;
-}
+    .ebook:hover, .ebook:active {
+        text-decoration: none;
+    }
+[% END %]
+[% IF enable_online_resource_overdrive %]
+	#overdrive-results {
+		display: inline-block;
+		background-color: #196596;
+		color: #fffafa;
+		font-weight: 300;
+		line-height: 20px;
+		padding: 20px;
+		padding-left: 20px;
+		margin-bottom: 5px;
+		padding-left: 5em;
+		background-image: url('https://raw.githubusercontent.com/bywatersolutions/web-assets/master/sites/galadriel/Overdrive2-300x197.jpg');
+		background-repeat: no-repeat;
+		background-position: left;
+		background-size: 75px;
+		line-height: 100%;
+	}
+
+	#overdrive-results a {
+		color: #fff;
+		text-decoration: none;
+	}
+	  
+		
+	#overdrive-results:hover {
+	  	box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	  	text-decoration: none;
+	}
+[% END %]
