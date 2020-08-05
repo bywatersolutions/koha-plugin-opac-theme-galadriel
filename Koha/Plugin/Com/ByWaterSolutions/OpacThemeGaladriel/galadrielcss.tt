@@ -35,6 +35,18 @@
         background: transparent url([% koha_logo_color %]) no-repeat scroll 0;
     }
 [% END %]
+
+[% IF enable_header_height %]
+.headerLogo {
+    height: [% header_height %]px;
+}
+[% END %]
+
+[% IF enable_header_width %]
+.headerLogo {
+    width: [% header_width %]px;
+}
+[% END %]
 /* END Global styles */
 
 /* START Top Nav Bar styles */

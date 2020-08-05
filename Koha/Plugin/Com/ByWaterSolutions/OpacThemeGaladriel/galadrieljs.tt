@@ -1,3 +1,11 @@
+[% IF enable_header_url %]
+if ( !$('#opacheader').length ) {
+    $('<div class="container-fluid"> <div class="row-fluid"> <div id="opacheader"><img class="headerLogo" src="[% header_url %]" /></div></div></div>').insertAfter($('#header-region'));
+} else {
+        $('#opacheader').prepend('<img class="headerLogo "src="[% header_url %]" />');
+}
+[% END %]
+
 [% IF enable_online_resource %]
 if ($('.bibliocol, #catalogue_detail_biblio').length ) {
 		function makeButton(url, text) {
