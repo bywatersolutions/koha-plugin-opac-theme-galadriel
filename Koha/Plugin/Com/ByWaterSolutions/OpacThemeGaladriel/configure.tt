@@ -70,13 +70,6 @@
         <input type="hidden" name="class" value="[% CLASS %]"/>
         <input type="hidden" name="method" value="[% METHOD %]"/>
         <fieldset>
-          <legend>Enable Galadriel</legend>
-
-           <input type ="checkbox" name="enable_galadriel" [% IF enable_galadriel %]checked="checked"[% END %] />
-           <label for="enable_galadriel">This box must be checked to enable Galadriel </label>
-       
-        </fieldset>
-        <fieldset>
             <legend>Font</legend>
 
             <input type="checkbox" name="enable_font_family" [% IF enable_font_family %]checked="checked"[% END %] />
@@ -144,7 +137,7 @@
                 <p/>
 
         <fieldset>
-                <legend>Navigation bar</legend>
+                <legend>Top Navigation bar</legend>
 
                 <input type="checkbox" name="enable_navbar_color" [% IF enable_navbar_color %]checked="checked"[% END %] />
                 <label for="navbar_color">Navigation bar: </label>
