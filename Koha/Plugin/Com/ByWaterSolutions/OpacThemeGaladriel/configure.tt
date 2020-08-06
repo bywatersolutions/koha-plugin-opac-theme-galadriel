@@ -17,6 +17,9 @@
 
   <script type="text/javascript">
     $(document).ready(function() {
+$( function() {
+  $( "#tabs" ).tabs();
+} );
       $('#font-preview').hide();
 
       $('.color').spectrum({
@@ -62,6 +65,7 @@
 
 <div id="breadcrumbs"><a href="/cgi-bin/koha/mainpage.pl">Home</a> &rsaquo; <a href="/cgi-bin/koha/plugins/plugins-home.pl">Plugins</a> &rsaquo; Galadriel OPAC Theme &rsaquo; Configuration</div>
 
+
 <div id="doc3">
     <h3>Koha: Galadriel OPAC Theme Plugin: Configuration</h3>
 
@@ -69,10 +73,19 @@
         <!-- Always pass these two parameters so the plugin system knows what to execute! -->
         <input type="hidden" name="class" value="[% CLASS %]"/>
         <input type="hidden" name="method" value="[% METHOD %]"/>
+            <div id="tabs">
+              <ul>
+                <li><a href="#tabs-1" title="Global">Global</a></li>
+                <li><a href="#tabs-2" title="Top navigation bar">Top navigation bar</a></li>
+                <li><a href="#tabs-3" title="Main search">Main search bar</a></li>
+                <li><a href="#tabs-4" title="More searches">More searches</a></li>
+                <li><a href="#tabs-5" title="Log in box">Log in box</a></li>
+                <li><a href="#tabs-6" title="Breadcrumbs">Breadcrumbs</a></li>
+                <li><a href="#tabs-7" title="Search Results">Search results</a></li>
+                <li><a href="#tabs-8" title="Online resources">Online resources</a></li>
+              </ul>
 
-        <fieldset id="imgopts">
-            <legend>Header</legend>
-
+              <div id="tabs-1">
             <fieldset>
                 <legend>Logo</legend>
 
@@ -93,17 +106,6 @@
 
         </fieldset>
 
-        <fieldset id="bodyopts">
-                <legend>General body options</legend>
-                <input type="checkbox" name="enable_body_padding" [% IF enable_body_padding %]checked="checked"[% END %] />
-                <label for="enabled_body_padding">Eliminate extra left/right body padding: </label>
-                <p/>
-
-                <input type="checkbox" name="enable_rounded_corners" [% IF enable_rounded_corners %]checked="checked"[% END %] />
-                <label for="enabled_rounded_corners">Bring back rounded corners: </label>
-                <p/>
-        </fieldset>
-
         <fieldset id="coloropts">
                 <legend>General color options</legend> 
                 <input type="checkbox" name="enable_koha_logo_color" [% IF enable_koha_logo_color %]checked="checked"[% END %] />
@@ -118,6 +120,21 @@
                 <label for="body_background_color">Background: </label>
                 <input name="body_background_color" id="body_background_color" type="text" class="color" value="[% body_background_color %]" />
                 <p/>
+
+
+        </fieldset>
+        <fieldset id="bodyopts">
+                <legend>General body options</legend>
+                <input type="checkbox" name="enable_body_padding" [% IF enable_body_padding %]checked="checked"[% END %] />
+                <label for="enabled_body_padding">Eliminate extra left/right body padding: </label>
+                <p/>
+
+                <input type="checkbox" name="enable_rounded_corners" [% IF enable_rounded_corners %]checked="checked"[% END %] />
+                <label for="enabled_rounded_corners">Bring back rounded corners: </label>
+                <p/>
+        </fieldset>
+              </div>
+              <div id="tabs-2">
 
         <fieldset>
                 <legend>Top Navigation bar</legend>
@@ -158,7 +175,8 @@
                 <p/>
 
             </fieldset>
-
+              </div>
+              <div id="tabs-3">
             <fieldset>
                 <legend>Search box</legend>
 
@@ -186,6 +204,8 @@
                 <input name="search_focus_color" id="search_focus_color" type="text" class="color" value="[% search_focus_color %]" />
                 <p/>
             </fieldset>
+              </div>
+              <div id="tabs-4">
             <fieldset>
                 <legend>More searches</legend>
 
@@ -200,20 +220,8 @@
                 <p/>
 
             </fieldset>
-
-            <fieldset>
-                <legend>Breadcrumbs</legend>
-                <input type="checkbox" name="enable_breadcrumbs_link_color" [% IF enable_breadcrumbs_link_color %]checked="checked"[% END %] />
-                <label for="breadcrumbs_link_color">Breadcrumbs Link Color: </label>
-                <input name="breadcrumbs_link_color" id="breadcrumbs_link_color" type="text" class="color" value="[% breadcrumbs_link_color %]" />
-                <p/>
-
-                <input type="checkbox" name="enable_breadcrumbs_background_color" [% IF enable_breadcrumbs_background_color %]checked="checked"[% END %] />
-                <label for="breadcrumbs_background_color">Background: </label>
-                <input name="breadcrumbs_background_color" id="breadcrumbs_background_color" type="text" class="color" value="[% breadcrumbs_background_color %]" />
-                <p/>
-            </fieldset>
-
+              </div>
+              <div id="tabs-5">
             <fieldset>
                 <legend>Login Box</legend>
                 <input type="checkbox" name="enable_login_enhanced" [% IF enable_login_enhanced %]checked="checked"[% END %] />
@@ -261,8 +269,22 @@
                 <p/>
 
             </fieldset>
-        </fieldset>
+              </div>
+              <div id="tabs-6">
+            <fieldset>
+                <legend>Breadcrumbs</legend>
+                <input type="checkbox" name="enable_breadcrumbs_link_color" [% IF enable_breadcrumbs_link_color %]checked="checked"[% END %] />
+                <label for="breadcrumbs_link_color">Breadcrumbs Link Color: </label>
+                <input name="breadcrumbs_link_color" id="breadcrumbs_link_color" type="text" class="color" value="[% breadcrumbs_link_color %]" />
+                <p/>
 
+                <input type="checkbox" name="enable_breadcrumbs_background_color" [% IF enable_breadcrumbs_background_color %]checked="checked"[% END %] />
+                <label for="breadcrumbs_background_color">Background: </label>
+                <input name="breadcrumbs_background_color" id="breadcrumbs_background_color" type="text" class="color" value="[% breadcrumbs_background_color %]" />
+                <p/>
+            </fieldset>
+              </div>
+              <div id="tabs-7">
         <fieldset>
             <legend>Search results</legend>
 
@@ -369,7 +391,8 @@
 
 
         </fieldset>
-
+              </div>
+              <div id="tabs-8">
         <fieldset>
             <legend>Online resources</legend>
 
@@ -437,6 +460,8 @@
             <label for="enable_online_resource_overdrive">Style the OverDrive results button: </label>
             </p>
         </fieldset>
+              </div>
+            </div>
 
         <p style="box-shadow: 0 0 0.25em 0 rgba(0, 0, 0, 0.25);position: fixed;bottom: 0;width: 100%;z-index: 100;padding-bottom:30px;">
 
