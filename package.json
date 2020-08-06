@@ -1,7 +1,7 @@
 {
   "name": "koha-plugin-opac-theme-galadriel",
-  "version": "1.0.55",
-  "previous_version": "1.0.54",
+  "version": "1.0.56",
+  "previous_version": "1.0.55",
   "description": "Koha Galadriel OPAC Theme Plugin",
   "main": "index.js",
   "dependencies": {
