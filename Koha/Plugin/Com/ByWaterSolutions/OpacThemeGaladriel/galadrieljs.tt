@@ -1,3 +1,38 @@
+if ($('#advsearch').length) {
+    [% IF hidden_itypes_text %]
+        $('#advsearch-itemtypes .span3').each(function() {
+            let this_itype = $(this);
+            let hidden_itypes = '[% hidden_itypes_text %]';
+            let itypes_to_hide = hidden_itypes.split("|");
+            let itype_string = $(this).find('input[name="limit"]').val().split('mc-itype,phr:')[1];
+            if ( $.inArray(itype_string, itypes_to_hide) != -1 ) {
+                this_itype.hide();
+            }
+        });
+    [% END %]
+    [% IF hidden_ccodes_text %]
+        $('#advsearch-ccode .span3').each(function() {
+            let this_ccode = $(this);
+            let hidden_ccodes = '[% hidden_ccodes_text %]';
+            let ccodes_to_hide = hidden_ccodes.split("|");
+            let ccode_string = $(this).find('input[name="limit"]').val().split('mc-ccode:')[1];
+            if ( $.inArray(ccode_string, ccodes_to_hide) != -1 ) {
+                this_ccode.hide();
+            }
+        });
+    [% END %]
+    [% IF hidden_locations_text %]
+        $('#advsearch-loc .span3').each(function() {
+            let this_location = $(this);
+            let hidden_locations = '[% hidden_locations_text %]';
+            let locations_to_hide = hidden_locations.split("|");
+            let location_string = $(this).find('input[name="limit"]').val().split('mc-loc:')[1];
+            if ( $.inArray(location_string, locations_to_hide) != -1 ) {
+                this_location.hide();
+            }
+        });
+    [% END %]
+}
 [% IF enable_header_url %]
 if ( !$('#opacheader').length ) {
     $('<div class="container-fluid"> <div class="row-fluid"> <div id="opacheader"><img class="headerLogo" src="[% header_url %]" /></div></div></div>').insertAfter($('#header-region'));

@@ -83,6 +83,7 @@ $( function() {
                 <li><a href="#tabs-6" title="Breadcrumbs">Breadcrumbs</a></li>
                 <li><a href="#tabs-7" title="Search Results">Search results</a></li>
                 <li><a href="#tabs-8" title="Online resources">Online resources</a></li>
+                <li><a href="#tabs-9" title="Advanced search">Advanced search</a></li>
               </ul>
 
               <div id="tabs-1">
@@ -460,6 +461,20 @@ $( function() {
             <label for="enable_online_resource_overdrive">Style the OverDrive results button: </label>
             </p>
         </fieldset>
+              </div>
+              <div  id="tabs-9">
+                <label for="enable_hidden_itypes">Unwanted item types: </label>
+                <input name="hidden_itypes_text" class="hidden_types_text" type="text" size="20" value="[% hidden_itypes_text %]" />
+                (use codes for unwanted item types seperated by a |)
+                <p/>
+                <label for="enable_hidden_ccodes">Unwanted collection codes: </label>
+                <input name="hidden_ccodes_text" class="hidden_ccodes_text" type="text" size="20" value="[% hidden_ccodes_text %]" />
+                (use codes for unwanted collection seperated by a |)
+                <p/>
+                <label for="enable_hidden_locations">Unwanted shelving locations: </label>
+                <input name="hidden_locations_text" class="hidden_locations_text" type="text" size="20" value="[% hidden_locations_text %]" />
+                (use codes for unwanted locations seperated by a |)
+                <p/>
               </div>
             </div>
 

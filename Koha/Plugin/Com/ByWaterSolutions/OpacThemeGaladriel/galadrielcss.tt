@@ -667,3 +667,12 @@
 	}
 [% END %]
 /* END online resources button styles */
+/* START advanced search */
+[% IF hidden_itypes_text || hidden_ccodes_text || hidden_locations_text %]
+	#advsearches .row-fluid::after {
+	  clear: none;
+	}
+	#advsearches .span3 {
+	  margin-left: 0 !important;
+	}
+[% END %]
