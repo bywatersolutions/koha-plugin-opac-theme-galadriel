@@ -50,61 +50,49 @@
 /* END Global styles */
 
 /* START Top Nav Bar styles */
+
+.navbar .nav > li > a {
+    text-shadow: none;
+}
+
 [% IF enable_navbar_color %]
     .navbar-inverse .navbar-inner {
-        background-image: linear-gradient(to bottom, [% navbar_color %], [% navbar_color %]);
-        border-color: [% navbar_color %];
-        background-color: [% navbar_color %];
+        background: [% navbar_color %] none;
     }
-
     .navbar-inverse .divider-vertical {
         border-left-color: [% navbar_color %];
         border-right-color: [% navbar_color %];
     }
-
-[% END %]
-
-[% IF enable_navbar_link_color %]
-    .navbar-inverse .brand, .navbar-inverse .nav > li > a {
-        color: [% navbar_link_color %];
-        text-shadow: none;
-    }   
-
-    .loggedinusername, .login-link, a.login-link, #members a.logout {
-        color: [% navbar_link_color %];
-    }
 [% END %]
 
 [% IF enable_navbar_icon_color %]
-    #carticon, #listsmenu .fa {
+    #carticon, #listsmenu .fa, #user-menu .fa-user {
       color: [% navbar_icon_color %];
     }
 [% END %]
 
 [% IF enable_navbar_label_color %]
-    .cartlabel, .listslabel, .loggedinusername, .login-link {
-      color: [% navbar_label_color %];
+    .listslabel, .cartlabel, .userlabel, .nav #search_history, .nav > .search_history > a[title="View your search history"] {
+        color: [% navbar_label_color %];
     }
 [% END %]
 
 [% IF enable_navbar_label_hover_color %]
-    .listslabel:hover, .navbar-inverse .nav > li > a:hover, .navbar-inverse .nav li.dropdown.open > .dropdown-toggle, .navbar-inverse .nav > li > a:focus, .navbar-inverse .nav > li > a:hover {
+    .listslabel:hover, .cartlabel:hover, .userlabel:hover, .nav #search_history:hover, .nav > .search_history > a[title="View your search history"]:hover, .listslabel:active, .cartlabel:active, .userlabel:active, .nav #search_history:active  {
         color: [% navbar_label_hover_color %];
-}
+    }
+    .navbar-inverse .navbar-inner li.dropdown > a:hover .caret {
+        border-top-color: [% navbar_label_hover_color %] !important;
+        border-bottom-color: [% navbar_label_hover_color %] !important;
+    }
 [% END %]
 
 [% IF enable_navbar_list_color %]
     .dropdown-menu > li > a:hover {
-        background: [% navbar_list_color %] none;
+        background: [% navbar_list_color %] !important;
     }
 [% END %]
 
-[% IF enable_navbar_caret_color%]
-    .navbar-inverse .nav li.dropdown > a:focus .caret, .navbar-inverse .nav li.dropdown > a:hover .caret {
-        border-top-color: [% navbar_caret_color %] !important;
-        border-bottom-color: [% navbar_caret_color %] !important;
-    }
-[% END %]
 /* END Top Nav Bar styles */
 
 /* START mastheadsearch styles */

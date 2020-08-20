@@ -141,18 +141,8 @@ $( function() {
                 <legend>Top Navigation bar</legend>
 
                 <input type="checkbox" name="enable_navbar_color" [% IF enable_navbar_color %]checked="checked"[% END %] />
-                <label for="navbar_color">Navigation bar: </label>
+                <label for="navbar_color">Navigation bar background color: </label>
                 <input name="navbar_color" id="navbar_color" type="text" class="color" value="[% navbar_color %]" />
-                <p/>
-
-                <input type="checkbox" name="enable_navbar_link_color" [% IF enable_navbar_link_color %]checked="checked"[% END %] />
-                <label for="navbar_color">Navigation bar links: </label>
-                <input name="navbar_link_color" id="navbar_link_color" type="text" class="color" value="[% navbar_link_color %]" />
-                <p/>
-
-                <input type="checkbox" name="enable_navbar_icon_color" [% IF enable_navbar_icon_color %]checked="checked"[% END %] />
-                <label for="navbar_icon_color">Navigation bar icon color: </label>
-                <input name="navbar_icon_color" id="navbar_icon_color" type="text" class="color" value="[% navbar_icon_color %]" />
                 <p/>
 
                 <input type="checkbox" name="enable_navbar_label_color" [% IF enable_navbar_label_color %]checked="checked"[% END %] />
@@ -160,19 +150,19 @@ $( function() {
                 <input name="navbar_label_color" id="navbar_label_color" type="text" class="color" value="[% navbar_label_color %]" />
                 <p/>
 
+                <input type="checkbox" name="enable_navbar_icon_color" [% IF enable_navbar_icon_color %]checked="checked"[% END %] />
+                <label for="navbar_icon_color">Navigation bar icon color: </label>
+                <input name="navbar_icon_color" id="navbar_icon_color" type="text" class="color" value="[% navbar_icon_color %]" />
+                <p/>
+
                 <input type="checkbox" name="enable_navbar_label_hover_color" [% IF enable_navbar_label_hover_color %]checked="checked"[% END %] />
-                <label for="navbar_label_color">Navigation bar list/login HOVER color: </label>
+                <label for="navbar_label_color">Labels on hover/active color: </label>
                 <input name="navbar_label_hover_color" id="navbar_label_hover_color" type="text" class="color" value="[% navbar_label_hover_color %]" />
                 <p/>
 
                 <input type="checkbox" name="enable_navbar_list_color" [% IF enable_navbar_list_color %]checked="checked"[% END %] />
-                <label for="navbar_list_color">Navigation bar list hover color: </label>
+                <label for="navbar_list_color">Navigation bar dropdown-menu > list on hover color: </label>
                 <input name="navbar_list_color" id="navbar_list_color" type="text" class="color" value="[% navbar_list_color %]" />
-                <p/>
-
-                <input type="checkbox" name="enable_navbar_caret_color" [% IF enable_navbar_caret_color %]checked="checked"[% END %] />
-                <label for="navbar_caret_color">Navigation bar caret color: </label>
-                <input name="navbar_caret_color" id="navbar_caret_color" type="text" class="color" value="[% navbar_caret_color %]" />
                 <p/>
 
             </fieldset>
@@ -182,7 +172,7 @@ $( function() {
                 <legend>Search box</legend>
 
                 <input type="checkbox" name="enable_searchbox_enhanced" [% IF enable_searchbox_enhanced %]checked="checked"[% END %] />
-                <label for="enabled_searchbox_enhanced">Enhanced Search Bar: </label>
+                <label for="enabled_searchbox_enhanced">Alternate Search Bar style: </label>
                 <p/>
 
                 <input type="checkbox" name="enable_searchbox_background_color" [% IF enable_searchbox_background_color %]checked="checked"[% END %] />
@@ -226,7 +216,7 @@ $( function() {
             <fieldset>
                 <legend>Login Box</legend>
                 <input type="checkbox" name="enable_login_enhanced" [% IF enable_login_enhanced %]checked="checked"[% END %] />
-                <label for="enabled_login_enhanced">Enhanced Login Box: </label>
+                <label for="enabled_login_enhanced">Alternate Login Box style: </label>
                 <p/>
 
                 <input type="checkbox" name="enable_login_box_border_top_color" [% IF enable_login_box_border_top_color %]checked="checked"[% END %] />
