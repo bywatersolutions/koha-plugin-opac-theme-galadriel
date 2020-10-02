@@ -102,12 +102,14 @@ sub configure {
 
 sub opac_js {
         my ( $self ) = @_;
-            return "<script>".$self->retrieve_data('galadriel_js')."</script>";
+        my $js = $self->retrieve_data('galadriel_js');
+        return "<script>".$js."</script>" if $js;
 }
 
 sub opac_head {
         my ( $self ) = @_;
-            return "<style>".$self->retrieve_data('galadriel_css')."</style>";
+        my $css = $self->retrieve_data('galadriel_css') // "";
+        return "<style>".$css."</style>" if $css;
 }
 ## This is the 'install' method. Any database tables or other setup that should
 ## be done when the plugin if first installed should be executed in this method.
