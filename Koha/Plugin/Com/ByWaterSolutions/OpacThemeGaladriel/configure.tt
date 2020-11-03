@@ -468,12 +468,11 @@ $( function() {
               </div>
             </div>
 
-        <p style="box-shadow: 0 0 0.25em 0 rgba(0, 0, 0, 0.25);position: fixed;bottom: 0;width: 100%;z-index: 100;padding-bottom:30px;">
 
         <input type="hidden" name="save" value="1" />
 
-        <button type="submit" value="Save">Save & Exit</button>
-        <button id="save_continue">Save & continue</button>
+        <button style="margin-bottom:3em;" type="submit" value="Save">Save & Exit</button>
+        <button style="margin-bottom:3em;" id="save_continue">Save & continue</button>
     </form>
 
 [% INCLUDE 'intranet-bottom.inc' %]

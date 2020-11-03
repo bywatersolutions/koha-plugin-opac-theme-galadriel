@@ -66,13 +66,13 @@
 [% END %]
 
 [% IF enable_navbar_icon_color %]
-    #carticon, #listsmenu .fa, #user-menu .fa-user {
+    #carticon, #listsmenu .fa, #user-menu .fa-user, #langmenu .fa-flag {
       color: [% navbar_icon_color %];
     }
 [% END %]
 
 [% IF enable_navbar_label_color %]
-    .listslabel, .cartlabel, .userlabel, .nav #search_history, .nav > .search_history > a[title="View your search history"] {
+    .listslabel, .cartlabel, .userlabel, .nav #search_history, .nav > .search_history > a[title="View your search history"], .langlabel {
         color: [% navbar_label_color %];
     }
 [% END %]
