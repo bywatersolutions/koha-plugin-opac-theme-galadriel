@@ -56,10 +56,10 @@
 }
 
 [% IF enable_navbar_color %]
-    .navbar-inverse .navbar-inner {
+    #header-region {
         background: [% navbar_color %] none;
     }
-    .navbar-inverse .divider-vertical {
+    #header-region .divider-vertical {
         border-left-color: [% navbar_color %];
         border-right-color: [% navbar_color %];
     }
@@ -72,7 +72,11 @@
 [% END %]
 
 [% IF enable_navbar_label_color %]
-    .listslabel, .cartlabel, .userlabel, .nav #search_history, .nav > .search_history > a[title="View your search history"], .langlabel {
+    .listslabel, 
+    .cartlabel, 
+    .userlabel, 
+    .nav-link[href="/cgi-bin/koha/opac-search-history.pl"],
+    .langlabel {
         color: [% navbar_label_color %];
     }
 [% END %]
@@ -88,7 +92,7 @@
 [% END %]
 
 [% IF enable_navbar_list_color %]
-    .dropdown-menu > li > a:hover {
+    .dropdown-menu > .dropdown-item:hover {
         background: [% navbar_list_color %] !important;
     }
 [% END %]
@@ -144,7 +148,7 @@
         margin-left: 5px;
     }
 
-    .mastheadsearch input[type="text"] {
+    #translControl1 {
         background-color: #ffffff;
         border-top: 1px solid #E5E5E4;
         border-bottom: 1px solid #E5E5E4;
@@ -156,7 +160,7 @@
         -o-transition: border linear .2s, box-shadow linear .2s;
         transition: border linear .2s, box-shadow linear .2s;
         border-radius: 0 !important;
-        height: 22px;
+        height: 44px;
         padding: 10px;
         margin: 0px;
     }
@@ -276,7 +280,7 @@
 
 [% IF enable_breadcrumbs_background_color %]
     .breadcrumb {
-        background-color: [% breadcrumbs_background_color %]
+        background: [% breadcrumbs_background_color %]
     }
 [% END %]
 /* END breadcrumbs styles */
