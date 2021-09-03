@@ -37,7 +37,7 @@ if ($('#advsearch').length) {
 if ( !$('#opacheader').length ) {
     $('<div class="container-fluid"> <div class="row-fluid"> <div id="opacheader"><img class="headerLogo" src="[% header_url %]" /></div></div></div>').insertAfter($('#header-region'));
 } else {
-        $('#opacheader').prepend('<img class="headerLogo "src="[% header_url %]" />');
+        $('#opacheader').prepend('<img class="headerLogo" src="[% header_url %]" />');
 }
 [% END %]
 
