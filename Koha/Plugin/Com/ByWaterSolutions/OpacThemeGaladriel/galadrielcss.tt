@@ -171,44 +171,6 @@
 /* END breadcrumbs styles */
 
 /* START login box styles */
-[% IF enable_login_enhanced %]
-    #patronregistration-main p {
-        text-align: center;
-    }
-
-    #login #auth {
-        padding: 2em 1em 1em 1em;
-    }
-
-    #login #userid, 
-    #login #password {
-        all: unset;
-        background: #f2f2f2;
-        width: 100%;
-        border: 0;
-        margin: 0 0 15px;
-        padding: 15px;
-        box-sizing: border-box;
-        font-size: 14px;
-    }
-
-    #login #auth .btn {
-        text-transform: uppercase;
-        outline: 0;
-        width: 100%;
-        border: 0;
-        padding: 15px;
-        color: #FFFFFF;
-        font-size: 14px;
-        font-weight: 600 !important;
-        border-radius: 0;
-    }
-
-    #login legend {
-        font-size: 18px;
-    }
-[% END %]
-
 [% IF enable_login_box_background_color %]
     #login {
         background-color: [% login_box_background_color %];
@@ -219,7 +181,8 @@
 [% END %]
 
 [% IF enable_login_box_text_color %]
-    #login {
+    #login label[for="userid"],
+    #login label[for="password"]{
         color: [% login_box_text_color %];
     }
 [% END %]

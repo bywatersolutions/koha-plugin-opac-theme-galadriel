@@ -33,11 +33,11 @@ our $VERSION = "{VERSION}";
 
 our $metadata = {
     name            => 'Galadriel OPAC Theme plugin',
-    author          => 'Kyle M Hall',
-    description     => 'Install the Galadriel OPAC theme ( design by Michael Cabus )',
+    author          => 'Lucas Gass, ByWater Solutions',
+    description     => 'Install the Galadriel OPAC theme',
     date_authored   => '2018-01-29',
     date_updated    => '1900-01-01',
-    minimum_version => '16.05',
+    minimum_version => '21.05',
     maximum_version => undef,
     version         => $VERSION,
 };

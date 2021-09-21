@@ -216,47 +216,44 @@ $( function() {
               <div id="tabs-5">
             <fieldset>
                 <legend>Login Box</legend>
-                <input type="checkbox" name="enable_login_enhanced" [% IF enable_login_enhanced %]checked="checked"[% END %] />
-                <label for="enabled_login_enhanced">Alternate Login Box style: </label>
-                <p/>
 
                 <input type="checkbox" name="enable_login_box_border_top_color" [% IF enable_login_box_border_top_color %]checked="checked"[% END %] />
-                <label for="login_box_border_top_color">Top border color/width: </label>
+                <label for="login_box_border_top_color">Top border color: </label>
                 <input name="login_box_border_top_color" id="login_box_border_top_color" type="text" class="color" value="[% login_box_border_top_color %]" />
                 <p/>
 
                 <input type="checkbox" name="enable_login_box_text_top_color" [% IF enable_login_box_text_top_color %]checked="checked"[% END %] />
-                <label for="login_box_text_top_color">Top text: </label>
+                <label for="login_box_text_top_color">Login legend text color: </label>
                 <input name="login_box_text_top_color" id="login_box_text_top_color" type="text" class="color" value="[% login_box_text_top_color %]" />
                 <p/>
 
                 <input type="checkbox" name="enable_login_box_background_color" [% IF enable_login_box_background_color %]checked="checked"[% END %] />
-                <label for="login_box_background_color">Background: </label>
+                <label for="login_box_background_color">Login box background color: </label>
                 <input name="login_box_background_color" id="login_box_background_color" type="text" class="color" value="[% login_box_background_color %]" />
                 <p/>
 
                 <input type="checkbox" name="enable_login_box_text_color" [% IF enable_login_box_text_color %]checked="checked"[% END %] />
-                <label for="login_box_text_color">Text: </label>
+                <label for="login_box_text_color">Login label text color: </label>
                 <input name="login_box_text_color" id="login_box_text_color" type="text" class="color" value="[% login_box_text_color %]" />
                 <p/>
 
                 <input type="checkbox" name="enable_login_box_link_color" [% IF enable_login_box_link_color %]checked="checked"[% END %] />
-                <label for="login_box_link_color">Link: </label>
+                <label for="login_box_link_color">Register here link color: </label>
                 <input name="login_box_link_color" id="login_box_link_color" type="text" class="color" value="[% login_box_link_color %]" />
                 <p/>
 
                 <input type="checkbox" name="enable_login_button_color" [% IF enable_login_button_color %]checked="checked"[% END %] />
-                <label for="login_button_color">Login button background: </label>
+                <label for="login_button_color">Login button background color: </label>
                 <input name="login_button_color" id="login_button_color" type="text" class="color" value="[% login_button_color %]" />
                 <p/>
 
                 <input type="checkbox" name="enable_login_button_hover_color" [% IF enable_login_button_hover_color %]checked="checked"[% END %] />
-                <label for="login_button_hover_color">Button Hover Color: </label>
+                <label for="login_button_hover_color">Login button background color (on hover): </label>
                 <input name="login_button_hover_color" id="login_button_hover_color" type="text" class="color" value="[% login_button_hover_color %]" />
                 <p/>
 
                 <input type="checkbox" name="enable_login_button_hover_text_color" [% IF enable_login_button_hover_text_color %]checked="checked"[% END %] />
-                <label for="login_button_hover_text_color">Button Hover Text Color: </label>
+                <label for="login_button_hover_text_color">Login button text color (on hover): </label>
                 <input name="login_button_hover_text_color" id="login_button_hover_text_color" type="text" class="color" value="[% login_button_hover_text_color %]" />
                 <p/>
 
@@ -363,12 +360,12 @@ $( function() {
 
             <hr />
             <input type="checkbox" name="enable_cover_height" [% IF enable_cover_height %]checked="checked"[% END %] />
-            <label for="cover_height">Normalize cover height in Search Results: </label>
+            <label for="cover_height">Set cover image height: </label>
             <input name="cover_height" id="cover_height" type="text" size="2" value="[% cover_height %]" /> px
             <p/>
 
             <input type="checkbox" name="enable_cover_width" [% IF enable_cover_width %]checked="checked"[% END %] />
-            <label for="cover_width">Normalize cover width in Search Results: </label>
+            <label for="cover_width">Set cover image width: </label>
             <input name="cover_width" id="cover_width" type="text" size="2" value="[% cover_width %]" /> px
             <p/>
 
@@ -388,7 +385,7 @@ $( function() {
             <p/>
 
             <input type="checkbox" name="enable_action_buttons" [% IF enable_action_buttons %]checked="checked"[% END %] />
-            <label for="enable_action_buttons">Turn Action Items Into Buttons (Place Hold, Save To Lists, Add to Cart) </label>
+            <label for="enable_action_buttons">Turn Place hold, Save to lists, Add to cart links into buttons: </label>
             <p/>
 
 
