@@ -83,3 +83,7 @@ if ($('.bibliocol, #catalogue_detail_biblio').length ) {
 }
 [% END %]
 
+//placeholder text
+[% IF enable_placeholder_text %]
+    $('#translControl1').attr('placeholder', '[% placeholder_text%]');
+[% END %]

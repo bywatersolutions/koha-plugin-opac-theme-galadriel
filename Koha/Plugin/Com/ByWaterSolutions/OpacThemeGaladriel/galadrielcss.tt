@@ -12,7 +12,7 @@
 [% END %]
 
 [% IF enable_body_background_color %]
-    #header-region,body {
+    #header-region, body {
       background-color: [% body_background_color %];
       border-color: [% body_background_color %];
     }
@@ -24,7 +24,7 @@
 [% END %]
 
 [% IF enable_body_padding %]
-    #wrap {
+    #wrapper {
         padding-right: 0;
         padding-left: 0;
     }
@@ -82,7 +82,15 @@
 [% END %]
 
 [% IF enable_navbar_label_hover_color %]
-    .listslabel:hover, .cartlabel:hover, .userlabel:hover, .nav #search_history:hover, .nav > .search_history > a[title="View your search history"]:hover, .listslabel:active, .cartlabel:active, .userlabel:active, .nav #search_history:active  {
+    .listslabel:hover, 
+    .cartlabel:hover, 
+    .userlabel:hover, 
+    .nav #search_history:hover, 
+    .nav > .search_history > a[title="View your search history"]:hover,
+    .listslabel:active,
+    .cartlabel:active,
+    .userlabel:active,
+    .nav #search_history:active  {
         color: [% navbar_label_hover_color %];
     }
     .navbar-inverse .navbar-inner li.dropdown > a:hover .caret {
@@ -100,133 +108,6 @@
 /* END Top Nav Bar styles */
 
 /* START mastheadsearch styles */
-[% IF enable_searchbox_enhanced %]
-    .mastheadsearch {
-        -webkit-border-radius: 7px;
-        -moz-border-radius: 7px;
-        border-radius: 7px;
-        padding: .8em;
-        margin: .5em 0;
-    }
-
-    .mastheadsearch label {
-        color: #366CA4;
-        font-weight: 500;
-        font-size: 18px;
-    }
-
-    #searchsubmit, .btn {
-        font-family: inherit;
-        text-transform: uppercase;
-        display: inline-block;
-        *display: inline;
-        *zoom: 1;
-        margin-bottom: 0;
-        font-size: 14px;
-        line-height: 20px;
-        text-align: center;
-        vertical-align: middle;
-        cursor: pointer;
-        text-shadow: none;
-        -webkit-border-radius: 4px;
-        -moz-border-radius: 4px;
-        border-radius: 4px;
-        *margin-left: .3em;
-        -webkit-box-shadow: none;
-        -moz-box-shadow: none;
-        box-shadow: none;
-        background-repeat: no-repeat;
-        border: none;
-        cursor: pointer;
-        display: inline-block;
-        font-size: 16px;
-        font-weight: 300;
-        line-height: normal;
-        padding: 12px 32px;
-        position: relative;
-        border-radius: 4px;
-        margin-left: 5px;
-    }
-
-    #translControl1 {
-        background-color: #ffffff;
-        border-top: 1px solid #E5E5E4;
-        border-bottom: 1px solid #E5E5E4;
-        -webkit-box-shadow: none;
-        -moz-box-shadow: none;
-        box-shadow: inset none;
-        -webkit-transition: none;
-        -moz-transition: none;
-        -o-transition: border linear .2s, box-shadow linear .2s;
-        transition: border linear .2s, box-shadow linear .2s;
-        border-radius: 0 !important;
-        height: 44px;
-        padding: 10px;
-        margin: 0px;
-    }
-
-    #toolbar select, #opac-main-search select, .toolbar select {
-        font-family: inherit;
-        text-indent: 0.01px;
-        padding: 8px 18px;
-        font-size: 14px;
-        background: #FFF;
-        border: 1px solid #E5E5E4;
-        border-radius: 0;
-        outline: 0;
-        color: #333333;
-        height: 44px;
-        background-color: rgb(255, 255, 255) !important;
-        border: 1px solid rgb(229, 229, 228);
-        outline: none;
-    }
-
-    #toolbar select, #opac-main-search select, .toolbar select, select {
-        text-indent: 0.01px;
-        padding: 8px 18px;
-        font-size: 14px;
-        background: #FFF;
-        border: 1px solid #E5E5E4;
-        border-radius: 0;
-        outline: 0;
-        color: #333333;
-        height: 44px;
-        appearance: menulist;
-        background-color: rgb(255, 255, 255);
-        border: 1px solid rgb(229, 229, 228);
-        outline: none;
-        color: rgb(0, 0, 0);
-        -webkit-appearance: menulist;
-        box-sizing: border-box;
-        text-indent: .01px;
-        text-overflow: '';
-
-    }
-
-    input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"], .uneditable-input {
-        height: 34px;
-    }
-
-    input, button, select, label {
-        line-height: 44px;
-    }
-
-    .input-mini {
-        width: 80px;
-    }
-
-    #booleansearch select {
-        width: 20%;
-    }
-
-    #memberentry_library label {
-        line-height: 20px;
-    }
-    #scrolltocontent {
-        top: -60px;
-    }
-[% END %]
-
 [% IF enable_searchbox_background_color %]
     .mastheadsearch {
         background: linear-gradient(to bottom, [% searchbox_background_color %] 38%, [% searchbox_background_color %] 100%) repeat scroll 0% 0% transparent !important;
@@ -234,7 +115,7 @@
 [% END %]
 
 [% IF enable_search_button_color %]
-    .btn-primary {
+    #searchsubmit {
         color: #000;
         text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.25);
         background-color: [% search_button_color %] !important;
@@ -257,6 +138,10 @@
 /* END  mastheadsearch styles */
 
 /* START moresearches styles */
+#moresearches {
+    width: 100%;
+}
+
 [% IF enable_link_color %]
     #moresearches a, #moresearches a:link {
       color: [% link_color %];
@@ -295,7 +180,8 @@
         padding: 2em 1em 1em 1em;
     }
 
-    #login #userid, #login #password {
+    #login #userid, 
+    #login #password {
         all: unset;
         background: #f2f2f2;
         width: 100%;

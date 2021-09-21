@@ -131,7 +131,7 @@ $( function() {
                 <p/>
 
                 <input type="checkbox" name="enable_rounded_corners" [% IF enable_rounded_corners %]checked="checked"[% END %] />
-                <label for="enabled_rounded_corners">Bring back rounded corners: </label>
+                <label for="enabled_rounded_corners">Rounded corners: </label>
                 <p/>
         </fieldset>
               </div>
@@ -171,10 +171,6 @@ $( function() {
             <fieldset>
                 <legend>Search box</legend>
 
-                <input type="checkbox" name="enable_searchbox_enhanced" [% IF enable_searchbox_enhanced %]checked="checked"[% END %] />
-                <label for="enabled_searchbox_enhanced">Alternate Search Bar style: </label>
-                <p/>
-
                 <input type="checkbox" name="enable_searchbox_background_color" [% IF enable_searchbox_background_color %]checked="checked"[% END %] />
                 <label for="searchbox_background_color">Search box background: </label>
                 <input name="searchbox_background_color" id="searchbox_background_color" type="text" class="color" value="[% searchbox_background_color %]" />
@@ -194,6 +190,11 @@ $( function() {
                 <label for="search_focus_color">Search box focus outline color:</label>
                 <input name="search_focus_color" id="search_focus_color" type="text" class="color" value="[% search_focus_color %]" />
                 <p/>
+
+             <input type="checkbox" name="enable_placeholder_text" [% IF enable_placeholdertext %]checked="checked"[% END %] />
+             <label for="placeholder_text">Search bar placeholder text: </label>
+             <input name="placeholder_text" id="placeholder_text" type="text" size="120" value="[% placeholder_text %]" />
+             <p/>
             </fieldset>
               </div>
               <div id="tabs-4">
@@ -291,65 +292,76 @@ $( function() {
             <input type="checkbox" name="enable_opac_cover_images_drop_shadows" [% IF enable_opac_cover_images_drop_shadows %]checked="checked"[% END %] />
             <label for="enable_opac_cover_images_drop_shadows">Add drop shadows to cover images: </label>
             <p/>
-
-             <input type="checkbox" name="enable_opac_available_field_label" [% IF enable_opac_available_field_label %]checked="checked"[% END %] />
-            <label for="enable_opac_online_field_label">Hide the "Availability" LABEL </label>
+             
+            <h3>Availability</h3>
+            <input type="checkbox" name="enable_opac_available_field_label" [% IF enable_opac_available_field_label %]checked="checked"[% END %] />
+            <label for="enable_opac_online_field_label">Hide the "Availability" LABEL </label><br />
             <input type="checkbox" name="enable_opac_available_field" [% IF enable_opac_available_field %]checked="checked"[% END %] />
             <label for="enable_opac_available_field">Hide the "Availability" field in Search Results </label>
             <p/>
 
+            <h3>Online resources</h3>
              <input type="checkbox" name="enable_opac_online_field_label" [% IF enable_opac_online_field_label %]checked="checked"[% END %] />
-            <label for="enable_opac_online_field_label">Hide the "Online Resource" LABEL </label>
+            <label for="enable_opac_online_field_label">Hide the "Online Resource" LABEL </label><br />
             <input type="checkbox" name="enable_opac_online_field" [% IF enable_opac_online_field %]checked="checked"[% END %] />
             <label for="enable_opac_online_field">Hide the "Online Resource" field in Search Results </label>
             <p/>
 
+            <h3>Editions</h3>
              <input type="checkbox" name="enable_opac_edition_field_label" [% IF enable_opac_edition_field_label %]checked="checked"[% END %] />
-            <label for="enable_opac_edition_field_label">Hide the "Edition" LABEL </label>
+            <label for="enable_opac_edition_field_label">Hide the "Edition" LABEL </label><br />
             <input type="checkbox" name="enable_opac_edition_field" [% IF enable_opac_edition_field %]checked="checked"[% END %] />
             <label for="enable_opac_edition_field">Hide the "Edition" field in Search Results </label>
             <p/>
 
+            <h3>Source</h3>
             <input type="checkbox" name="enable_opac_source_field_label" [% IF enable_opac_source_field_label %]checked="checked"[% END %] />
-            <label for="enable_opac_edition_field_label">Hide the "Source" LABEL</label>
+            <label for="enable_opac_edition_field_label">Hide the "Source" LABEL</label><br />
             <input type="checkbox" name="enable_opac_source_field" [% IF enable_opac_source_field %]checked="checked"[% END %] />
             <label for="enable_opac_edition_field">Hide the "Source" field in Search Results </label>
             <p/>
 
+            <h3>Material type</h3>
             <input type="checkbox" name="enable_opac_material_field_label" [% IF enable_opac_material_field_label %]checked="checked"[% END %] />
-            <label for="enable_opac_material_field_label">Hide the "Material Type" LABEL </label>
+            <label for="enable_opac_material_field_label">Hide the "Material Type" LABEL </label><br />
             <input type="checkbox" name="enable_opac_material_field" [% IF enable_opac_material_field %]checked="checked"[% END %] />
             <label for="enable_opac_material_field">Hide the "Material Type" field in Search Results </label>
             <p/>
 
+            <h3>Publisher</h3>
             <input type="checkbox" name="enable_opac_publisher_field_label" [% IF enable_opac_publisher_field_label %]checked="checked"[% END %] />
-            <label for="enable_opac_publisher_field_label">Hide the "Publisher" LABEL </label>
+            <label for="enable_opac_publisher_field_label">Hide the "Publisher" LABEL </label><br />
             <input type="checkbox" name="enable_opac_publisher_field" [% IF enable_opac_publisher_field %]checked="checked"[% END %] />
             <label for="enable_opac_publisher_field">Hide the "Publisher" field in Search Results </label>
             <p/>
 
+            <h3>Star ratings</h3>
             <input type="checkbox" name="enable_opac_ratings_field_label" [% IF enable_opac_ratings_field_label %]checked="checked"[% END %] />
-            <label for="enable_opac_ratings_field_label">Hide the "Ratings" LABEL </label>
+            <label for="enable_opac_ratings_field_label">Hide the "Ratings" LABEL </label><br />
             <input type="checkbox" name="enable_opac_ratings_field" [% IF enable_opac_ratings_field %]checked="checked"[% END %] />
             <label for="enable_opac_ratings_field">Hide the "Ratings" field in Search Results </label>
             <p/>
 
+            <h3>Other title</h3>
             <input type="checkbox" name="enable_other_title_label" [% IF enable_other_title_label %]checked="checked"[% END %] />
-            <label for="enable_other_title_label">Hide the "Other Title" LABEL </label>
+            <label for="enable_other_title_label">Hide the "Other Title" LABEL </label><br />
             <input type="checkbox" name="enable_other_title" [% IF enable_other_title %]checked="checked"[% END %] />
             <label for="enable_other_title">Hide the "Other Title" field in Search Results </label>
             <p/>
 
+            <h3>Dissertation note</h3>
             <input type="checkbox" name="enable_opac_dissnote_label" [% IF enable_opac_dissnote_label %]checked="checked"[% END %] />
-            <label for="enable_other_title_label">Hide the "Dissertation Note" LABEL </label>
+            <label for="enable_other_title_label">Hide the "Dissertation Note" LABEL </label><br />
             <input type="checkbox" name="enable_opac_dissnote" [% IF enable_opac_dissnote %]checked="checked"[% END %] />
             <label for="enable_other_title">Hide the "Dissertation Note" field in Search Results </label>
             <p/>
 
+            <h3>Statement of responsbility</h3>
             <input type="checkbox" name="enable_245_title" [% IF enable_245_title %]checked="checked"[% END %] />
             <label for="enable_245_title">Hide the 245C (Statement of Responsbility) from title </label>
             <p/>
 
+            <hr />
             <input type="checkbox" name="enable_cover_height" [% IF enable_cover_height %]checked="checked"[% END %] />
             <label for="cover_height">Normalize cover height in Search Results: </label>
             <input name="cover_height" id="cover_height" type="text" size="2" value="[% cover_height %]" /> px
