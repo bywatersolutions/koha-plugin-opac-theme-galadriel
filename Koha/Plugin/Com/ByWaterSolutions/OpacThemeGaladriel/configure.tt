@@ -118,21 +118,18 @@ $( function() {
                 </select>
                 <p/>
                 <input type="checkbox" name="enable_body_background_color" [% IF enable_body_background_color %]checked="checked"[% END %] />
-                <label for="body_background_color">Background: </label>
+                <label for="body_background_color">Main background color: </label>
                 <input name="body_background_color" id="body_background_color" type="text" class="color" value="[% body_background_color %]" />
                 <p/>
 
 
         </fieldset>
         <fieldset id="bodyopts">
-                <legend>General body options</legend>
+                <legend>General options</legend>
                 <input type="checkbox" name="enable_body_padding" [% IF enable_body_padding %]checked="checked"[% END %] />
                 <label for="enabled_body_padding">Eliminate extra left/right body padding: </label>
                 <p/>
 
-                <input type="checkbox" name="enable_rounded_corners" [% IF enable_rounded_corners %]checked="checked"[% END %] />
-                <label for="enabled_rounded_corners">Rounded corners: </label>
-                <p/>
         </fieldset>
               </div>
               <div id="tabs-2">
@@ -200,6 +197,11 @@ $( function() {
               <div id="tabs-4">
             <fieldset>
                 <legend>More searches</legend>
+
+                <input type="checkbox" name="enable_moresearches_font_size" [% IF enable_moresearches_font_size %]checked="checked"[% END %] />
+                <label for="moresearches_font_size">Font size: </label>
+                <input name="moresearches_font_size" id="moresearches_font_size" type="text" size="2" placeholder="px" value="[% moresearches_font_size %]" />
+                <p/>
 
                 <input type="checkbox" name="enable_link_color" [% IF enable_link_color %]checked="checked"[% END %] />
                 <label for="link_color">Link Color: </label>
@@ -270,6 +272,10 @@ $( function() {
                 <input type="checkbox" name="enable_breadcrumbs_background_color" [% IF enable_breadcrumbs_background_color %]checked="checked"[% END %] />
                 <label for="breadcrumbs_background_color">Background: </label>
                 <input name="breadcrumbs_background_color" id="breadcrumbs_background_color" type="text" class="color" value="[% breadcrumbs_background_color %]" />
+                <p/>
+
+                <input type="checkbox" name="enable_hide_breadcrumbs" [% IF enable_hide_breadcrumbs %]checked="checked"[% END %] />
+                <label for="enabled_hide_breadcrumbs">Hide breadcrumbs on OPAC main page: </label>
                 <p/>
             </fieldset>
               </div>
@@ -390,6 +396,61 @@ $( function() {
 
 
 
+        </fieldset>
+        <fieldset>
+            <legend>Search facets/filter</legend>
+            <input type="checkbox" name="enable_alternate_facet" [% IF enable_alternate_facet %]checked="checked"[% END %] />
+            <label for="enable_alternate_facet">Enable alternate facet style: </label>
+            <p/>
+            <hr />
+            <input type="checkbox" name="enable_hide_availability_facet" [% IF enable_hide_availability_facet %]checked="checked"[% END %] />
+            <label for="enable_hide_availability_facet">Hide "Availability" facet: </label>
+            <p/>
+            <input type="checkbox" name="enable_hide_author_facet" [% IF enable_hide_author_facet %]checked="checked"[% END %] />
+            <label for="enable_hide_author_facet">Hide "Author" facet: </label>
+            <p/>
+            <input type="checkbox" name="enable_hide_collection_facet" [% IF enable_hide_collection_facet %]checked="checked"[% END %] />
+            <label for="enable_hide_collection_facet">Hide "Collections" facet: </label>
+            <p/>
+            <input type="checkbox" name="enable_hide_holding_facet" [% IF enable_hide_holding_facet %]checked="checked"[% END %] />
+            <label for="enable_hide_holding_facet">Hide "Holding libraries" facet: </label>
+            <p/>
+            <input type="checkbox" name="enable_hide_itypes_facet" [% IF enable_hide_itypes_facet %]checked="checked"[% END %] />
+            <label for="enable_hide_itypes_facet">Hide "Item types" facet: </label>
+            <p/>
+            <input type="checkbox" name="enable_hide_loc_facet" [% IF enable_hide_loc_facet %]checked="checked"[% END %] />
+            <label for="enable_hide_loc_facet">Hide "Locations" facet: </label>
+            <p/>
+            <input type="checkbox" name="enable_hide_series_facet" [% IF enable_hide_series_facet %]checked="checked"[% END %] />
+            <label for="enable_hide_series_facet">Hide "Series" facet: </label>
+            <p/>
+            <input type="checkbox" name="enable_hide_place_facet" [% IF enable_hide_place_facet %]checked="checked"[% END %] />
+            <label for="enable_hide_place_facet">Hide "Places" facet: </label>
+            <p/>
+            <input type="checkbox" name="enable_hide_topic_facet" [% IF enable_hide_topic_facet %]checked="checked"[% END %] />
+            <label for="enable_hide_topic_facet">Hide "Topics" facet: </label>
+            <p/>
+            <input type="checkbox" name="enable_hide_title_facet" [% IF enable_hide_title_facet %]checked="checked"[% END %] />
+            <label for="enable_hide_title_facet">Hide "Titles" facet: </label>
+            <p/>
+            <hr />
+
+            <label for="enable_hidden_facet_itypes">Unwanted facet "Item types": </label>
+            <input name="hidden_facet_itypes_text" class="hidden_facet_itypes_text" type="text" size="20" value="[% hidden_facet_itypes_text %]" />
+            (use item type codes to hide unwanted item types from facets, seperated by a |)
+            <p/>
+            <label for="enable_hidden_facet_ccodes">Unwanted facet "Collections": </label>
+            <input name="hidden_facet_ccodes_text" class="hidden_facet_ccodes_text" type="text" size="20" value="[% hidden_facet_ccodes_text %]" />
+            (use CCODE authorized values to hide unwanted collection from facets, seperated by a |)
+            <p/>
+            <label for="enable_hidden_facet_locations">Unwanted facet "Locations": </label>
+            <input name="hidden_facet_locations_text" class="hidden_facet_locations_text" type="text" size="20" value="[% hidden_facet_locations_text %]" />
+            (use LOC authorized values to hide unwanted locations from facets, seperated by a |)
+            <p/>
+            <label for="enable_hidden_facet_holdings">Unwanted facet "Holding libraries": </label>
+            <input name="hidden_facet_holdings_text" class="hidden_facet_holdings_text" type="text" size="20" value="[% hidden_facet_holdings_text %]" />
+            (use holding library BRANCHCODE to hide unwanted holding libraries from facets, seperated by a |)
+            <p/>
         </fieldset>
               </div>
               <div id="tabs-8">

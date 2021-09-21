@@ -1,3 +1,56 @@
+if ( $('#search-facets').length ) {
+    /* search facets */
+    [% IF enable_alternate_facet %]
+          $('.check_facet ul').toggle();
+          $('a[title^="Remove facet"]').css('text-decoration','none').parent().addClass('selected');
+          $('.selected').each( function() {
+            var this_facet = $(this).children('a').clone().text('');
+            var text = $(this).children('.facet-label').text();
+            $(this).html(`<span class="facet-label">${text}<span>`).wrap(this_facet);
+          });
+    [% END%]
+    [% IF hidden_facet_holdings_text %]
+        $('#holdingbranch_id .facet-label > a').each( function() {
+            let this_facet_holding = $(this).attr('title');
+            let hidden_facet_holdings = '[% hidden_facet_holdings_text %]';
+            let facet_holdings_to_hide = hidden_facet_holdings.split("|");
+            if ( $.inArray(this_facet_holding, facet_holdings_to_hide) != -1 ) {
+                $(this).parent().hide();
+            }
+        });
+    [% END %]
+    [% IF hidden_facet_itypes_text %]
+        $('#itype_id .facet-label > a').each( function() {
+            let this_facet_itype = $(this).attr('title');
+            let hidden_facet_itypes = '[% hidden_facet_itypes_text %]';
+            let facet_itypes_to_hide = hidden_facet_itypes.split("|");
+            if ( $.inArray(this_facet_itype, facet_itypes_to_hide) != -1 ) {
+                $(this).parent().hide();
+            }
+        });
+    [% END %]
+    [% IF hidden_facet_ccodes_text %]
+        $('#ccode_id .facet-label > a').each( function() {
+            let this_facet_ccode = $(this).attr('title');
+            let hidden_facet_ccodes = '[% hidden_facet_ccodes_text %]';
+            let facet_ccodes_to_hide = hidden_facet_ccodes.split("|");
+            if ( $.inArray(this_facet_ccode, facet_ccodes_to_hide) != -1 ) {
+                $(this).parent().hide();
+            }
+        });
+    [% END %]
+    [% IF hidden_facet_locations_text %]
+        $('#location_id .facet-label > a').each( function() {
+            let this_facet_location = $(this).attr('title');
+            let hidden_facet_locations = '[% hidden_facet_locations_text %]';
+            let facet_locations_to_hide = hidden_facet_locations.split("|");
+            if ( $.inArray(this_facet_location, facet_locations_to_hide) != -1 ) {
+                $(this).parent().hide();
+            }
+        });
+    [% END %]
+}
+
 if ($('#advsearch').length) {
     [% IF hidden_itypes_text %]
         $('#advsearch-itemtypes .span3').each(function() {

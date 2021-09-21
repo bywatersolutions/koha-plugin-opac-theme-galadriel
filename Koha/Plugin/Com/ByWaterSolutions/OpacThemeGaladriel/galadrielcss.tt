@@ -30,6 +30,12 @@
     }
 [% END %]
 
+[% IF enable_hide_breadcrumbs %]
+    #opac-main .breadcrumb {
+        display: none;
+    }
+[% END%]
+
 [% IF koha_logo_color %]
     #logo {
         background: transparent url([% koha_logo_color %]) no-repeat scroll 0;
@@ -117,9 +123,7 @@
 [% IF enable_search_button_color %]
     #searchsubmit {
         color: #000;
-        text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.25);
-        background-color: [% search_button_color %] !important;
-        background-image: linear-gradient(to bottom, [% search_button_color %], [% search_button_color %]) !important;
+        background: [% search_button_color %] !important;
     }
 [% END %]
 
@@ -141,6 +145,15 @@
 #moresearches {
     width: 100%;
 }
+
+[% IF enable_moresearches_font_size %]
+    #moresearches li a {
+        font-size: [% moresearches_font_size %]px;
+    }
+    #moresearches li::after {
+        font-size: [% moresearches_font_size %]px;
+    }
+[% END  %]
 
 [% IF enable_link_color %]
     #moresearches a, #moresearches a:link {
@@ -233,6 +246,103 @@
 /* END login box styles*/
 
 /* START search results page styles */
+/* search facets*/
+[% IF enable_alternate_facet %]
+#search-facets a {
+	text-decoration: none;
+}
+#search-facets .fa {
+	padding-right: 3px;
+}
+.selected {
+	font-weight: 700 !important;
+}
+.check_facet::before {
+    font-family: "FontAwesome";
+	content: '\f054';
+    font-weight: 100;
+	font-size: 10px;
+	padding-right: 3px;
+}
+.check_facet_selected::before {
+	content: '\f078';
+}
+.facet-label, .facet-label a {
+	color: #000;
+}
+.facet-label a::before {
+    font-family: "FontAwesome";
+	content: '\f096';
+    padding-right: 3px;
+    font-weight: 100;
+}
+.facet-label a:hover::before {
+    opacity: .5;
+    content: '\f14a';
+	color: #85ca11;
+}
+.selected .facet-label::before {
+    color: #85ca11;
+    font-family: "FontAwesome";
+	content: '\f14a';
+    padding-right: 3px;
+}
+.selected .facet-label:hover::before {
+	content: '\f146';
+    color: red;
+    opacity: .5;
+}
+[% END %]
+[% IF enable_hide_availability_facet %]
+    li#availability_facet {
+        display: none !important;
+    }
+[% END %]
+[% IF enable_hide_author_facet %]
+    li#au_id {
+        display: none !important;
+    }
+[% END %]
+[% IF enable_hide_collection_facet %]
+    li#ccode_id {
+        display: none !important;
+    }
+[% END %]
+[% IF enable_hide_holding_facet %]
+    li#holdingbranch_id {
+        display: none !important;
+    }
+[% END %]
+[% IF enable_hide_itypes_facet %]
+    li#itype_id {
+        display: none !important;
+    }
+[% END %]
+[% IF enable_hide_loc_facet %]
+    li#location_id {
+        display: none !important;
+    }
+[% END %]
+[% IF enable_hide_series_facet %]
+    li#se_id {
+        display: none !important;
+    }
+[% END %]
+[% IF enable_hide_place_facet %]
+    li#su-geo_id {
+        display: none !important;
+    }
+[% END %]
+[% IF enable_hide_topic_facet %]
+    li#su-to_id {
+        display: none !important;
+    }
+[% END %]
+[% IF enable_hide_title_facet %]
+    li#su-ut_id {
+        display: none !important;
+    }
+[% END %]
 [% IF enable_cover_url %]
     .no-image {
         background-image: url('[% cover_url %]');
