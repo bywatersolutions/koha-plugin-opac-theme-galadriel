@@ -62,17 +62,21 @@
 }
 
 [% IF enable_navbar_color %]
-    #header-region {
+    .navbar {
         background: [% navbar_color %] none;
     }
-    #header-region .divider-vertical {
+    .navbar .divider-vertical {
         border-left-color: [% navbar_color %];
         border-right-color: [% navbar_color %];
     }
 [% END %]
 
 [% IF enable_navbar_icon_color %]
-    #carticon, #listsmenu .fa, #user-menu .fa-user, #langmenu .fa-flag {
+    #carticon, 
+    #listsmenu .fa, 
+    #user-menu .fa-user, 
+    #langmenu .fa-flag,
+    #members .fa-user {
       color: [% navbar_icon_color %];
     }
 [% END %]
