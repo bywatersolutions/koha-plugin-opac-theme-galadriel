@@ -1,4 +1,3 @@
-
 /* START Global styles */
 [% IF enable_font_size %]
       body {
