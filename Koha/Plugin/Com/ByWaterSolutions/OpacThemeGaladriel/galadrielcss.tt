@@ -1,3 +1,4 @@
+
 /* START Global styles */
 [% IF enable_font_size %]
       body {
@@ -36,7 +37,7 @@
     }
 [% END%]
 
-[% IF koha_logo_color %]
+[% IF enable_koha_logo_color %]
     #logo {
         background: transparent url([% koha_logo_color %]) no-repeat scroll 0;
     }
@@ -138,8 +139,10 @@
 [% END %]
 
 [% IF enable_search_focus_color %]
-    input[type="text"]:focus {
-        border-color: [% search_focus_color %];
+    input[type="text"]:focus,
+    input[type="password"]:focus,
+    select:focus {
+        border-color: [% search_focus_color %] !important;
         box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(0,0,0,.075);
     }
 [% END %]
@@ -354,13 +357,14 @@
 [% END %]
 
 [% IF enable_opac_cover_images_on_left %]
-    .coverimages {
-        left: 0;
-        float: left;
-        padding-right: 50px;
-        padding-bottom: 40px; 
-        top: 0;
+    #results .bibliocol {
+        display: flex;
     }
+    .coverimages {
+        margin-right: 1em;
+    }
+}
+
 [% END %]
 
 [% IF enable_opac_cover_images_drop_shadows %]
@@ -484,19 +488,14 @@
     .coverimages img {
         height: [% cover_height %]px;
     }
-    .no-image {
-        height: [% cover_height %]px;
-    }
-        .coverimages  {
+
+    .coverimages img  {
         height: [% cover_height %]px;
     } 
 [% END %]
 
 [% IF enable_cover_width %]
     .coverimages img {
-        width: [% cover_width %]px;
-    }
-    .no-image {
         width: [% cover_width %]px;
     }
     .coverimages {
@@ -630,4 +629,14 @@
 	#advsearches .span3 {
 	  margin-left: 0 !important;
 	}
+[% END %]
+
+/* media queries */
+@media screen and
+(max-width:608px) {
+    [% IF enable_opac_cover_images_on_left %]
+        #results .bibliocol {
+            display: block;
+        }
+    }
 [% END %]
