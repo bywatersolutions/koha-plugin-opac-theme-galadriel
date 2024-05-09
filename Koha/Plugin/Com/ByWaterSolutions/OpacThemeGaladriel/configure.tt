@@ -17,9 +17,6 @@
 
   <script type="text/javascript">
     $(document).ready(function() {
-$( function() {
-  $( "#tabs" ).tabs();
-} );
       $('#font-preview').hide();
 
       $('.color').spectrum({
@@ -74,20 +71,38 @@ $( function() {
         <input type="hidden" name="class" value="[% CLASS %]"/>
         <input type="hidden" name="method" value="[% METHOD %]"/>
             <div id="tabs">
-              <ul>
-                <li><a href="#tabs-1" title="Global">Global</a></li>
-                <li><a href="#tabs-2" title="Top navigation bar">Top navigation bar</a></li>
-                <li><a href="#tabs-3" title="Main search">Main search bar</a></li>
-                <li><a href="#tabs-4" title="More searches">More searches</a></li>
-                <li><a href="#tabs-5" title="Log in box">Log in box</a></li>
-                <li><a href="#tabs-6" title="Breadcrumbs">Breadcrumbs</a></li>
-                <li><a href="#tabs-7" title="Search Results">Search results</a></li>
-                <li><a href="#tabs-8" title="Online resources">Online resources</a></li>
-                <li><a href="#tabs-9" title="Advanced search">Advanced search</a></li>
+              <ul class="nav nav-tabs" role="tablist">
+                <li role="presentation" class="active">
+                    <a href="#tabs-1" title="Global" aria-controls="tabs-1" role="tab" data-toggle="tab">Global</a>
+                </li>
+                <li role="presentation">
+                    <a href="#tabs-2" title="Top navigation bar" aria-controls="tabs-2" role="tab" data-toggle="tab">Top navigation bar</a>
+                </li>
+                <li role="presentation">
+                    <a href="#tabs-3" title="Main search" aria-controls="tabs-3" role="tab" data-toggle="tab">Main search bar</a>
+                </li>
+                <li role="presentation">
+                    <a href="#tabs-4" title="More searches" aria-controls="tabs-4" role="tab" data-toggle="tab">More searches</a>
+                </li>
+                <li role="presentation">
+                    <a href="#tabs-5" title="Log in box" aria-controls="tabs-5" role="tab" data-toggle="tab">Log in box</a>
+                </li>
+                <li role="presentation">
+                    <a href="#tabs-6" title="Breadcrumbs" aria-controls="tabs-6" role="tab" data-toggle="tab">Breadcrumbs</a>
+                </li>
+                <li role="presentation">
+                    <a href="#tabs-7" title="Search Results" aria-controls="tabs-7" role="tab" data-toggle="tab">Search results</a>
+                </li>
+                <li role="presentation">
+                    <a href="#tabs-8" title="Online resources" aria-controls="tabs-8" role="tab" data-toggle="tab">Online resources</a>
+                </li>
+                <li role="presentation">
+                    <a href="#tabs-9" title="Advanced search" aria-controls="tabs-9" role="tab" data-toggle="tab">Advanced search</a>
+                </li>
               </ul>
-
-              <div id="tabs-1">
-            <fieldset>
+              <div class="tab-content">
+              <div id="tabs-1" class="tab-pane active" role="tabpanel">
+                <fieldset>
                 <legend>Logo</legend>
 
                 <input type="checkbox" name="enable_header_url" [% IF enable_header_url %]checked="checked"[% END %] />
@@ -132,7 +147,7 @@ $( function() {
 
         </fieldset>
               </div>
-              <div id="tabs-2">
+              <div id="tabs-2" class="tab-pane" role="tabpanel">
 
         <fieldset>
                 <legend>Top Navigation bar</legend>
@@ -164,7 +179,7 @@ $( function() {
 
             </fieldset>
               </div>
-              <div id="tabs-3">
+              <div id="tabs-3" class="tab-pane" role="tabpanel">
             <fieldset>
                 <legend>Search box</legend>
 
@@ -194,7 +209,7 @@ $( function() {
              <p/>
             </fieldset>
               </div>
-              <div id="tabs-4">
+              <div id="tabs-4" class="tab-pane" role="tabpanel">
             <fieldset>
                 <legend>More searches</legend>
 
@@ -215,7 +230,7 @@ $( function() {
 
             </fieldset>
               </div>
-              <div id="tabs-5">
+              <div id="tabs-5" class="tab-pane" role="tabpanel">
             <fieldset>
                 <legend>Login Box</legend>
 
@@ -261,7 +276,7 @@ $( function() {
 
             </fieldset>
               </div>
-              <div id="tabs-6">
+              <div id="tabs-6" class="tab-pane" role="tabpanel">
             <fieldset>
                 <legend>Breadcrumbs</legend>
                 <input type="checkbox" name="enable_breadcrumbs_link_color" [% IF enable_breadcrumbs_link_color %]checked="checked"[% END %] />
@@ -279,7 +294,7 @@ $( function() {
                 <p/>
             </fieldset>
               </div>
-              <div id="tabs-7">
+              <div id="tabs-7" class="tab-pane" role="tabpanel">
         <fieldset>
             <legend>Search results</legend>
 
@@ -453,7 +468,7 @@ $( function() {
             <p/>
         </fieldset>
               </div>
-              <div id="tabs-8">
+              <div id="tabs-8" class="tab-pane" role="tabpanel">
         <fieldset>
             <legend>Online resources</legend>
 
@@ -520,9 +535,9 @@ $( function() {
             <input type="checkbox" name="enable_online_resource_overdrive" [% IF enable_online_resource_overdrive %]checked="checked"[% END %] />
             <label for="enable_online_resource_overdrive">Style the OverDrive results button: </label>
             </p>
-        </fieldset>
+            </fieldset>
               </div>
-              <div  id="tabs-9">
+              <div id="tabs-9" class="tab-pane" role="tabpanel">
                 <label for="enable_hidden_itypes">Unwanted item types: </label>
                 <input name="hidden_itypes_text" class="hidden_types_text" type="text" size="20" value="[% hidden_itypes_text %]" />
                 (use codes for unwanted item types seperated by a |)
@@ -537,12 +552,12 @@ $( function() {
                 <p/>
               </div>
             </div>
-
+        </div>
 
         <input type="hidden" name="save" value="1" />
 
         <button style="margin-bottom:3em;" type="submit" value="Save">Save & Exit</button>
         <button style="margin-bottom:3em;" id="save_continue">Save & continue</button>
     </form>
-
+</div>
 [% INCLUDE 'intranet-bottom.inc' %]
