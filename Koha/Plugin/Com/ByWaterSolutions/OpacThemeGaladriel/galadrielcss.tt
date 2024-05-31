@@ -264,8 +264,7 @@
 	font-weight: 700 !important;
 }
 .check_facet::before {
-    font-family: "FontAwesome";
-	content: '\f054';
+    font: var(--fa-font-solid);
     font-weight: 100;
 	font-size: 10px;
 	padding-right: 3px;
@@ -277,23 +276,26 @@
 	color: #000;
 }
 .facet-label a::before {
-    font-family: "FontAwesome";
+    font: var(--fa-font-solid);
 	content: '\f096';
     padding-right: 3px;
     font-weight: 100;
+    color: #ccc;
 }
 .facet-label a:hover::before {
+    font: var(--fa-font-solid);
     opacity: .5;
     content: '\f14a';
 	color: #85ca11;
 }
 .selected .facet-label::before {
+    font: var(--fa-font-solid);
     color: #85ca11;
-    font-family: "FontAwesome";
 	content: '\f14a';
     padding-right: 3px;
 }
 .selected .facet-label:hover::before {
+    font: var(--fa-font-solid);
 	content: '\f146';
     color: red;
     opacity: .5;
