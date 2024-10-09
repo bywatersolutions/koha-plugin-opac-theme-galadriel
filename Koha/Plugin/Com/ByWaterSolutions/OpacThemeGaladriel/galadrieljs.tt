@@ -1,3 +1,9 @@
+function getTypeFromUrl(urlString) {
+  const absoluteUrl = new URL(`${window.location.origin}${urlString}`);
+  const params = new URLSearchParams(absoluteUrl.search);
+  return params.get('limit').split(':')[1];
+}
+
 if ( $('#search-facets').length ) {
     /* search facets */
     [% IF enable_alternate_facet %]
@@ -11,41 +17,45 @@ if ( $('#search-facets').length ) {
     [% END%]
     [% IF hidden_facet_holdings_text %]
         $('#holdingbranch_id .facet-label > a').each( function() {
-            let this_facet_holding = $(this).attr('title');
+            let this_facet_holding = $(this).attr('href');
             let hidden_facet_holdings = '[% hidden_facet_holdings_text %]';
             let facet_holdings_to_hide = hidden_facet_holdings.split("|");
-            if ( $.inArray(this_facet_holding, facet_holdings_to_hide) != -1 ) {
-                $(this).parent().hide();
+            let this_holding = getTypeFromUrl(this_facet_holding);
+            if ( $.inArray(this_holding, facet_holdings_to_hide) != -1 ) {
+                $(this).closest('li').hide();
             }
         });
     [% END %]
     [% IF hidden_facet_itypes_text %]
         $('#itype_id .facet-label > a').each( function() {
-            let this_facet_itype = $(this).attr('title');
+            let this_facet_itype = $(this).attr('href');
             let hidden_facet_itypes = '[% hidden_facet_itypes_text %]';
             let facet_itypes_to_hide = hidden_facet_itypes.split("|");
-            if ( $.inArray(this_facet_itype, facet_itypes_to_hide) != -1 ) {
-                $(this).parent().hide();
+            let this_itype = getTypeFromUrl(this_facet_itype);
+            if ( $.inArray(this_itype, facet_itypes_to_hide) != -1 ) {
+                $(this).closest('li').hide();
             }
         });
     [% END %]
     [% IF hidden_facet_ccodes_text %]
         $('#ccode_id .facet-label > a').each( function() {
-            let this_facet_ccode = $(this).attr('title');
+            let this_facet_ccode = $(this).attr('href');
             let hidden_facet_ccodes = '[% hidden_facet_ccodes_text %]';
             let facet_ccodes_to_hide = hidden_facet_ccodes.split("|");
-            if ( $.inArray(this_facet_ccode, facet_ccodes_to_hide) != -1 ) {
-                $(this).parent().hide();
+            let this_ccode = getTypeFromUrl(this_facet_ccode);
+            if ( $.inArray(this_ccode, facet_ccodes_to_hide) != -1 ) {
+                $(this).closest('li').hide();
             }
         });
     [% END %]
     [% IF hidden_facet_locations_text %]
         $('#location_id .facet-label > a').each( function() {
-            let this_facet_location = $(this).attr('title');
+            let this_facet_location = $(this).attr('href');
             let hidden_facet_locations = '[% hidden_facet_locations_text %]';
             let facet_locations_to_hide = hidden_facet_locations.split("|");
-            if ( $.inArray(this_facet_location, facet_locations_to_hide) != -1 ) {
-                $(this).parent().hide();
+            let this_location = getTypeFromUrl(this_facet_location);
+            if ( $.inArray(this_location, facet_locations_to_hide) != -1 ) {
+                $(this).closest('li').hide();
             }
         });
     [% END %]
