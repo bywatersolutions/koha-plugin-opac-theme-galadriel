@@ -21,13 +21,8 @@
 [% INCLUDE 'header.inc' %]
 [% INCLUDE 'cat-search.inc' %]
 
-<nav aria-label="breadcrumb">
-  <ol class="breadcrumb">
-    <li class="breadcrumb-item"><a href="/cgi-bin/koha/mainpage.pl">Home</a></li>
-    <li class="breadcrumb-item"><a href="/cgi-bin/koha/plugins/plugins-home.pl">Plugins</a></li>
-    <li class="breadcrumb-item active" aria-current="page">Galadriel OPAC Theme &rsaquo; Configuration</li>
-  </ol>
-</nav>
+<div id="breadcrumbs"><a href="/cgi-bin/koha/mainpage.pl">Home</a> &rsaquo; <a href="/cgi-bin/koha/plugins/plugins-home.pl">Plugins</a> &rsaquo; Galadriel OPAC Theme &rsaquo; Configuration</div>
+
 
 <div id="doc3">
     <h3>Koha: Galadriel OPAC Theme Plugin: Configuration</h3>
@@ -37,37 +32,37 @@
         <input type="hidden" name="class" value="[% CLASS %]"/>
         <input type="hidden" name="method" value="[% METHOD %]"/>
             <div id="tabs">
-              <ul class="nav nav-tabs" id="configTabs" role="tablist">
-               <li class="nav-item" role="presentation">
-               <button class="nav-link active" id="tab1-tab" data-bs-toggle="tab" data-bs-target="#tabs-1" type="button" role="tab" aria-controls="tabs-1" aria-selected="true">Global</button>
+              <ul class="nav nav-tabs" role="tablist">
+                <li role="presentation" class="active">
+                    <a href="#tabs-1" title="Global" aria-controls="tabs-1" role="tab" data-toggle="tab">Global</a>
                 </li>
-                <li class="nav-item" role="presentation">
-                <button class="nav-link" id="tab2-tab" data-bs-toggle="tab" data-bs-target="#tabs-2" type="button" role="tab" aria-controls="tabs-2" aria-selected="false">Top navigation bar</button>
+                <li role="presentation">
+                    <a href="#tabs-2" title="Top navigation bar" aria-controls="tabs-2" role="tab" data-toggle="tab">Top navigation bar</a>
                 </li>
-                <li class="nav-item" role="presentation">
-                <button class="nav-link" id="tab3-tab" data-bs-toggle="tab" data-bs-target="#tabs-3" type="button" role="tab" aria-controls="tabs-3" aria-selected="false">Main search bar</button>
+                <li role="presentation">
+                    <a href="#tabs-3" title="Main search" aria-controls="tabs-3" role="tab" data-toggle="tab">Main search bar</a>
                 </li>
-                <li class="nav-item" role="presentation">
-                <button class="nav-link" id="tab4-tab" data-bs-toggle="tab" data-bs-target="#tabs-4" type="button" role="tab" aria-controls="tabs-4" aria-selected="false">More searches</button>
+                <li role="presentation">
+                    <a href="#tabs-4" title="More searches" aria-controls="tabs-4" role="tab" data-toggle="tab">More searches</a>
                 </li>
-                <li class="nav-item" role="presentation">
-                <button class="nav-link" id="tab5-tab" data-bs-toggle="tab" data-bs-target="#tabs-5" type="button" role="tab" aria-controls="tabs-5" aria-selected="false">Log in box</button>
+                <li role="presentation">
+                    <a href="#tabs-5" title="Log in box" aria-controls="tabs-5" role="tab" data-toggle="tab">Log in box</a>
                 </li>
-                <li class="nav-item" role="presentation">
-                <button class="nav-link" id="tab6-tab" data-bs-toggle="tab" data-bs-target="#tabs-6" type="button" role="tab" aria-controls="tabs-6" aria-selected="false">Breadcrumbs</button>
+                <li role="presentation">
+                    <a href="#tabs-6" title="Breadcrumbs" aria-controls="tabs-6" role="tab" data-toggle="tab">Breadcrumbs</a>
                 </li>
-                <li class="nav-item" role="presentation">
-                <button class="nav-link" id="tab7-tab" data-bs-toggle="tab" data-bs-target="#tabs-7" type="button" role="tab" aria-controls="tabs-7" aria-selected="false">Search results</button>
+                <li role="presentation">
+                    <a href="#tabs-7" title="Search Results" aria-controls="tabs-7" role="tab" data-toggle="tab">Search results</a>
                 </li>
-                <li class="nav-item" role="presentation">
-                <button class="nav-link" id="tab8-tab" data-bs-toggle="tab" data-bs-target="#tabs-8" type="button" role="tab" aria-controls="tabs-8" aria-selected="false">Online resources</button>
+                <li role="presentation">
+                    <a href="#tabs-8" title="Online resources" aria-controls="tabs-8" role="tab" data-toggle="tab">Online resources</a>
                 </li>
-                <li class="nav-item" role="presentation">
-                <button class="nav-link" id="tab9-tab" data-bs-toggle="tab" data-bs-target="#tabs-9" type="button" role="tab" aria-controls="tabs-9" aria-selected="false">Advanced search</button>
+                <li role="presentation">
+                    <a href="#tabs-9" title="Advanced search" aria-controls="tabs-9" role="tab" data-toggle="tab">Advanced search</a>
                 </li>
               </ul>
-              <div class="tab-content" id="configTabsContent">
-                <div class="tab-pane fade show active" id="tabs-1" role="tabpanel" aria-labelledby="tab1-tab">
+              <div class="tab-content">
+              <div id="tabs-1" class="tab-pane active" role="tabpanel">
                 <fieldset>
                 <legend>Logo</legend>
 
