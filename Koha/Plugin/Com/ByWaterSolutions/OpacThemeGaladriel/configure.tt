@@ -46,7 +46,7 @@
                     <a href="#tabs-4" title="More searches" aria-controls="tabs-4" role="tab" data-toggle="tab">More searches</a>
                 </li>
                 <li role="presentation">
-                    <a href="#tabs-5" title="Log in box" aria-controls="tabs-5" role="tab" data-toggle="tab">Log in box</a>
+                    <a href="#tabs-5" title="Log in box" aria-controls="tabs-5" role="tab" data-toggle="tab">Login box</a>
                 </li>
                 <li role="presentation">
                     <a href="#tabs-6" title="Breadcrumbs" aria-controls="tabs-6" role="tab" data-toggle="tab">Breadcrumbs</a>
