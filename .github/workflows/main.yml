@@ -89,7 +89,7 @@ jobs:
         cp env/defaults.env .env
         docker compose pull
 #   - name: Setup Debug Session
-#      uses: csexton/debugger-action@master
+#     uses: csexton/debugger-action@master
 
     - name: Run tests
       run: |
