@@ -42,7 +42,7 @@ jobs:
         GITHUB_CONTEXT: ${{ toJson(github) }}
       run: echo "$GITHUB_CONTEXT"
 
-    - uses: actions/checkout@v1
+    - uses: actions/checkout@v4
 
     - name: Get Koha Version Branch Name
       id: koha-version
@@ -87,7 +87,8 @@ jobs:
         mkdir -p env
         wget -O env/defaults.env https://gitlab.com/koha-community/koha-testing-docker/raw/main/env/defaults.env
         cp env/defaults.env .env
-        docker compose pull
+#    - name: Setup Debug Session
+#      uses: csexton/debugger-action@mastedocker compose pull
 
     - name: Run tests
       run: |
@@ -130,21 +131,23 @@ jobs:
     strategy:
       fail-fast: false
     steps:
-    - uses: actions/checkout@v1
+    - uses: actions/checkout@v4
 
     - name: Parse out and store the GitHub repository name
       id: myvars
       run: |
         IFS='/' read -r -a parts <<< "$GITHUB_REPOSITORY"
         GITHUB_REPO="${parts[1]}"
-        echo ::set-output name=github_repo::$GITHUB_REPO
+        #echo ::set-output name=github_repo::$GITHUB_REPO
+        echo "github_repo=$GITHUB_REPO" >> $GITHUB_OUTPUT
         echo "GITHUB REPO: $GITHUB_REPO"
 
         TAG_VERSION="${GITHUB_REF##*/}"
         echo "TAG VERSION: $TAG_VERSION"
         TAG_VERSION="${TAG_VERSION:1}"
         echo "TAG VERSION 2: $TAG_VERSION"
-        echo ::set-output name=tag_version::$TAG_VERSION
+        echo "tag_version=$TAG_VERSION" >> $GITHUB_OUTPUT
+        #echo ::set-output name=tag_version::$TAG_VERSION
 
     - name: Get Koha Version Branch Name
       id: koha-version-oldstable
@@ -176,7 +179,7 @@ jobs:
         ls -alh
 
     - name: Release
-      uses: softprops/action-gh-release@v1
+      uses: softprops/action-gh-release@v2
       if: startsWith(github.ref, 'refs/tags/')
       with:
         files: |
@@ -189,7 +192,7 @@ jobs:
     name: Keep Alive
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
     - name: Check age and push commit if needed
       run: |
         LAST_COMMIT=$( git --no-pager log -1 --format=%ct )
