@@ -90,6 +90,7 @@ jobs:
         docker compose pull
 #    - name: Setup Debug Session
 #      uses: csexton/debugger-action@master
+
     - name: Run tests
       run: |
         pwd
