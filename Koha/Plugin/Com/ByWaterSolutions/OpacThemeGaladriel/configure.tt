@@ -32,37 +32,37 @@
         <input type="hidden" name="class" value="[% CLASS %]"/>
         <input type="hidden" name="method" value="[% METHOD %]"/>
             <div id="tabs">
-              <ul class="nav nav-tabs" role="tablist">
-                <li role="presentation" class="active">
-                    <a href="#tabs-1" title="Global" aria-controls="tabs-1" role="tab" data-bs-toggle="tab">Global</a>
+              <ul class="nav nav-tabs" id="configTabs" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <a class="nav-link active" id="tab1-tab" data-bs-toggle="tab" href="#tabs-1" role="tab" aria-controls="tabs-1" aria-selected="true">Global</a>
                 </li>
-                <li role="presentation">
-                    <a href="#tabs-2" title="Top navigation bar" aria-controls="tabs-2" role="tab" data-bs-toggle="tab">Top navigation bar</a>
+                <li class="nav-item" role="presentation">
+                    <a class="nav-link" id="tab2-tab" data-bs-toggle="tab" href="#tabs-2" role="tab" aria-controls="tabs-2" aria-selected="false">Top navigation bar</a>
                 </li>
-                <li role="presentation">
-                    <a href="#tabs-3" title="Main search" aria-controls="tabs-3" role="tab" data-bs-toggle="tab">Main search bar</a>
+                <li class="nav-item" role="presentation">
+                    <a class="nav-link" id="tab3-tab" data-bs-toggle="tab" href="#tabs-3" role="tab" aria-controls="tabs-3" aria-selected="false">Main search bar</a>
                 </li>
-                <li role="presentation">
-                    <a href="#tabs-4" title="More searches" aria-controls="tabs-4" role="tab" data-bs-toggle="tab">More searches</a>
+                <li class="nav-item" role="presentation">
+                    <a class="nav-link" id="tab4-tab" data-bs-toggle="tab" href="#tabs-4" role="tab" aria-controls="tabs-4" aria-selected="false">More searches</a>
                 </li>
-                <li role="presentation">
-                    <a href="#tabs-5" title="Log in box" aria-controls="tabs-5" role="tab" data-bs-toggle="tab">Login box</a>
+                <li class="nav-item" role="presentation">
+                    <a class="nav-link" id="tab5-tab" data-bs-toggle="tab" href="#tabs-5" role="tab" aria-controls="tabs-5" aria-selected="false">Login box</a>
                 </li>
-                <li role="presentation">
-                    <a href="#tabs-6" title="Breadcrumbs" aria-controls="tabs-6" role="tab" data-bs-toggle="tab">Breadcrumbs</a>
+                <li class="nav-item" role="presentation">
+                    <a class="nav-link" id="tab6-tab" data-bs-toggle="tab" href="#tabs-6" role="tab" aria-controls="tabs-6" aria-selected="false">Breadcrumbs</a>
                 </li>
-                <li role="presentation">
-                    <a href="#tabs-7" title="Search Results" aria-controls="tabs-7" role="tab" data-bs-toggle="tab">Search results</a>
+                <li class="nav-item" role="presentation">
+                    <a class="nav-link" id="tab7-tab" data-bs-toggle="tab" href="#tabs-7" role="tab" aria-controls="tabs-7" aria-selected="false">Search results</a>
                 </li>
-                <li role="presentation">
-                    <a href="#tabs-8" title="Online resources" aria-controls="tabs-8" role="tab" data-bs-toggle="tab">Online resources</a>
+                <li class="nav-item" role="presentation">
+                    <a class="nav-link" id="tab8-tab" data-bs-toggle="tab" href="#tabs-8" role="tab" aria-controls="tabs-8" aria-selected="false">Online resources</a>
                 </li>
-                <li role="presentation">
-                    <a href="#tabs-9" title="Advanced search" aria-controls="tabs-9" role="tab" data-bs-toggle="tab">Advanced search</a>
+                <li class="nav-item" role="presentation">
+                    <a class="nav-link" id="tab9-tab" data-bs-toggle="tab" href="#tabs-9" role="tab" aria-controls="tabs-9" aria-selected="false">Advanced search</a>
                 </li>
               </ul>
-              <div class="tab-content">
-              <div id="tabs-1" class="tab-pane active" role="tabpanel">
+              <div class="tab-content p-3 border border-top-0" id="configTabsContent">
+               <div class="tab-pane fade show active" id="tabs-1" role="tabpanel" aria-labelledby="tab1-tab">
                 <fieldset>
                 <legend>Logo</legend>
 
@@ -108,7 +108,7 @@
 
         </fieldset>
               </div>
-              <div id="tabs-2" class="tab-pane" role="tabpanel">
+              <div class="tab-pane fade" id="tabs-2" role="tabpanel" aria-labelledby="tab2-tab">
 
         <fieldset>
                 <legend>Top Navigation bar</legend>
@@ -140,7 +140,7 @@
 
             </fieldset>
               </div>
-              <div id="tabs-3" class="tab-pane" role="tabpanel">
+              <div class="tab-pane fade" id="tabs-3" role="tabpanel" aria-labelledby="tab3-tab">
             <fieldset>
                 <legend>Search box</legend>
 
@@ -170,7 +170,7 @@
              <p/>
             </fieldset>
               </div>
-              <div id="tabs-4" class="tab-pane" role="tabpanel">
+              <div class="tab-pane fade" id="tabs-4" role="tabpanel" aria-labelledby="tab4-tab">
             <fieldset>
                 <legend>More searches</legend>
 
@@ -191,7 +191,7 @@
 
             </fieldset>
               </div>
-              <div id="tabs-5" class="tab-pane" role="tabpanel">
+              <div class="tab-pane fade" id="tabs-5" role="tabpanel" aria-labelledby="tab5-tab">
             <fieldset>
                 <legend>Login Box</legend>
 
@@ -237,7 +237,7 @@
 
             </fieldset>
               </div>
-              <div id="tabs-6" class="tab-pane" role="tabpanel">
+              <div class="tab-pane fade" id="tabs-6" role="tabpanel" aria-labelledby="tab6-tab">
             <fieldset>
                 <legend>Breadcrumbs</legend>
                 <input type="checkbox" name="enable_breadcrumbs_link_color" [% IF enable_breadcrumbs_link_color %]checked="checked"[% END %] />
@@ -255,7 +255,7 @@
                 <p/>
             </fieldset>
               </div>
-              <div id="tabs-7" class="tab-pane" role="tabpanel">
+              <div class="tab-pane fade" id="tabs-7" role="tabpanel" aria-labelledby="tab7-tab">
         <fieldset>
             <legend>Search results</legend>
 
@@ -429,7 +429,7 @@
             <p/>
         </fieldset>
               </div>
-              <div id="tabs-8" class="tab-pane" role="tabpanel">
+              <div class="tab-pane fade" id="tabs-8" role="tabpanel" aria-labelledby="tab8-tab">
         <fieldset>
             <legend>Online resources</legend>
 
@@ -498,7 +498,7 @@
             </p>
             </fieldset>
               </div>
-              <div id="tabs-9" class="tab-pane" role="tabpanel">
+              <div class="tab-pane fade" id="tabs-9" role="tabpanel" aria-labelledby="tab9-tab">
                 <label for="enable_hidden_itypes">Unwanted item types: </label>
                 <input name="hidden_itypes_text" class="hidden_types_text" type="text" size="20" value="[% hidden_itypes_text %]" />
                 (use codes for unwanted item types seperated by a |)
