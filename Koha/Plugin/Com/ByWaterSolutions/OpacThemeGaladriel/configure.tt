@@ -1,28 +1,6 @@
-[% INCLUDE 'doc-head-open.inc' %]
-  <title>Koha: Galadriel OPAC Theme Plugin: Configuration</title>
-  [% INCLUDE 'doc-head-close.inc' %]
-
-  <link rel="stylesheet" type="text/css" href="[% interface %]/[% theme %]/css/humanmsg.css" />
-  <script src="[% interface %]/lib/jquery/plugins/humanmsg.js" type="text/javascript"></script>
-
-  <script type="text/javascript">
-    $(document).ready(function() {
-      $('#save_continue').on('click', function(e){
-        e.preventDefault();
-        $.post('', $('#configureForm').serialize(), function(){
-          humanMsg.displayMsg('Settings saved!');
-        });
-      });
-    });
-  </script>
-
-</head>
+<!DOCTYPE html>
+[% WRAPPER "wrapper-staff-tool-plugin.inc" method="configure" plugin_title="Koha: Galadriel OPAC Theme Plugin: Configuration" %]
 <body>
-[% INCLUDE 'header.inc' %]
-[% INCLUDE 'cat-search.inc' %]
-
-<div id="breadcrumbs"><a href="/cgi-bin/koha/mainpage.pl">Home</a> &rsaquo; <a href="/cgi-bin/koha/plugins/plugins-home.pl">Plugins</a> &rsaquo; Galadriel OPAC Theme &rsaquo; Configuration</div>
-
 
 <div id="doc3">
     <h3>Koha: Galadriel OPAC Theme Plugin: Configuration</h3>
@@ -517,8 +495,8 @@
 
         <input type="hidden" name="save" value="1" />
 
-        <button style="margin-bottom:3em;" type="submit" value="Save">Save & Exit</button>
-        <button style="margin-bottom:3em;" id="save_continue">Save & continue</button>
+        <button class="btn btn-default" style="margin-bottom:3em;" type="submit" value="Save">Save & Exit</button>
+        <button class="btn btn-default" style="margin-bottom:3em;" id="save_continue">Save & continue</button>
     </form>
 </div>
-[% INCLUDE 'intranet-bottom.inc' %]
+[% END %]
