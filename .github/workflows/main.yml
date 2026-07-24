@@ -73,7 +73,7 @@ jobs:
         "
 
     - name: Show logs on failure
-      if: failure()&
+      if: failure()
       run: |
         export KTD_HOME=$(pwd)/../koha-testing-docker
         echo "=== KTD instance status ==="
