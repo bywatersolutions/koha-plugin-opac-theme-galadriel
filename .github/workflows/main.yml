@@ -61,7 +61,7 @@ jobs:
       run: |
         cd ../koha-testing-docker
         export KTD_HOME=$(pwd)
-        ktd --name galadriel --wait-ready 120
+        ktd --name galadriel --wait-ready 240
 
     - name: Run plugin tests
       run: |
@@ -73,7 +73,7 @@ jobs:
         "
 
     - name: Show logs on failure
-      if: failure()
+      if: failure()&
       run: |
         export KTD_HOME=$(pwd)/../koha-testing-docker
         echo "=== KTD instance status ==="
@@ -167,3 +167,4 @@ jobs:
         git config --global user.name "Kyle M Hall"
         git commit --allow-empty -m "Automated commit from keep alive workflow"
         if [ "$DAYS" -gt "50" ]; then git push; fi
+&
