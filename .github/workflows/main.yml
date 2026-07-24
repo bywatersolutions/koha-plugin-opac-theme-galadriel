@@ -167,4 +167,4 @@ jobs:
         git config --global user.name "Kyle M Hall"
         git commit --allow-empty -m "Automated commit from keep alive workflow"
         if [ "$DAYS" -gt "50" ]; then git push; fi
-&
+
