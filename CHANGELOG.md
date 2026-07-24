@@ -13,3 +13,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Removed
 - No removals in this release.
+
+## 1.2.2
+### Changed
+- Updated configuration page to use the Koha plugin wrapper include
