@@ -29,15 +29,15 @@ BEGIN {
 use JavaScript::Minifier qw(minify);
 
 ## Here we set our plugin version
-our $VERSION = "{VERSION}";
+our $VERSION = "v1.2.5";
 
 our $metadata = {
     name            => 'Galadriel OPAC Theme plugin',
     author          => 'Lucas Gass, ByWater Solutions',
     description     => 'Install the Galadriel OPAC theme',
     date_authored   => '2018-01-29',
-    date_updated    => '2025-06-06',
-    minimum_version => '21.05',
+    date_updated    => '2026-08-10',
+    minimum_version => '25.05',
     maximum_version => undef,
     version         => $VERSION,
 };
