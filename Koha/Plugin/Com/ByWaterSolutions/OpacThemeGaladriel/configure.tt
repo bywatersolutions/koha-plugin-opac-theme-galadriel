@@ -496,7 +496,40 @@
         <input type="hidden" name="save" value="1" />
 
         <button class="btn btn-default" style="margin-bottom:3em;" type="submit" value="Save">Save & Exit</button>
-        <button class="btn btn-default" style="margin-bottom:3em;" id="save_continue">Save & continue</button>
+        <button class="btn btn-default" style="margin-bottom:3em;" type="button" id="save_continue">Save & continue</button>
     </form>
 </div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const saveContinue = document.getElementById("save_continue");
+    const configureForm = document.getElementById("configureForm");
+
+    if (!saveContinue || !configureForm) {
+        return;
+    }
+
+    saveContinue.addEventListener("click", function () {
+        const params = new URLSearchParams(new FormData(configureForm));
+
+        fetch(window.location.pathname + "?" + params.toString(), {
+            method: "GET"
+        })
+        .then(function (response) {
+            if (!response.ok) {
+                throw new Error(
+                    "HTTP " + response.status + " " + response.statusText
+                );
+            }
+
+            alert("Settings saved!");
+        })
+        .catch(function (error) {
+            console.error("Galadriel save failed:", error);
+            alert("There was a problem saving the settings.");
+        });
+    });
+});
+</script>
+
 [% END %]
