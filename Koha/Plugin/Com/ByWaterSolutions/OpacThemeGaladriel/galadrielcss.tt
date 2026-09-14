@@ -288,13 +288,13 @@
     content: '\f14a';
 	color: #85ca11;
 }
-.selected .facet-label::before {
+.facet-label.selected::before {
     font: var(--fa-font-solid);
     color: #85ca11;
 	content: '\f14a';
     padding-right: 3px;
 }
-.selected .facet-label:hover::before {
+.facet-label.selected:hover::before {
     font: var(--fa-font-solid);
 	content: '\f146';
     color: red;

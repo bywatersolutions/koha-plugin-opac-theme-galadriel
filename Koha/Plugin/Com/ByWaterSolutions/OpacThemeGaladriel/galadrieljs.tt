@@ -6,15 +6,41 @@ function getTypeFromUrl(urlString) {
 
 if ( $('#search-facets').length ) {
     /* search facets */
+
     [% IF enable_alternate_facet %]
-          $('.check_facet ul').toggle();
-          $('a[title^="Remove facet"]').css('text-decoration','none').parent().addClass('selected');
-          $('.selected').each( function() {
-            var this_facet = $(this).children('a').clone().text('');
-            var text = $(this).children('.facet-label').text();
-            $(this).html(`<span class="facet-label">${text}<span>`).wrap(this_facet);
-          });
-    [% END%]
+
+    $('.check_facet ul').toggle();
+
+    $('a[title^="Remove facet"]').each(function() {
+        let $remove_link = $(this);
+        let $facet = $remove_link.closest('.facet-label');
+
+    if (!$facet.length) {
+        return;
+    }
+
+    let facet_text = $facet
+        .clone()
+        .children('a')
+        .remove()
+        .end()
+        .text()
+        .trim();
+
+    let $facet_link = $remove_link
+        .clone()
+        .empty()
+        .css('text-decoration', 'none');
+
+    $facet
+        .empty()
+        .addClass('selected')
+        .text(facet_text)
+        .wrap($facet_link);
+});
+
+[% END %]
+
     [% IF hidden_facet_holdings_text %]
         $('#holdingbranch_id .facet-label > a').each( function() {
             let this_facet_holding = $(this).attr('href');
